@@ -18,7 +18,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.string :company_name
       t.string :address_street
-      t.number :address_zip
+      t.integer :address_zip
       t.string :address_city
       t.string :phone_number
 
