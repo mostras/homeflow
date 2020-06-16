@@ -4,9 +4,9 @@ puts "ceci marque le debut des seeds.."
 
 puts "empezamos la desrucion de las seedas"
 
+Document.destroy_all
 Job.destroy_all
 User.destroy_all
-Document.destroy_all
 
 puts "---------- ça créer du USERS"
 
