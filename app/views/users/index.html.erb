@@ -1,1 +1,9 @@
-index.html.erb
+<h1>VOICI LA LISTE DE VOS CLIENTS</h1>
+
+<ul>
+  <% @clients.each do |client| %>
+   <li><%= client.first_name %> <%= client.last_name %> | <%= link_to 'details', user_path(client.id)  %></li>
+  <% end %>
+
+</ul>
+
