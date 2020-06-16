@@ -5,4 +5,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  belongs_to :constructor, class_name: 'User', optional: true
+  has_many :users, foreign_key: :constructor_id, dependent: :destroy
+
+  def constructor?
+    constructor_id.nil?
+  end
+
+  def clients
+    users
+  end
 end

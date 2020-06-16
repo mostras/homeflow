@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_094532) do
+ActiveRecord::Schema.define(version: 2020_06_16_125622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 2020_06_16_094532) do
     t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "constructor_id"
+    t.index ["constructor_id"], name: "index_users_on_constructor_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -87,4 +89,5 @@ ActiveRecord::Schema.define(version: 2020_06_16_094532) do
   add_foreign_key "documents", "users"
   add_foreign_key "jobs", "users"
   add_foreign_key "tasks", "jobs"
+  add_foreign_key "users", "users", column: "constructor_id"
 end
