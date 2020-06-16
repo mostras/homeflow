@@ -1,3 +1,5 @@
+
+
 puts "ceci marque le debut des seeds.."
 
 puts "empezamos la desrucion de las seedas"
@@ -19,6 +21,14 @@ puts "---------- ça créer du JOBS"
 jobs = ['fondation', 'murs', 'toiture', 'revetement', 'isolation', 'plomberie', 'electicite', 'peinture']
 
 clients.each do |client|
+
+  document1 = Document.new(title: 'Devis', category: "administratif", user: client)
+  document1.photos.attach(io: open('seed_images/devis1.jpg'), filename: 'devis1.jpg', content_type: 'image/jpg')
+  document1.save!
+  document2 = Document.new(title: 'Devis', category: "administratif", user: client)
+  document2.photos.attach(io: open('seed_images/devis2.jpg'), filename: 'devis2.jpg', content_type: 'image/jpg')
+  document2.save!
+
   jobs.each do |job|
     var = Job.create!(name: job, user: client)
     puts "#{var.name} a été créé!!!!!"
@@ -27,6 +37,8 @@ clients.each do |client|
     Task.create!(title: "Tâche.. piscine", content: "T'as capté la reférence? lol xD", job: var)
   end
 end
+
+
 
 puts "==============================="
 puts "Et c'est ainsi que les seeds se terminent."

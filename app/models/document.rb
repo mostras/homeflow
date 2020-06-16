@@ -1,5 +1,6 @@
 class Document < ApplicationRecord
   belongs_to :user
+  has_many_attached :photos
 
   DOC_TYPE = %w(banque plan administratif)
 
