@@ -8,4 +8,8 @@ class TaskPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def create?
+    user.constructor?
+  end
 end
