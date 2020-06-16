@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   def index
-    @users = policy_scope(Users)
+    @clients = policy_scope(User)
+  end
+
+  def show
+    @client = User.find(params[:id])
+    authorize @client
+
   end
 
   def new
