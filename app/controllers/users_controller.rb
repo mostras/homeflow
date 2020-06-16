@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   def show
     @client = User.find(params[:id])
     authorize @client
-
   end
 
   def new

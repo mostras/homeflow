@@ -1,4 +1,10 @@
 class TasksController < ApplicationController
-  def index
+  def show
+  end
+
+  def new
+  end
+
+  def create
   end
 end
