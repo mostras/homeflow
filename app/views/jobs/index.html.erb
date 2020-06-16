@@ -1,1 +1,10 @@
-index.html.erb
+<h1>Les metier en cours:</h1>
+<ul>
+  <% @jobs.each do |job| %>
+    <li>
+        <%= link_to job.name,  %>
+    </li>
+  <% end %>
+</ul>
+
+
