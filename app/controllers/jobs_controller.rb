@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
+
   def index
+    @jobs = policy_scope(Job).where(user: current_user)
   end
 
   def show
@@ -7,3 +9,4 @@ class JobsController < ApplicationController
     authorize @job
   end
 end
+
