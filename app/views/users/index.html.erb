@@ -2,7 +2,7 @@
 
 <ul>
   <% @clients.each do |client| %>
-   <li><%= client.first_name %> <%= client.last_name %> | <%= link_to 'details', user_path(client.id)  %></li>
+   <li><%= client.first_name %> <%= client.last_name %> | <%= link_to 'details', user_path(client)  %></li>
   <% end %>
 
 </ul>

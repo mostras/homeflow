@@ -4,7 +4,7 @@
 <ul>
   <% @client.jobs.each do |job| %>
     <li>
-      <%= link_to job.name, '#' %>
+      <%= link_to job.name, job_path(job) %>
     </li>
   <% end %>
 </ul>

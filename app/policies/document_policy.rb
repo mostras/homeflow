@@ -1,4 +1,4 @@
-class TasksPolicy < ApplicationPolicy
+class DocumentPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all

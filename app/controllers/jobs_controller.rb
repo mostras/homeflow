@@ -3,5 +3,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    @job = Job.find(params[:id])
+    authorize @job
   end
 end
