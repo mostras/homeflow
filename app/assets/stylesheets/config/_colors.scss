@@ -11,7 +11,14 @@ $light-gray: #F4F4F4;
 
 
 // couleur figma
-// $principale #BFE1FC; // bleue clair fonc
+// $principale #BFE1FC;
 // $secondaire #D00A71; // rouge carmin
 // $tertiaire #05B4FF; // blueu ciel vif
 // $gris #C4C4C4 opacity: 0.15; // girs clair fond 15%
+
+:root {
+  --principale: #BFE1FC;
+  --secondaire: #D00A71;
+  --tertiaire: #05B4FF;
+  --gris: #C4C4C4; //opacity: 0.15;
+}
