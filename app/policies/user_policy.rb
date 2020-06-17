@@ -9,6 +9,10 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+  def create?
+    user.constructor?
+  end
+
   def show?
     user.constructor?
   end
