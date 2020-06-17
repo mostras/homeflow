@@ -1,7 +1,7 @@
 <h1>Les metier en cours:</h1>
 
   <% @jobs.each do |job| %>
-        <%= render partial: "shared/task_card", locals: {task: task} %>
+        <%= render partial: "shared/task_card", locals: {job: job} %>
   <% end %>
 
 <%= link_to 'voir les documents', documents_path %>
