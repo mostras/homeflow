@@ -8,12 +8,6 @@ class UsersController < ApplicationController
   def show
   end
 
-  def new
-  end
-
-  def create
-  end
-
   def details
   end
 
@@ -22,5 +16,9 @@ class UsersController < ApplicationController
   def set_user
     @client = User.find(params[:id])
     authorize @client
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :first_name, :last_name, :address_street, :address_zip, :address_city, :phone_number)
   end
 end
