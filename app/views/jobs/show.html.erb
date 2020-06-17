@@ -1,4 +1,8 @@
-<h1><%= @job.name %></h1>
+<%= render partial: "shared/navbar", locals: {
+  title: @job.name,
+  sub_title: "#{@job.tasks.count} tâches • Dernier envoi : #{@job.tasks.last.created_at.strftime('%d/%m/%Y')}",
+  button: :back
+  } %>
 
 <ul>
   <% @job.tasks.each do |task| %>

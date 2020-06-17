@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :details]
 
   def index
+    @user = current_user
     @clients = policy_scope(User)
   end
 

@@ -1,4 +1,8 @@
-<h1><%= @client.first_name %> <%= @client.last_name %></h1>
+<%= render partial: "shared/navbar", locals: {
+  title: "#{@client.first_name} #{@client.last_name}",
+  sub_title: "#{@client.jobs.count} étapes • #{@client.jobs.where(completed: false).count} actives • #{@client.jobs.where(completed: true).count} terminées",
+  button: :back
+  } %>
 
 <%= link_to 'Docs', user_documents_path(@client) %>  |
 <%= link_to 'Mail', "mailto:#{@client.email}" %>  | 

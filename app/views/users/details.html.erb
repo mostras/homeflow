@@ -1,4 +1,9 @@
-<h1><%= @client.first_name %> <%= @client.last_name %></h1>
+<%= render partial: "shared/navbar", locals: {
+  title: "#{@client.first_name} #{@client.last_name}",
+  sub_title: "Client ajouté le #{@client.created_at.strftime('%d/%m/%Y')}",
+  button: :back
+  } %>
+
 
 <p>Adresse : <%= @client.address_street %> <%= @client.address_zip %>, <%= @client.address_city %></p>
 
