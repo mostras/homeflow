@@ -33,7 +33,7 @@ clients.each do |client|
     var = Job.create!(name: job, user: client)
     puts "#{var.name} a été créé!!!!!"
 
-    Task.create!(title: "Tâche.. pistache", content: "Voici la description de notre tâche. J'espere que vous avez apprécié !", job: var)
+    Task.create!(title: "Tâche.. pistache", content: "Voici la description de notre tâche. J'espere que vous avez apprécié !", job: var, seen: true)
     Task.create!(title: "Tâche.. piscine", content: "T'as capté la reférence? lol xD", job: var)
   end
 end
