@@ -1,0 +1,5 @@
+
+<div>
+  <%= link_to job.name, job_path(job) %> ( <%= job.tasks.count %> ) |
+  <%= render partial: "shared/toggle_button", locals: {job: job}  %>
+</div>
