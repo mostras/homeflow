@@ -1,5 +1,6 @@
   <%= simple_form_for [@job, @task] do |f| %>
   <%= f.input :title, label: 'Titre'%>
   <%= f.input :content, label: 'Description' %>
+  <%= f.file_field :photos, label: false, as: :file, multiple: true %>
   <%= f.submit "Ajouter une taches" %>
   <% end %>
