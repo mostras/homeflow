@@ -6,12 +6,7 @@
 <%= link_to 'More', user_details_path(@client) %>
 
 <h2>Voici les jobs :</h2>
-<ul>
-  <% @client.jobs.each do |job| %>
-    <li>
-      <%= link_to job.name, job_path(job) %> ( <%= job.tasks.count %> ) |
-      <%= render partial: "shared/toggle_button", locals: {job: job}  %>
-    </li>
-  <% end %>
-</ul>
 
+  <% @client.jobs.each do |job| %>
+    <%= render partial: "shared/job_card", locals: {job: job} %>
+  <% end %>
