@@ -9,9 +9,8 @@
 <ul>
   <% @client.jobs.each do |job| %>
     <li>
-      <%= link_to job.name, job_path(job) %>
+      <%= link_to job.name, job_path(job) %> | <%= render partial: "shared/toggle_button", locals: {job: job}  %>
     </li>
   <% end %>
 </ul>
-
 

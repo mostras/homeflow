@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   end
 
   resources :jobs, only: [:index, :show] do
+    patch :completed, on: :member
+    patch :not_completed, on: :member
     resources :tasks, only: [ :show, :new, :create]
   end
-
-
 
   resources :documents, only: [:index, :show, :new, :create, :destroy]
 
