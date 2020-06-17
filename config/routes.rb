@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :new, :create]
 
-  resources :jobs, only: [:index, :show]
+  resources :jobs, only: [:index, :show] do
+    resources :tasks, only: [ :show, :new, :create]
+  end
 
-  resources :tasks, only: [ :show, :new, :create]
+
 
   resources :documents, only: [:index, :show, :new, :create, :destroy]
 

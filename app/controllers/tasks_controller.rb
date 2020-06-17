@@ -5,17 +5,18 @@ class TasksController < ApplicationController
   end
 
   def new
+    @job = Job.find(params[:job_id])
     @task = Task.new
     authorize @task
   end
 
   def create
-    @job = Job.find(49)
+    @job = Job.find(params[:job_id])
     @task = Task.new(task_params)
     @task.job = @job
     authorize @task
     if @task.save!
-      redirect_to job_path(49)
+      redirect_to job_path(@job)
     else
       render :new
     end
