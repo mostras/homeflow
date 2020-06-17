@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
   def show
-      @task = Task.find(params[:job_id])
-      authorize @task
-      @task.update!(seen: true) unless current_user.constructor?
+    @task = Task.find(params[:job_id])
+    authorize @task
+    @task.update!(seen: true) unless current_user.constructor?
   end
 
   def new

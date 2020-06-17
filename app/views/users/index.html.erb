@@ -1,4 +1,8 @@
-<h1>VOICI LA LISTE DE VOS CLIENTS</h1>
+<%= render partial: "shared/navbar", locals: {
+  title: "#{@user.company_name}",
+  sub_title: "#{@clients.length} clients • XX actifs",
+  button: users_path
+  } %>
 
 <%= link_to '+ ajouter', '#' %>
 
