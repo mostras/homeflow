@@ -8,4 +8,12 @@ class JobPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def completed?
+    user.constructor?
+  end
+
+  def not_completed?
+    user.constructor?
+  end
 end

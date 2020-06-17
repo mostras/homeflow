@@ -1,0 +1,5 @@
+<% if job.completed == false %>
+  <%= link_to '✓', completed_job_path(job), method: :patch, data: { confirm: 'Êtes vous sûr de vouloir marquer cette étape comme terminée ?' } %>
+<% else %>
+  <%= link_to '↩︎', not_completed_job_path(job), method: :patch, data: { confirm: 'Vous êtes sur le point de réouvrir cette étape, êtes vous sûr ?' } %>
+<% end %>
