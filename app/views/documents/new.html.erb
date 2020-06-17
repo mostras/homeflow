@@ -1,6 +1,7 @@
 <%= simple_form_for(@document) do |f| %>
   <%= f.input :title, label: 'Titre' %>
-  <%= f.input :category, collection: ['S', 'XS', 'M', 'L'], label: 'Category' %>
+  <%= f.input :category, collection: Document::DOC_TYPE, label: 'Category' %>
   <%= f.input :photos, label: false, placeholder: "Photo", as: :file %>
   <%= f.button :submit, "Creer un document"%>
 <% end %>
+
