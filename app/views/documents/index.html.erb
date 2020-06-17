@@ -1,11 +1,11 @@
 <h1>Mes documents</h1>
 <ul>
   <% @documents.each do |document| %>
-    <li>
-      <%= document.title %>
-      <%= document.category %>
-      <%= link_to 'voir le document',  document_path(document)  %>
-    </li>
+    <%= render partial: "shared/documents_card", locals: {
+      title: document.title,
+      category: document.category,
+      path: document_path(document)
+    } %>
   <% end %>
 </ul>
 
@@ -14,5 +14,7 @@
 <% else %>
   <%= link_to 'Creer un document', new_document_path %>
 <% end %>
+
+
 
 
