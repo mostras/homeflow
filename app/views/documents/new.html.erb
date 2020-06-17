@@ -1,7 +1,16 @@
-<%= simple_form_for(@document) do |f| %>
-  <%= f.input :title, label: 'Titre' %>
-  <%= f.input :category, collection: Document::DOC_TYPE, label: 'Category' %>
-  <%= f.input :photos, label: false, placeholder: "Photo", as: :file %>
-  <%= f.button :submit, "Creer un document"%>
+<% if current_user.constructor? %>
+  <%= simple_form_for [@user, @document] do |f| %>
+    <%= f.input :title, label: 'Titre' %>
+    <%= f.input :category, collection: Document::DOC_TYPE, label: 'Category' %>
+    <%= f.input :photos, label: false, placeholder: "Photo", as: :file %>
+    <%= f.button :submit, "Creer un document"%>
+  <% end %>
+<% else %>
+  <%= simple_form_for(@document) do |f| %>
+    <%= f.input :title, label: 'Titre' %>
+    <%= f.input :category, collection: Document::DOC_TYPE, label: 'Category' %>
+    <%= f.input :photos, label: false, placeholder: "Photo", as: :file %>
+    <%= f.button :submit, "Creer un document"%>
+  <% end %>
 <% end %>
-
+<!-- @document, url: user_documents_path, method: 'POST' -->

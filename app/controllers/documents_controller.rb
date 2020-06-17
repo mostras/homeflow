@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
   def index
     if current_user.constructor?
+      @user = User.find(params[:user_id])
       @documents = policy_scope(Document).where(user_id: params[:user_id])
     else
       @documents = policy_scope(Document).where(user: current_user)
@@ -13,6 +14,10 @@ class DocumentsController < ApplicationController
   end
 
   def new
+    if current_user.constructor?
+      @user = User.find(params[:user_id])
+    end
+
     @document = Document.new
     authorize @document
   end
@@ -20,11 +25,21 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new(document_params)
     authorize @document
-    @document.user = current_user
-    if @document.save
-      redirect_to documents_path
+    if current_user.constructor?
+      @user = User.find(params[:user_id])
+      @document.user = @user
+        if @document.save
+          redirect_to user_documents_path(@user)
+        else
+          render :new
+        end
     else
-      render :new
+      @document.user = current_user
+      if @document.save
+        redirect_to documents_path
+      else
+        render :new
+      end
     end
 
   end
@@ -39,3 +54,4 @@ class DocumentsController < ApplicationController
   end
 
 end
+

@@ -9,5 +9,10 @@
   <% end %>
 </ul>
 
-<%= link_to 'Creer un document', new_document_path %>
+<% if current_user.constructor? %>
+  <%= link_to 'Creer un document', new_user_document_path(@user)  %>
+<% else %>
+  <%= link_to 'Creer un document', new_document_path %>
+<% end %>
+
 
