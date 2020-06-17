@@ -4,13 +4,9 @@ class UserPolicy < ApplicationPolicy
       if user.constructor?
         scope.where(constructor: user)
       else
-        p "alors qu'est ce qu'on fait?"
+        scope.none
       end
     end
-  end
-
-  def create?
-    user.constructor?
   end
 
   def show?

@@ -8,18 +8,6 @@ class UsersController < ApplicationController
   def show
   end
 
-  def new
-    @client = User.new
-    authorize @client
-  end
-
-  def create
-    @client = User.new(user_params)
-    authorize @client
-
-    @client.constructor = current_user
-  end
-
   def details
   end
 
@@ -31,6 +19,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :address_street, :address_zip, :address_city, :phone_number)
+    params.require(:user).permit(:email, :first_name, :last_name, :address_street, :address_zip, :address_city, :phone_number)
   end
 end

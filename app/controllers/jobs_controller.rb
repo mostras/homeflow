@@ -10,16 +10,12 @@ class JobsController < ApplicationController
 
   def completed
     @job.update!(completed: true)
-    # @client = Client.find(params[:id])
-
-    redirect_to users_path
+    redirect_back(fallback_location: users_path)
   end
 
   def not_completed
     @job.update!(completed: false)
-    # @client = Client.find(params[:id])
-
-    redirect_to users_path
+    redirect_back(fallback_location: users_path)
   end
 
   private
