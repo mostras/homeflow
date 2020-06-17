@@ -3,7 +3,12 @@
 <ul>
   <% @job.tasks.each do |task| %>
     <li>
-      <%= task.title %> <%= link_to 'voir', job_task_path(task)  %>
+      <%= task.title %> <%= link_to 'voir', job_task_path(task)  %> |
+      <% if task.seen %>
+        <p>Vu</p>
+      <% else %>
+        <p>Non vu</p>
+      <% end %>
     </li>
   <% end %>
 </ul>
