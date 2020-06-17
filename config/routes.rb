@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     resources :tasks, only: [ :show, :new, :create]
   end
 
-
-
   resources :documents, only: [:index, :show, :new, :create, :destroy]
 
 end
