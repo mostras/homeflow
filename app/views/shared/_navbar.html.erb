@@ -1,5 +1,6 @@
 <div>
   <%= link_to '<--', button unless button == "" %>
+  <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete %>
   <div>
     <h1><%= title %></h1>
     <p> <%= sub_title %></p>
