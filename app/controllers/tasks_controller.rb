@@ -16,7 +16,9 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.job = @job
     authorize @task
-    if @task.save!
+    if @task.save
+      @job.completed = false
+      @job.save
       redirect_to job_path(@job)
     else
       render :new
