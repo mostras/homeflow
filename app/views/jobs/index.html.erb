@@ -1,12 +1,12 @@
 <%= render partial: "shared/navbar_home", locals: {
   title: "Bonjour #{@jobs.first.user.first_name} !",
-  sub_title: "#{@jobs.count} tâches • Dernier envoi : #{@jobs.last.created_at.strftime('%d/%m/%Y')}", # a definir!
+  sub_title: "#{@jobs.count} tâches • Dernier envoi : #{@jobs.last.created_at.strftime('%d/%m/%Y')}", # a definir ce qu'on veut mettre ici
   } %>
 
 <%= link_to 'voir les documents', documents_path %>
 
 <% @jobs.each do |job| %>
-      <%= render partial: "shared/task_card", locals: {job: job} %>
+      <%= render partial: "shared/job_card", locals: {job: job} %>
 <% end %>
 
 

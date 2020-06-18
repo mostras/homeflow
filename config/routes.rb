@@ -19,8 +19,9 @@ Rails.application.routes.draw do
   resources :jobs, only: [:show] do
     patch :completed, on: :member
     patch :not_completed, on: :member
-    resources :tasks, only: [ :show, :new, :create]
+    resources :tasks, only: [:new, :create]
   end
+  resources :tasks, only: [:show]
 
   resources :documents, only: [:index, :show, :new, :create, :destroy]
 

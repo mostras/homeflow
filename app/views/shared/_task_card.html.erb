@@ -1,8 +1,8 @@
 <div class="task-card-container">
-  <%= link_to '', path, class: 'cover-link'  %>
+  <%= link_to '', task_path(task), class: 'cover-link'  %>
   <div class="task-info">
-    <h2><%= task_title %> </h2>
-    <% if task_seen %>
+    <h2><%= task.title %> </h2>
+    <% if task.seen? %>
       <h4>Vu</h4>
     <% else %>
       <h4>Non vu</h4>

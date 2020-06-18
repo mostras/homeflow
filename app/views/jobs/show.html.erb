@@ -14,11 +14,7 @@
 <% end %>
 
 <% @job.tasks.order(created_at: :desc).each do |task| %>
-  <%= render partial: "shared/task_card", locals: {
-    task_title: task.title,
-    path: job_task_path(task),
-    task_seen: task.seen
-  } %>
+  <%= render partial: "shared/task_card", locals: { task: task } %>
 <% end %>
 
 
