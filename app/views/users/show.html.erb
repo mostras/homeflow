@@ -4,13 +4,28 @@
   button: users_path
   } %>
 
-<%= link_to 'Docs', user_documents_path(@client) %>  |
-<%= link_to 'Mail', "mailto:#{@client.email}" %>  | 
-<%= link_to 'Phone', "tel:#{@client.phone_number}" %>  |
-<%= link_to 'More', user_details_path(@client) %>
 
-<h2>Voici les jobs :</h2>
-
-  <% @client.jobs.each do |job| %>
-    <%= render partial: "shared/job_card", locals: {job: job} %>
+<div class="icon-container">
+  <%= link_to user_documents_path(@client) do  %>
+    <i class="far fa-file icon"></i>
   <% end %>
+
+  <%= link_to "mailto:#{@client.email}" do  %>
+    <i class="far fa-envelope icon"></i>
+  <% end %>
+
+  <%= link_to "tel:#{@client.phone_number}" do  %>
+    <i class="fas fa-phone icon"></i>
+  <% end %>
+
+  <%= link_to user_details_path(@client) do  %>
+    <i class="fas fa-ellipsis-h icon"></i>
+  <% end %>
+</div>
+
+
+<% @client.jobs.each do |job| %>
+  <%= render partial: "shared/job_card", locals: {job: job} %>
+<% end %>
+
+

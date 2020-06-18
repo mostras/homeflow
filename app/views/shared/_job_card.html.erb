@@ -1,6 +1,10 @@
-
-<div>
-  <%= link_to job.name, job_path(job) %> ( <%= job.tasks.count %> ) |
-  <p>Dernière notification : <%= job.updated_at.strftime('%d/%m/%Y') %></p>
-  <%= render partial: "shared/toggle_button", locals: {job: job}  %>
+<div class="job-card-container">
+  <%= link_to '', job_path(job), class: 'cover-link' %>
+  <div class="job-info">
+    <h1><%= job.name %> ( <%= job.tasks.count %> )</h1>
+    <h4>Dernière notification : <%= job.updated_at.strftime('%d/%m/%Y') %></h4>
+  </div>
+  <div class="icon">
+    <%= render partial: "shared/toggle_button", locals: {job: job}  %>
+  </div>
 </div>
