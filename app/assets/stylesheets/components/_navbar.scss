@@ -1,12 +1,29 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+.navbar-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px $light-gray solid;
+  padding: 0.5rem 2rem;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  .icon {
+    width: 20%;
+    text-align: center;
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .navbar-description {
+    width: 80%;
+    margin-left: 1rem;
+  }
+
+
+  h1{
+    font-size: $T1;
+    color: $bold-gray;
+  }
+
+  h3 {
+    font-size: $T3;
+    color: $orange;
+  }
+
 }
