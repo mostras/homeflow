@@ -1,5 +1,9 @@
-<div>
-  <h1><%= document.title %></h1>
-  <p><%= document.category %> | Ajouté le <%= document.created_at.strftime('%d/%m/%Y') %></p>
-  <%= link_to 'détails', document_path(document) %>
+<div class="documents-container">
+  <%= link_to '', document_path(document), class: 'cover-link' %>
+  <div class="document-info">
+    <p><%= document.title %></p>
+    <p><%= document.category %></p>
+    <p>Ajouté le <%= document.created_at.strftime('%d/%m/%Y') %></p>
+  </div>
 </div>
+

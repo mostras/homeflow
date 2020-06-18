@@ -4,15 +4,32 @@
   button: current_user.constructor? ? user_path(@documents.first.user) : jobs_path
 } %>
 
+<% if current_user.constructor? %>
+  <%= link_to new_user_document_path(@user) do %>
+    <div class="add-container">
+      <i class="fas fa-plus"></i>
+      <p>Ajouter un document</p>
+    </div>
+  <% end %>
+<% else %>
+  <%= link_to new_document_path do %>
+    <div class="add-container">
+      <i class="fas fa-plus"></i>
+      <p>Ajouter un document</p>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="documents-container-wrap">
   <% @documents.each do |document| %>
     <%= render partial: "shared/document_card", locals: {document: document} %>
   <% end %>
+</div>
 
-<% if current_user.constructor? %>
-  <%= link_to 'Ajouter un document', new_user_document_path(@user)  %>
-<% else %>
-  <%= link_to 'Ajouter un document', new_document_path %>
-<% end %>
+
+
+
+
 
 
 
