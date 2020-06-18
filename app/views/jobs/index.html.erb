@@ -1,7 +1,6 @@
-<%= render partial: "shared/navbar", locals: {
+<%= render partial: "shared/navbar_home", locals: {
   title: "Bonjour #{@jobs.first.user.first_name} !",
   sub_title: "#{@jobs.count} tâches • Dernier envoi : #{@jobs.last.created_at.strftime('%d/%m/%Y')}", # a definir!
-  button: ""
   } %>
 
 <%= link_to 'voir les documents', documents_path %>

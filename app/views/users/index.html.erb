@@ -1,7 +1,6 @@
-<%= render partial: "shared/navbar", locals: {
+<%= render partial: "shared/navbar_home", locals: {
   title: "#{@user.company_name}",
   sub_title: "#{@clients.length} clients • XX actifs",
-  button: ""
   } %>
 
 <%= link_to '+ ajouter', '#' %>
