@@ -8,7 +8,7 @@
   margin: 1rem auto;
   border-radius: 10px;
   position: relative;
-  border-left: 10px solid $orange;
+  border-left: 10px solid $gray;
 
   .cover-link {
     position: absolute;
@@ -18,9 +18,9 @@
     right: 0;
   }
 
-  h1 {
+  h2 {
     font-size: $T2;
-    color: $orange;
+    color: $gray;
   }
 
   h4 {
