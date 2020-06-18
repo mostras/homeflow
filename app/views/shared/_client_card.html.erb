@@ -5,7 +5,9 @@
     <h3><%= client.address_street %> <%= client.address_zip %>, <%= client.address_city.upcase %></h3>
     <h4>Dernière notification : <%= client.updated_at.strftime('%d/%m/%Y') %></h4>
   </div>
-  <%= link_to 'Call', "tel:#{client.phone_number}", class: "icon-call" %>
+  <%= link_to "tel:#{client.phone_number}", class: "icon-call" do %>
+    <i class="fas fa-phone icon"></i>
+  <% end %>
 </div>
 
 

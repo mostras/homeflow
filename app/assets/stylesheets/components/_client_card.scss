@@ -19,6 +19,14 @@
     right: 0;
   }
 
+  .icon-call {
+    text-decoration: none;
+    color: $orange;
+    margin-right: 0.5rem;
+    font-size: 24px;
+    z-index: 10;
+  }
+
   h2{
     font-size: $T2;
     color: $orange;
@@ -33,4 +41,6 @@
     font-size: $T4;
     color: $gray;
   }
+
+
 }

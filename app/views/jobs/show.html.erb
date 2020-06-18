@@ -5,12 +5,14 @@
   } %>
 
 <% if policy(@job.tasks).create? %>
-  <div class="add-task-container">
-    <%= link_to new_job_task_path(@job) do %>
-      <i class="fas fa-plus"></i>
-    <% end %>
+
+<%= link_to new_job_task_path(@job) do %>
+  <div class="add-container">
+    <i class="fas fa-plus"></i>
     <p>Ajouter une tâches</p>
   </div>
+<% end %>
+
 <% end %>
 
 <% @job.tasks.order(created_at: :desc).each do |task| %>
