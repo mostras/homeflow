@@ -1,17 +1,22 @@
+<%= render partial: "shared/navbar", locals: {
+  title: "Nouveau document",
+  sub_title: "Veuillez remplir les champs ci dessous.",
+  button: :back
+} %>
+
 <% if current_user.constructor? %>
   <%= simple_form_for [@user, @document] do |f| %>
     <%= f.input :title, label: 'Titre' %>
     <%= f.input :category, collection: Document::DOC_TYPE, label: 'Category' %>
-    <%= f.input :photos, label: false, placeholder: "Photo", as: :file, multiple: true %>
-    <%= f.button :submit, "Creer un document"%>
+    <%= f.file_field :photos, label: false, as: :file, multiple: true %>
+    <%= f.button :submit, "Ajouter le document"%>
   <% end %>
 <% else %>
   <%= simple_form_for(@document) do |f| %>
-  je sui lq
     <%= f.input :title, label: 'Titre' %>
     <%= f.input :category, collection: Document::DOC_TYPE, label: 'Category' %>
     <%= f.file_field :photos, label: false, as: :file, multiple: true %>
-    <%= f.button :submit, "Creer un document"%>
+    <%= f.button :submit, "Ajouter le document"%>
   <% end %>
 <% end %>
 <!-- @document, url: user_documents_path, method: 'POST' -->

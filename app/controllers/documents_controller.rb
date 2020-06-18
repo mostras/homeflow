@@ -14,9 +14,7 @@ class DocumentsController < ApplicationController
   end
 
   def new
-    if current_user.constructor?
-      @user = User.find(params[:user_id])
-    end
+    @user = User.find(params[:user_id]) if current_user.constructor?
 
     @document = Document.new
     authorize @document

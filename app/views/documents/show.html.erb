@@ -1,4 +1,8 @@
-<h1><%= @document.title %></h1>
+<%= render partial: "shared/navbar", locals: {
+  title: @document.title,
+  sub_title: "#{@document.category} • Ajouté le #{@document.created_at.strftime('%d/%m/%Y')}",
+  button: current_user.constructor? ? user_documents_path(@document.user) : documents_path
+} %>
 
 <% @document.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
