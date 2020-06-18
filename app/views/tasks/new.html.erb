@@ -1,7 +1,7 @@
 <%= render partial: "shared/navbar", locals: {
   title: "Nouvelle tâche",
   sub_title: "",
-  button: :back
+  button: job_path(@job)
   } %>
 
   <%= simple_form_for [@job, @task] do |f| %>

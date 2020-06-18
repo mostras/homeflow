@@ -10,10 +10,10 @@ User.destroy_all
 
 puts "---------- ça créer du USERS"
 
-robert = User.create!(company_name: 'RhoneKonst', phone_number: '06 79 09 38 18', email: 'robert@konst.fr', password: 'azerty')
-client1 = User.create!(constructor: robert, first_name: 'Marine', last_name: 'Bouvier', phone_number: '06 81 92 45 59', address_street: '20 rue des Caps', address_zip: 69005, address_city: 'Lyon', email: 'boubou@gmail.com', password: 'azerty')
-client2 = User.create!(constructor: robert, first_name: 'Jean', last_name: 'Charles', phone_number: '06 81 82 45 59', address_street: '32 allée des crapeaux', address_zip: 69007, address_city: 'Lyon', email: 'jc@gmail.com', password: 'azerty')
-client3 = User.create!(constructor: robert, first_name: 'Marc', last_name: 'Ronchant', phone_number: '06 81 92 45 58', address_street: '455 avenue du champ', address_zip: 69006, address_city: 'Lyon', email: 'mr@gmail.com', password: 'azerty')
+robert = User.create!(company_name: 'RhoneKonst', phone_number: '06 79 09 38 18', email: 'robert@gmail.com', password: 'azerty')
+client1 = User.create!(constructor: robert, first_name: 'Marine', last_name: 'Bouvier', phone_number: '06 81 92 45 59', address_street: '20 rue des Caps', address_zip: 69005, address_city: 'Lyon', email: 'marine@gmail.com', password: 'azerty')
+client2 = User.create!(constructor: robert, first_name: 'Jean', last_name: 'Charles', phone_number: '06 81 82 45 59', address_street: '32 allée des crapeaux', address_zip: 69007, address_city: 'Lyon', email: 'jean@gmail.com', password: 'azerty')
+client3 = User.create!(constructor: robert, first_name: 'Marc', last_name: 'Ronchant', phone_number: '06 81 92 45 58', address_street: '455 avenue du champ', address_zip: 69006, address_city: 'Lyon', email: 'marc@gmail.com', password: 'azerty')
 
 clients = [client1, client2, client3]
 

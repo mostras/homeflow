@@ -1,5 +1,7 @@
 
 <div>
-  <%= client.first_name %> <%= client.last_name %>
-  <%= link_to 'Call', "tel:#{client.phone_number}" %> | <%= link_to 'details', user_path(client)  %>
+  <span><%= client.first_name %> <%= client.last_name %></span>
+  <span><%= client.address_street %> <%= client.address_zip %>, <%= client.address_city.upcase %></span>
+  <span>Dernière notification : <%= client.updated_at.strftime('%d/%m/%Y') %></span>
+  <span><%= link_to 'Call', "tel:#{client.phone_number}" %> | <%= link_to 'details', user_path(client)  %></span>
 </div>
