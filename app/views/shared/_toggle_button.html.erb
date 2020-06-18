@@ -1,6 +1,18 @@
+<div class="toggle_button">
+  <% if job.completed == false %>
+    <%= link_to completed_job_path(job), method: :patch, data: { confirm: 'Êtes vous sûr de vouloir marquer cette étape comme terminée ?' } do  %>
+      <i class="fas fa-check"></i>
+    <% end %>
+  <% else %>
+    <%= link_to not_completed_job_path(job), method: :patch, data: { confirm: 'Vous êtes sur le point de réouvrir cette étape, êtes vous sûr ?' } do  %>
+      <i class="fas fa-undo-alt"></i>
+    <% end %>
+  <% end %>
+</div>
 
-<% if job.completed == false %>
-  <%= link_to '✓', completed_job_path(job), method: :patch, data: { confirm: 'Êtes vous sûr de vouloir marquer cette étape comme terminée ?' } %>
-<% else %>
-  <%= link_to '↩︎', not_completed_job_path(job), method: :patch, data: { confirm: 'Vous êtes sur le point de réouvrir cette étape, êtes vous sûr ?' } %>
-<% end %>
+
+
+
+
+
+

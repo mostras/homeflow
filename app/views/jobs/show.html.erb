@@ -4,19 +4,22 @@
   button: current_user.constructor? ? user_path(@job.user) : jobs_path
   } %>
 
-<ul>
-  <% @job.tasks.order(created_at: :desc).each do |task| %>
-    <li>
-      <%= task.title %> <%= link_to 'voir', job_task_path(task)  %> |
-      <% if task.seen %>
-        <p>Vu</p>
-      <% else %>
-        <p>Non vu</p>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
 <% if policy(@job.tasks).create? %>
-  <%= link_to 'Creer une taches', new_job_task_path(@job) %>
+  <div class="add-task-container">
+    <%= link_to new_job_task_path(@job) do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+    <p>Ajouter une tâches</p>
+  </div>
 <% end %>
+
+<% @job.tasks.order(created_at: :desc).each do |task| %>
+  <%= render partial: "shared/task_card", locals: {
+    task_title: task.title,
+    path: job_task_path(task),
+    task_seen: task.seen
+  } %>
+<% end %>
+
+
+
