@@ -1,8 +1,10 @@
-<div>
-  <%= link_to '<--', button unless button == "" %>
-  <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete %>
-  <div>
+<div class="navbar-container">
+  <div class="icon">
+    <%= link_to '<--', button unless button == "" %>
+    <%= link_to "Q", destroy_user_session_path, method: :delete %>
+  </div>
+  <div class="navbar-description">
     <h1><%= title %></h1>
-    <p> <%= sub_title %></p>
+    <h3><%= sub_title %></h3>
   </div>
 </div>
