@@ -1,7 +1,8 @@
 <div class="job-card-container">
   <%= link_to '', job_path(job), class: 'cover-link' %>
   <div class="job-info">
-    <h1><%= job.name %> ( <%= job.tasks.count %> )</h1>
+    <h1><%= job.name %></h1>
+    <h4>Il y a <%= job.tasks.count %> tâches en cours</h4>
     <h4>Dernière notification : <%= job.updated_at.strftime('%d/%m/%Y') %></h4>
   </div>
   <div class="icon">

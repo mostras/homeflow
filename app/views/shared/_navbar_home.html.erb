@@ -1,7 +1,7 @@
 <div class="navbar-container">
-  <div class="icon">
-    <%= link_to "Q", destroy_user_session_path, method: :delete %>
-  </div>
+  <%= link_to destroy_user_session_path, method: :delete, class: 'icon_home' do %>
+    <i class="fas fa-power-off"></i>
+  <% end %>
   <div class="navbar-description">
     <h1><%= title %></h1>
     <h3><%= sub_title %></h3>

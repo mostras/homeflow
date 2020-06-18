@@ -1,7 +1,9 @@
 <div class="navbar-container">
-  <div class="icon">
-    <%= link_to '<--', button unless button == "" %>
-  </div>
+  <% unless button == "" %>
+    <%= link_to button, class: 'icon' do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  <% end %>
   <div class="navbar-description">
     <h1><%= title %></h1>
     <h3><%= sub_title %></h3>

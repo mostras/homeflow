@@ -3,11 +3,21 @@
   sub_title: "#{@jobs.count} tâches • Dernier envoi : #{@jobs.last.created_at.strftime('%d/%m/%Y')}", # a definir ce qu'on veut mettre ici
   } %>
 
-<%= link_to 'voir les documents', documents_path %>
+
+<div class="job-index-icon">
+  <%= link_to documents_path do  %>
+    <i class="far fa-file icon"></i>
+  <% end %>
+</div>
+
+
 
 <% @jobs.each do |job| %>
       <%= render partial: "shared/job_card", locals: {job: job} %>
 <% end %>
+
+
+
 
 
 
