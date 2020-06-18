@@ -1,8 +1,6 @@
 <div class="navbar-container">
-  <% unless button == "" %>
-    <%= link_to button, class: 'icon' do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
+  <%= link_to destroy_user_session_path, method: :delete, class: 'icon_home' do %>
+    <i class="fas fa-power-off"></i>
   <% end %>
   <div class="navbar-description">
     <h1><%= title %></h1>

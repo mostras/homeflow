@@ -3,6 +3,7 @@ class JobsController < ApplicationController
 
   def index
     @jobs = policy_scope(Job).where(user: current_user)
+    @jobs.order(created_at: :desc)
   end
 
   def show

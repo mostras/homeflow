@@ -1,12 +1,22 @@
-<%= render partial: "shared/navbar", locals: {
+<%= render partial: "shared/navbar_home", locals: {
   title: "#{@user.company_name}",
   sub_title: "#{@clients.length} clients • XX actifs",
-  button: users_path
   } %>
 
-<%= link_to '+ ajouter', '#' %>
+<%= link_to '#' do %>
+  <div class="add-container">
+    <i class="fas fa-plus"></i>
+    <p>Ajouter une tâches</p>
+  </div>
+<% end %>
 
 <% @clients.each do |client| %>
   <%= render partial: "shared/client_card", locals: {client: client} %>
 <% end %>
+
+
+
+
+
+
 

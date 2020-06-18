@@ -11,3 +11,20 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+#gray {
+  border-color: $gray;
+
+  h1 {
+    color: $gray;
+  }
+
+  h2 {
+    color: $gray;
+  }
+
+  i {
+    color: $gray;
+  }
+}

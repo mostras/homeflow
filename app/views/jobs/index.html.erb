@@ -1,9 +1,23 @@
-<h1>Les metier en cours:</h1>
+<%= render partial: "shared/navbar_home", locals: {
+  title: "Bonjour #{@jobs.first.user.first_name} !",
+  sub_title: "Votre chef de chantier : #{current_user.constructor.first_name} #{current_user.constructor.last_name}",
+  } %>
 
-  <% @jobs.each do |job| %>
-        <%= render partial: "shared/task_card", locals: {job: job} %>
+
+<div class="job-index-icon">
+  <%= link_to documents_path do  %>
+    <i class="far fa-file icon"></i>
   <% end %>
+</div>
 
-<%= link_to 'voir les documents', documents_path %>
+
+
+<% @jobs.each do |job| %>
+      <%= render partial: "shared/job_card", locals: {job: job} %>
+<% end %>
+
+
+
+
 
 
