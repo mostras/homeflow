@@ -1,38 +1,41 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<body style="background-color: white";>
 
-<body style="background-color: var(--fond)";>
 
-<div>
 
-  <div class = "hauthome">haut</div>
 
-  <div class = "photohome">
-    <%= image_tag "home1.png" %>
+  <div class = "container center">
+<h1>Home Flow</h1>
   </div>
-  <div class = "photohome"> </div>
-  <div class = "photohome"></div>
 
-  <div class = "bashome">connection</div>
+  <div class = "container">
+<%= image_tag "home1.png", class: "photohome" %>
 
+  </div>
 
+  <div class ="container_signin">
 <%= simple_form_for(:user, as: :user, url: session_path(:user)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean %>
-  </div>
+    <div class="form-inputs itemcenter">
+      <%= f.input :email,
+                  label: false,
+                  required: false,
+                  autofocus: true,
+                  input_html:{ autocomplete: "email", class: "field", placeholder: "mail" } %>
+      <%= f.input :password,
+                  label: false,
+                  required: false,
+                  input_html: { autocomplete: "current-password", class: "field", placeholder: "password"} %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+
+<div class = "centerbetewen">
+    <%= f.button :submit, "Log in", class: "button-connection" %>
+    <%= f.button :submit, "Sign in", class: "button-connection" %>
+</div>
+  <div class = "paddingremember">
+  <%= f.input :remember_me, as: :boolean %>
   </div>
 <% end %>
 
-</div>
+    </div>
+  </div>
 
 </body>
