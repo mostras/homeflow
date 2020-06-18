@@ -1,13 +1,13 @@
-.add-task-container {
+.add-container {
   max-width: 300px;
   margin: 1rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  a {
+  i {
     text-decoration: none;
-    color: gray;
+    color: $gray;
     margin-right: 0.5rem;
   }
 
