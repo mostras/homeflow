@@ -1,7 +1,7 @@
 <%= render partial: "shared/navbar", locals: {
   title: @task.title,
   sub_title: "Envoyé le #{@task.created_at.strftime('%d/%m/%Y')}",
-  button: :back
+  button: job_path(@task.job)
   } %>
 
 <p><%= @task.content %></p>

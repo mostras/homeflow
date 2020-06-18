@@ -1,11 +1,11 @@
 <%= render partial: "shared/navbar", locals: {
   title: @job.name,
   sub_title: "#{@job.tasks.count} tâches • Dernier envoi : #{@job.tasks.last.created_at.strftime('%d/%m/%Y')}",
-  button: :back
+  button: current_user.constructor? ? user_path(@job.user) : jobs_path
   } %>
 
 <ul>
-  <% @job.tasks.each do |task| %>
+  <% @job.tasks.order(created_at: :desc).each do |task| %>
     <li>
       <%= task.title %> <%= link_to 'voir', job_task_path(task)  %> |
       <% if task.seen %>
@@ -17,4 +17,6 @@
   <% end %>
 </ul>
 
-<%= link_to 'Creer une taches', new_job_task_path(@job) %>
+<% if policy(@job.tasks).create? %>
+  <%= link_to 'Creer une taches', new_job_task_path(@job) %>
+<% end %>

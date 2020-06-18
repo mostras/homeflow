@@ -1,5 +1,6 @@
 
 <div>
   <%= link_to job.name, job_path(job) %> ( <%= job.tasks.count %> ) |
+  <p>Dernière notification : <%= job.updated_at.strftime('%d/%m/%Y') %></p>
   <%= render partial: "shared/toggle_button", locals: {job: job}  %>
 </div>

@@ -1,7 +1,7 @@
 <%= render partial: "shared/navbar", locals: {
   title: "#{@client.first_name} #{@client.last_name}",
   sub_title: "Client ajouté le #{@client.created_at.strftime('%d/%m/%Y')}",
-  button: :back
+  button: user_path(@client)
   } %>
 
 

@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
     @user = current_user
     @clients = policy_scope(User)
+    @clients.order(updated_at: :desc)
   end
 
   def show
