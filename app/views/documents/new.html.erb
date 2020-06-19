@@ -1,7 +1,8 @@
 <%= render partial: "shared/navbar", locals: {
   title: "Nouveau document",
   sub_title: "Veuillez remplir les champs ci dessous.",
-  button: :back
+  button: :back,
+  user: current_user
 } %>
 
 <% if current_user.constructor? %>

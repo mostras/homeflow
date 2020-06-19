@@ -1,7 +1,13 @@
 <div class="task-card-container-wrap">
 
   <div class="timeline">
+
+  <% if task.seen? %>
+    <i class="far fa-circle"></i>
+  <% else %>
     <i class="fas fa-circle"></i>
+  <% end %>
+
     <div class="line"></div>
   </div>
 

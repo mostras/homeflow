@@ -1,7 +1,8 @@
 <%= render partial: "shared/navbar", locals: {
   title: "Nouvelle tâche",
   sub_title: "pour #{@job.user.first_name} #{@job.user.last_name}",
-  button: job_path(@job)
+  button: job_path(@job),
+  user: current_user
   } %>
 
   <%= simple_form_for [@job, @task] do |f| %>

@@ -1,7 +1,8 @@
 <%= render partial: "shared/navbar", locals: {
   title: current_user.constructor? ? "Documents" : "Mes documents",
   sub_title: "#{pluralize @documents.size, "document"}",
-  button: current_user.constructor? ? user_path(@client) : jobs_path
+  button: current_user.constructor? ? user_path(@client) : jobs_path,
+  user: current_user
 } %>
 
 

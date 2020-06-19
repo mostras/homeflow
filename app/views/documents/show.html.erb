@@ -1,7 +1,8 @@
 <%= render partial: "shared/navbar", locals: {
   title: @document.title,
   sub_title: "#{@document.category} • Ajouté le #{@document.created_at.strftime('%d/%m/%Y')}",
-  button: current_user.constructor? ? user_documents_path(@document.user) : documents_path
+  button: current_user.constructor? ? user_documents_path(@document.user) : documents_path,
+  user: current_user
 } %>
 
 <% @document.photos.each do |photo| %>
