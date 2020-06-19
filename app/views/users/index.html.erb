@@ -1,6 +1,7 @@
 <%= render partial: "shared/navbar_home", locals: {
   title: "#{@user.company_name}",
   sub_title: "#{@clients.length} clients • XX actifs",
+  user: current_user,
   } %>
 
 <%= link_to '#' do %>
