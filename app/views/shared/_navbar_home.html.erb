@@ -1,8 +1,10 @@
 
-<div>
-  <%= link_to 'X', destroy_user_session_path, method: :delete%>
+<div class="navbar-wrap-home">
+  <%= link_to destroy_user_session_path, method: :delete do %>
+    <i class="fas fa-power-off"></i>
+  <% end %>
 
-  <div>
+  <div class="navbar-container-home">
     <%= cl_image_tag current_user.photo.key, alt: "avatar_user" %>
     <div class="navbar-description">
       <h1><%= title %></h1>
