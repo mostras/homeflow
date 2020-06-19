@@ -1,14 +1,13 @@
-
-<div>
+<div class="navbar-wrap">
   <%= link_to button, class: 'icon' do %>
     <i class="fas fa-arrow-left"></i>
   <% end %>
 
-  <div>
+  <div class="navbar-container">
     <%= cl_image_tag current_user.photo.key, alt: "avatar_user" %>
     <div class="navbar-description">
       <h1><%= title %></h1>
       <h3><%= sub_title %></h3>
-  </div>
+    </div>
   </div>
 </div>
