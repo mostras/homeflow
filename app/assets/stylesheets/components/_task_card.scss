@@ -1,14 +1,42 @@
+
+.task-card-container-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  max-width: 300px;
+  margin: 0 0 0 1rem;
+}
+
+
+.timeline {
+
+  text-align: -webkit-center;
+  position: relative;
+
+  i{
+    color: $orange;
+    font-size: 20px;
+  }
+
+  .line{
+    width: 2px;
+    height: 28px;
+    background-color: $orange;
+    position: absolute;
+    transform: translateX(10px);
+    top: 30px;
+  }
+}
+
+
 .task-card-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
-  background-color: $light-gray;
   max-width: 350px;
-  margin: 1rem auto;
   border-radius: 10px;
   position: relative;
-  border-left: 10px solid $gray;
+  margin-left: 1rem;
 
   .cover-link {
     position: absolute;
@@ -23,8 +51,7 @@
     color: $gray;
   }
 
-  h4 {
-    font-size: $T4;
-    color: $gray;
+  p {
+    font-size: 10px;
   }
 }

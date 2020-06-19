@@ -1,13 +1,25 @@
-<div class="task-card-container">
-  <%= link_to '', task_path(task), class: 'cover-link'  %>
-  <div class="task-info">
-    <h2><%= task.title %> </h2>
-    <% if task.seen? %>
-      <h4>Vu</h4>
-    <% else %>
-      <h4>Non vu</h4>
-    <% end %>
+<div class="task-card-container-wrap">
+
+  <div class="timeline">
+    <i class="fas fa-circle"></i>
+    <div class="line"></div>
   </div>
+
+  <div class="task-card-container">
+    <%= link_to '', task_path(task), class: 'cover-link'  %>
+    <div class="task-info">
+      <h2><%= task.title %> </h2>
+      <% if task.seen? %>
+        <p>Vu</p>
+      <% else %>
+        <p>Non vu</p>
+      <% end %>
+    </div>
+  </div>
+
+
 </div>
+
+
 
 
