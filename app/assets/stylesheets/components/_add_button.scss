@@ -1,0 +1,22 @@
+.add-container {
+  max-width: 300px;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px $orange solid;
+  border-radius: 10px;
+  padding: 0.2rem;
+  max-width: 165px;
+
+  i {
+    text-decoration: none;
+    color: $orange;
+    margin-right: 0.5rem;
+  }
+
+  p {
+    color: $orange;
+    margin: 0;
+  }
+}
