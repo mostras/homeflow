@@ -12,12 +12,17 @@
 
 
 
-<% @jobs.each do |job| %>
+<% @jobs.in_progress.each do |job| %>
       <%= render partial: "shared/job_card", locals: {job: job} %>
 <% end %>
 
+<% @jobs.completed.each do |job| %>
+      <%= render partial: "shared/job_card", locals: {job: job} %>
+<% end %>
 
-
+<% @jobs.pending.each do |job| %>
+      <%= render partial: "shared/job_card", locals: {job: job} %>
+<% end %>
 
 
 

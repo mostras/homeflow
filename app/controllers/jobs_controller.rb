@@ -2,8 +2,7 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :completed, :not_completed]
 
   def index
-    @jobs = policy_scope(Job).where(user: current_user)
-    @jobs.order(created_at: :desc)
+    @jobs = policy_scope(Job).where(user: current_user).order(updated_at: :desc)
   end
 
   def show

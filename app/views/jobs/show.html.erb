@@ -4,6 +4,12 @@
   button: current_user.constructor? ? user_path(@job.user) : jobs_path
   } %>
 
+  <% if current_user.constructor? %>
+    <div class="icon">
+      <%= render partial: "shared/toggle_button", locals: {job: @job}  %>
+    </div>
+  <% end %>
+
 <% if policy(@job.tasks).create? %>
 
 <%= link_to new_job_task_path(@job) do %>
