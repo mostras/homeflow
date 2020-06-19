@@ -4,6 +4,9 @@
   button: user_path(@client)
   } %>
 
+<%= render partial: "shared/tabbar", locals: { client: @client } %>
+
+<%= cl_image_tag @client.photo.key, alt: "alttext" %>
 
 <p>Adresse : <%= @client.address_street %> <%= @client.address_zip %>, <%= @client.address_city %></p>
 

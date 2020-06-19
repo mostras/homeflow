@@ -5,23 +5,7 @@
   } %>
 
 
-<div class="icon-container">
-  <%= link_to user_documents_path(@client) do  %>
-    <i class="far fa-file icon"></i>
-  <% end %>
-
-  <%= link_to "mailto:#{@client.email}" do  %>
-    <i class="far fa-envelope icon"></i>
-  <% end %>
-
-  <%= link_to "tel:#{@client.phone_number}" do  %>
-    <i class="fas fa-phone icon"></i>
-  <% end %>
-
-  <%= link_to user_details_path(@client) do  %>
-    <i class="fas fa-ellipsis-h icon"></i>
-  <% end %>
-</div>
+<%= render partial: "shared/tabbar", locals: {client: @client} %>
 
 
 <% @client.jobs.in_progress.order(updated_at: :desc).each do |job| %>

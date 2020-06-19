@@ -1,15 +1,12 @@
-<div class="navbar-container">
-  <%= link_to destroy_user_session_path, method: :delete, class: 'avatar_home' do %>
-    <%= cl_image_tag user.photo.key, crop: :fill %>
-  <% end %>
-  <div class="navbar-description">
-    <h1><%= title %></h1>
-    <h3><%= sub_title %></h3>
+
+<div>
+  <%= link_to 'X', destroy_user_session_path, method: :delete%>
+
+  <div>
+    <%= cl_image_tag current_user.photo.key, alt: "avatar_user" %>
+    <div class="navbar-description">
+      <h1><%= title %></h1>
+      <h3><%= sub_title %></h3>
+    </div>
   </div>
 </div>
-
-
-
-
-
-
