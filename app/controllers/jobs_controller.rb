@@ -25,4 +25,3 @@ class JobsController < ApplicationController
     authorize @job
   end
 end
-
