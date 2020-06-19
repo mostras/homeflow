@@ -1,12 +1,12 @@
 <%= render partial: "shared/navbar", locals: {
   title: "Nouvelle tâche",
-  sub_title: "",
+  sub_title: "pour #{@job.user.first_name} #{@job.user.last_name}",
   button: job_path(@job)
   } %>
 
   <%= simple_form_for [@job, @task] do |f| %>
+  <%= f.submit "√ Envoyer" %>
   <%= f.input :title, label: 'Titre', hint:"Essayer de garder votre titre concis"%>
   <%= f.input :content, label: 'Description' %>
   <%= f.file_field :photos, label: false, as: :file, multiple: true %>
-  <%= f.submit "Ajouter une taches" %>
   <% end %>

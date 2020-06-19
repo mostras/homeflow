@@ -1,12 +1,9 @@
-<div class="job-card-container" id="<%= 'colorful' if job.completed == false %>">
+<div class="job-card-container in-progress">
   <%= link_to '', job_path(job), class: 'cover-link' %>
   <div class="job-info">
     <h2><%= job.name %></h2>
     <h4><%= job.tasks.where(seen: false).count %> tâches non lues.</h4>
     <h4>Dernière notification : <%= job.updated_at.strftime('%d/%m/%Y') %></h4>
   </div>
-  <% if job.completed? %>
-    <i class="fas fa-check"></i>
-  <% end %>
 </div>
 
