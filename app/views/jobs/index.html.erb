@@ -1,6 +1,7 @@
 <%= render partial: "shared/navbar_home", locals: {
   title: "Bonjour #{@jobs.first.user.first_name} !",
   sub_title: "Votre chef de chantier : #{current_user.constructor.first_name} #{current_user.constructor.last_name}",
+  user: current_user,
   } %>
 
 
