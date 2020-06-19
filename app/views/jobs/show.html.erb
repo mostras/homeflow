@@ -6,7 +6,7 @@
   } %>
 
   <% if current_user.constructor? %>
-    <div class="icon">
+    <div class="button-full">
       <%= render partial: "shared/toggle_button", locals: {job: @job}  %>
     </div>
   <% end %>

@@ -6,12 +6,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
+  text-align: center;
+
+    i {
+    font-size: 100px;
+    color: $gray;
+  }
 }
+
+
 
 
 .documents-container{
 
-  background-color: gray;
   border-radius: 10px;
   position: relative;
 
