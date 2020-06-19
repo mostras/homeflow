@@ -1,0 +1,38 @@
+
+<div class="icon-container">
+
+  <div>
+    <%= link_to current_user.constructor? ? user_path(@client) : jobs_path do  %>
+      <i class="far fa-list icon"></i>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to current_user.constructor? ? user_documents_path(@client) : documents_path do  %>
+      <i class="far fa-file icon"></i>
+    <% end %>
+  </div>
+
+  <% if current_user.constructor? %>
+    <div>
+      <%= link_to "mailto:#{@client.email}" do  %>
+       <i class="far fa-envelope icon"></i>
+      <% end %>
+    </div>
+
+    <div>
+      <%= link_to "tel:#{@client.phone_number}" do  %>
+        <i class="fas fa-phone icon"></i>
+      <% end %>
+    </div>
+  <% end %>
+
+
+  <div>
+    <%= link_to current_user.constructor? ? user_details_path(@client) : '#' do  %>
+      <i class="fas fa-ellipsis-h icon"></i>
+    <% end %>
+  </div>
+
+</div>
+

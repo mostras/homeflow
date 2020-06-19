@@ -1,7 +1,7 @@
 class DocumentsController < ApplicationController
   def index
     if current_user.constructor?
-      @user = User.find(params[:user_id])
+      @client = User.find(params[:user_id])
       @documents = policy_scope(Document).where(user_id: params[:user_id])
     else
       @documents = policy_scope(Document).where(user: current_user)

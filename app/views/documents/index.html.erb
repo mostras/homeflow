@@ -1,17 +1,23 @@
 <%= render partial: "shared/navbar", locals: {
   title: current_user.constructor? ? "Documents" : "Mes documents",
   sub_title: "#{pluralize @documents.size, "document"}",
-  button: current_user.constructor? ? user_path(@documents.first.user) : jobs_path
+  button: current_user.constructor? ? user_path(@client) : jobs_path
 } %>
 
+
+
 <% if current_user.constructor? %>
-  <%= link_to new_user_document_path(@user) do %>
+  <%= render partial: "shared/tabbar", locals: { client: @client } %>
+
+  <%= link_to new_user_document_path(@client) do %>
     <div class="add-container">
       <i class="fas fa-plus"></i>
       <p>Ajouter un document</p>
     </div>
   <% end %>
 <% else %>
+  <%= render partial: "shared/tabbar" %>
+
   <%= link_to new_document_path do %>
     <div class="add-container">
       <i class="fas fa-plus"></i>
