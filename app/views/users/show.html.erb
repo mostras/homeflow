@@ -9,14 +9,14 @@
 
 
 <% @client.jobs.in_progress.order(updated_at: :desc).each do |job| %>
-  <%= render partial: "shared/job_card", locals: {job: job} %>
+  <%= render partial: "shared/job_card(in-progress)", locals: {job: job} %>
 <% end %>
 
 <% @client.jobs.completed.order(updated_at: :desc).each do |job| %>
-  <%= render partial: "shared/job_card", locals: {job: job} %>
+  <%= render partial: "shared/job_card(completed)", locals: {job: job} %>
 <% end %>
 
 <% @client.jobs.pending.order(updated_at: :desc).each do |job| %>
-  <%= render partial: "shared/job_card", locals: {job: job} %>
+  <%= render partial: "shared/job_card(pending)", locals: {job: job} %>
 <% end %>
 
