@@ -27,6 +27,19 @@
   <% end %>
 <% end %>
 
+
+<% if current_user.constructor? %>
+  <%= form_tag(user_documents_path(@client), method: "get") do %>
+    <%= text_field_tag(:query, nil, placeholder: 'Document') %>
+    <button> Chercher </button>
+  <% end %>
+<% else %>
+  <%= form_tag(documents_path, method: "get") do %>
+    <%= text_field_tag(:query, nil, placeholder: 'Document') %>
+    <button> Chercher </button>
+  <% end %>
+<% end %>
+
 <div class="documents-container-wrap">
   <% @documents.each do |document| %>
     <%= render partial: "shared/document_card", locals: {document: document} %>
