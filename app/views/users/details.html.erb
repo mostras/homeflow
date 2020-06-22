@@ -8,6 +8,13 @@
 <%= render partial: "shared/tabbar", locals: { client: @client } %>
 
 
+  <% if current_user.constructor? %>
+    <div class="button-full">
+      <%= render partial: "shared/toggle_btn_client", locals: {client: @client}  %>
+    </div>
+  <% end %>
+
+
 <%= cl_image_tag @client.photo.key, alt: "alttext" %>
 
 <p>Adresse : <%= @client.address_street %> <%= @client.address_zip %>, <%= @client.address_city %></p>

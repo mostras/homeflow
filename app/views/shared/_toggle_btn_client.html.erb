@@ -1,0 +1,12 @@
+<div class="toggle_button">
+  <% if client.in_progress == false %>
+    <%= link_to resume_work_user_path(client), method: :patch, data: { confirm: 'Vous êtes sur le point de relancer le chantier, êtes vous sûr ?' } do  %>
+      <i class="fas fa-play"></i><span>Reprendre le chantier</span>
+    <% end %>
+  <% else %>
+    <%= link_to stop_work_user_path(client), method: :patch, data: { confirm: 'Vous êtes sur le point de mettre le chantier en pause, êtes vous sûr ?' } do  %>
+      <i class="fas fa-pause"></i><span>Mettre en pause</span>
+    <% end %>
+  <% end %>
+</div>
+
