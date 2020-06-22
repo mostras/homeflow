@@ -1,26 +1,32 @@
-
-
 .documents-container-wrap {
-  max-width: 320px;
+  max-width: 340px;
   margin: 1rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 50px;
-  text-align: center;
-
-    i {
-    font-size: 100px;
-    color: $gray;
-  }
+  grid-gap: 30px;
 }
-
-
 
 
 .documents-container{
 
   border-radius: 10px;
   position: relative;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+
+  i {
+    width: 40px;
+    position: absolute;
+    top: 0.5rem;
+    right: 0px;
+    opacity: 0.7;
+    color: $green;
+  }
+
+  .document-info{
+    margin-top: 1rem;
+  }
+
 
   .cover-link {
     position: absolute;
@@ -30,9 +36,19 @@
     right: 0;
   }
 
-  p {
-    font-size: 10px;
+  h1 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+
+  h3 {
+    font-size: 12px;
+    color: $gray;
+    line-height: 0.5;
+
   }
 }
+
 
 
