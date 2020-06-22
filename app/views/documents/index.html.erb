@@ -18,8 +18,9 @@
       <% end %>
     </div>
     <%= form_tag(user_documents_path(@client), method: "get", class: 'form-document') do %>
-      <%= text_field_tag(:query, nil, placeholder: 'Document', value: params[:query], class: 'field-document') %>
+      <%= text_field_tag(:query, nil, placeholder: 'Rechercher..', value: params[:query], class: 'field-document') %>
       <button> <i class="fas fa-search"></i> </button>
+      <%= link_to '', 'hello' %>
     <% end %>
   </div>
 
@@ -33,7 +34,7 @@
       <% end %>
     </div>
     <%= form_tag(documents_path, method: "get", class: 'form-document')  do %>
-      <%= text_field_tag(:query, nil, placeholder: 'Document', class: 'field-document') %>
+      <%= text_field_tag(:query, nil, placeholder: 'Rechercher..', class: 'field-document') %>
       <button> <i class="fas fa-search"></i> </button>
     <% end %>
   </div>
