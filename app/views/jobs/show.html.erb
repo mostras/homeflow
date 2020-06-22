@@ -15,7 +15,7 @@
       <% end %>
     <% end %>
 
-    <% if current_user.constructor? %>
+    <% if current_user.constructor? && !@job.completed.nil? %>
       <div class="button-full">
         <%= render partial: "shared/toggle_btn_job", locals: {job: @job}  %>
       </div>
