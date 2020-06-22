@@ -1,12 +1,11 @@
 <style>
   .center {
     margin: 1rem auto;
+    max-width: 500px;
+    padding: 2rem;
     border-radius: 10px;
-    color: $gray;
+    color: rgba( 95, 95, 95, 1);
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
-  }
-
-  p {
     text-align: center;
     font-family: sans-serif;
   }
@@ -18,23 +17,35 @@
 
   a {
     text-decoration: none;
+    display: inline-block;
+    background-color: #FFF;
+    border: 1px solid #FFAA05;
+    color: #FFAA05;
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+    margin: 2rem 1rem;
+  }
+
+  img {
+    width: 60px;
+    text-align: left;
   }
 
 </style>
 
 <div class="center">
-  <%= image_tag "source", alt: "logo-homeflow" %>
+  <%= image_tag "favicon.ico", alt: "logo-homeflow" %>
 
-  <h1><%= @client.first_name %>, il y a du nouveau sur votre chantier !</h1>
+  <h1>Il y a du nouveau sur votre chantier !</h1>
 
   <p>
     Bonjour <%= @client.first_name %>,
-
-    <%= @client.constructor.first_name %>, votre chef de chantier a ajouter une nouvelle tâche dans la catégorie <%= @task.job.name %>.
-
-    Vous pouvez aller voir ce qu'il y a de nouveau en cliquant sur <%= link_to 'ce lien', job_url(@task.job) %>.
-
+    <br><%= @client.constructor.first_name %>, votre chef de chantier a ajouter une nouvelle tâche dans la catégorie <%= @task.job.name %>.
+    <br>Vous pouvez aller voir sur votre application ce qu'il y a de nouveau.
+    <br>L'équipe Homeflow
   </p>
+
+  <%= link_to 'Voir la notification', job_url(@task.job) %>
 
 </div>
 
