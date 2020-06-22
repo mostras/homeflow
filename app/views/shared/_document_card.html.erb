@@ -1,11 +1,12 @@
 <div class="documents-container">
 <%= link_to "", rails_blob_path(document.photo), class: 'cover-link', :target => '_blank' %>
-  <i class="fas fa-file"></i>
+  <i class="fas fa-money-check-alt"></i>
   <div class="document-info">
-    <p><%= document.title %></p>
-    <p><%= document.category %></p>
-    <p>Ajouté le <%= document.created_at.strftime('%d/%m/%Y') %></p>
+    <h1><%= document.title %></h1>
+    <h3><%= document.category %></h3>
+    <h3>Ajouté le <%= document.created_at.strftime('%d/%m/%Y') %></h3>
   </div>
+
 </div>
 
 
