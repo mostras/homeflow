@@ -4,6 +4,14 @@ class UsersController < ApplicationController
   def index
     @user = current_user
     @clients = policy_scope(User).order(updated_at: :desc)
+    @users = User.geocoded
+
+    @markers = @users.map do |u|
+      {
+        lat: u.latitude,
+        lng: u.longitude
+      }
+    end
   end
 
   def show
