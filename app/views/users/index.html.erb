@@ -11,6 +11,10 @@
   </div>
 <% end %>
 
-<% @clients.each do |client| %>
+<% @clients.work_in_progress.each do |client| %>
+  <%= render partial: "shared/client_card", locals: {client: client} %>
+<% end %>
+
+<% @clients.work_paused.each do |client| %>
   <%= render partial: "shared/client_card", locals: {client: client} %>
 <% end %>
