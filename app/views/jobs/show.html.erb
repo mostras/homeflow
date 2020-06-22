@@ -5,22 +5,22 @@
   user: current_user
   } %>
 
-  <% if current_user.constructor? %>
-    <div class="button-full">
-      <%= render partial: "shared/toggle_btn_job", locals: {job: @job}  %>
-    </div>
-  <% end %>
+  <div class='button-container'>
+    <% if policy(@job.tasks).create? %>
+      <%= link_to new_job_task_path(@job) do %>
+        <div class="button-empty">
+          <i class="fas fa-plus"></i>
+          <p>Ajouter une tâche</p>
+        </div>
+      <% end %>
+    <% end %>
 
-<% if policy(@job.tasks).create? %>
-
-<%= link_to new_job_task_path(@job) do %>
-  <div class="button-empty">
-    <i class="fas fa-plus"></i>
-    <p>Ajouter une tâches</p>
-  </div>
-<% end %>
-
-<% end %>
+    <% if current_user.constructor? %>
+      <div class="button-full">
+        <%= render partial: "shared/toggle_btn_job", locals: {job: @job}  %>
+      </div>
+    <% end %>
+</div>
 
 <% @job.tasks.order(created_at: :desc).each do |task| %>
   <%= render partial: "shared/task_card", locals: { task: task } %>
