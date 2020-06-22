@@ -2,7 +2,7 @@
   title: @task.title,
   sub_title: "Envoyé le #{@task.created_at.strftime('%d/%m/%Y')}",
   button: job_path(@task.job),
-  user: current_user
+  user: current_user.constructor? ? @task.job.user : current_user
   } %>
 
 <p><%= @task.content %></p>
