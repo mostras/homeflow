@@ -1,14 +1,22 @@
 // Specific CSS for your home-page
 
+body{
+display: flex;
+flex-direction: column;
+ justify-content: center;
+
+
+
+}
+
 
 .hauthome {
 height: 10em;
 }
 
 .photohome {
-width: 100vw;
 
+width: 80%;
+height: 80%;
 
 }
-
-
