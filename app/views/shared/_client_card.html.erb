@@ -1,10 +1,13 @@
-<div class="client-card-container">
+<div class=" <%= client.in_progress? ? 'client-card-container' : 'client-card-container paused'%>">
   <%= link_to '', user_path(client), class: 'cover-link' %>
   <%= cl_image_tag client.photo.key, crop: :fill %>
   <div class="client-info">
     <h2><%= client.first_name %> <%= client.last_name %></h2>
     <h3>Chantier : <%= client.address_zip %>, <%= client.address_city.upcase %></h3>
   </div>
+  <% if !client.in_progress? %>
+    <i class="fas fa-pause"></i>
+  <% end %>
 </div>
 
 

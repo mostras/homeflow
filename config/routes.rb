@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get "users/:id/details", to: 'users#details', as: 'user_details'
 
   authenticate :user, lambda { |u| u.constructor? } do
-    resources :users, only: [:index]
+    resources :users, only: [:index] do
+      patch :stop_work, on: :member
+      patch :resume_work, on: :member
+    end
   end
 
   authenticate :user, lambda { |u| !u.constructor? } do

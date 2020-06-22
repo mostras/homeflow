@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :details]
+  before_action :set_user, only: [:show, :details, :stop_work, :resume_work]
 
   def index
     @user = current_user
@@ -10,6 +10,16 @@ class UsersController < ApplicationController
   end
 
   def details
+  end
+
+  def stop_work
+    @client.update!(in_progress: false)
+    redirect_back(fallback_location: users_path)
+  end
+
+  def resume_work
+    @client.update!(in_progress: true)
+    redirect_back(fallback_location: users_path)
   end
 
   private
