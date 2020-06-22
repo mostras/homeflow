@@ -2,9 +2,17 @@ class DocumentsController < ApplicationController
   def index
     if current_user.constructor?
       @client = User.find(params[:user_id])
-      @documents = policy_scope(Document).where(user_id: params[:user_id])
+      if params[:query].present?
+        @documents = policy_scope(Document).where(user_id: params[:user_id]).search(params[:query])
+      else
+        @documents = policy_scope(Document).where(user_id: params[:user_id])
+      end
     else
-      @documents = policy_scope(Document).where(user: current_user)
+      if params[:query].present?
+        @documents = policy_scope(Document).where(user: current_user).search(params[:query])
+      else
+        @documents = policy_scope(Document).where(user: current_user)
+      end
     end
   end
 

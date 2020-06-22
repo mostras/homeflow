@@ -1,0 +1,54 @@
+.document-form-containerr {
+  display: flex;
+  max-width: 340px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-document-button{
+
+  border-radius: 10px;
+  padding: 0.26rem;
+  border: 1px $orange solid;
+  flex: 1 0 auto;
+  text-align: center;
+  margin-right: 1rem;
+
+  a {
+    text-decoration: none;
+    i{
+      color: $orange;
+    }
+  }
+}
+
+.form-document {
+
+background-color: white;
+border-radius: 10px;
+padding: 0.2rem;
+border: 1px $orange solid;
+width: 80%;
+display: flex;
+
+  .field-document {
+    border: none;
+    flex: 1 0 auto;
+    outline: none;
+    color: $bold-gray;
+    margin-left: 0.5rem;
+    font-size: 14px;
+  }
+
+  button {
+    border: none;
+    background-color: white;
+
+    i {
+      color: $orange;
+    }
+  }
+}
+
+

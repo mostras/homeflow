@@ -8,24 +8,42 @@
 
 
 <% if current_user.constructor? %>
+
   <%= render partial: "shared/tabbar", locals: { client: @client } %>
 
-  <%= link_to new_user_document_path(@client) do %>
-    <div class="button-empty">
-      <i class="fas fa-plus"></i>
-      <p>Ajouter un document</p>
+  <div class="document-form-containerr">
+    <div class="add-document-button">
+      <%= link_to new_user_document_path(@client) do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
     </div>
-  <% end %>
+    <%= form_tag(user_documents_path(@client), method: "get", class: 'form-document') do %>
+      <%= text_field_tag(:query, nil, placeholder: 'Rechercher..', value: params[:query], class: 'field-document') %>
+      <button> <i class="fas fa-search"></i> </button>
+      <%= link_to '', 'hello' %>
+    <% end %>
+  </div>
+
 <% else %>
   <%= render partial: "shared/tabbar" %>
 
-  <%= link_to new_document_path do %>
-    <div class="add-container">
-      <i class="fas fa-plus"></i>
-      <p>Ajouter un document</p>.photo
+  <div class="document-form-containerr">
+    <div class="add-document-button">
+      <%= link_to new_document_path do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
     </div>
-  <% end %>
+    <%= form_tag(documents_path, method: "get", class: 'form-document')  do %>
+      <%= text_field_tag(:query, nil, placeholder: 'Rechercher..', class: 'field-document') %>
+      <button> <i class="fas fa-search"></i> </button>
+    <% end %>
+  </div>
+
 <% end %>
+
+
+
+
 
 <div class="documents-container-wrap">
   <% @documents.each do |document| %>
