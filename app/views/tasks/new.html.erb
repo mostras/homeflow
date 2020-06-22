@@ -2,7 +2,7 @@
   title: "Nouvelle tâche",
   sub_title: "pour #{@job.user.first_name} #{@job.user.last_name}",
   button: job_path(@job),
-  user: current_user.constructor? ? @job.user : current_user
+  user: @job.user
   } %>
 
   <%= simple_form_for [@job, @task] do |f| %>

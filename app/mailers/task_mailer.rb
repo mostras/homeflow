@@ -9,6 +9,6 @@ class TaskMailer < ApplicationMailer
     @client = params[:client]
     @task = params[:task]
 
-    mail to: @client.email, subject: "Vous avez une notification!"
+    mail to: @client.email, subject: "Votre chantier avance !"
   end
 end
