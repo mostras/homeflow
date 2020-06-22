@@ -8,6 +8,7 @@
 
 <%= render partial: "shared/tabbar", locals: {client: @client} %>
 
+<%= render partial: "shared/progress_bar", locals: {completion: (@client.jobs.completed.count.fdiv(@client.jobs.count))} %>
 
 <% @client.jobs.in_progress.order(updated_at: :desc).each do |job| %>
   <%= render partial: "shared/job_card(in-progress)", locals: {job: job} %>

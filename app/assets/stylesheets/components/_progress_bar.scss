@@ -1,0 +1,10 @@
+#progress-bar {
+  width: 340px ;
+  margin: 0 auto;
+  background-color: $gray;
+  border-radius: 10px;
+
+  div {
+    height: 10px;
+  }
+}
