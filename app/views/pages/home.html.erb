@@ -3,11 +3,13 @@
 
 
 
-
+<div class="titrehome">
 <h6>Home Flow</h6>
+</div>
 
+<div class="slogan"><h4>Home flow simplifie votre construction</h4> </div>
 
-  <div class = "container center">
+  <div class = "container_home center">
 <%= image_tag "home1.png", size: '300x300', class: "photohome" %>
 
   </div>
@@ -19,18 +21,18 @@
                   label: false,
                   required: false,
                   autofocus: true,
-                  input_html:{ autocomplete: "email", class: "field", placeholder: "mail" } %>
+                  input_html:{ autocomplete: "email", class: "field", placeholder: "Adresse email" } %>
       <%= f.input :password,
                   label: false,
                   required: false,
-                  input_html: { autocomplete: "current-password", class: "field", placeholder: "password"} %>
+                  input_html: { autocomplete: "current-password", class: "field", placeholder: "Mot de passe"} %>
 
 
 <div class = "centerbetewen">
     <%= f.button :submit, "Log in", class: "button-connection" %>
     <%= f.button :submit, "Sign in", class: "button-connection" %>
 </div>
-  <div class = "paddingremember">
+  <div class = "paddingremember center">
   <%= f.input :remember_me, as: :boolean %>
   </div>
 <% end %>
