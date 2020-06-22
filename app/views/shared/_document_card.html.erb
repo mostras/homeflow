@@ -1,5 +1,5 @@
 <div class="documents-container">
-<%= link_to "", rails_blob_path(document.photos.first), class: 'cover-link', :target => '_blank' %>
+<%= link_to "", rails_blob_path(document.photo), class: 'cover-link', :target => '_blank' %>
   <i class="fas fa-file"></i>
   <div class="document-info">
     <p><%= document.title %></p>
@@ -7,4 +7,7 @@
     <p>Ajouté le <%= document.created_at.strftime('%d/%m/%Y') %></p>
   </div>
 </div>
+
+
+
 

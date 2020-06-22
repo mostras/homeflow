@@ -9,14 +9,14 @@
   <%= simple_form_for [@user, @document] do |f| %>
     <%= f.input :title, label: 'Titre' %>
     <%= f.input :category, collection: Document::DOC_TYPE, label: 'Category' %>
-    <%= f.file_field :photos, label: false, as: :file, multiple: true %>
+    <%= f.file_field :photo, label: false, as: :file %>
     <%= f.button :submit, "Ajouter le document"%>
   <% end %>
 <% else %>
   <%= simple_form_for(@document) do |f| %>
     <%= f.input :title, label: 'Titre' %>
     <%= f.input :category, collection: Document::DOC_TYPE, label: 'Category' %>
-    <%= f.file_field :photos, label: false, as: :file, multiple: true %>
+    <%= f.file_field :photo, label: false, as: :file %>
     <%= f.button :submit, "Ajouter le document"%>
   <% end %>
 <% end %>
