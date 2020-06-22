@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   resources :documents, only: [:index, :show, :new, :create, :destroy]
 
+  resources :search, only: [:index]
+
   # devise_scope :user do
   #   root to: "devise/sessions#new"
   # end
