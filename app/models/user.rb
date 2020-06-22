@@ -12,6 +12,9 @@ class User < ApplicationRecord
   belongs_to :constructor, class_name: 'User', optional: true
   has_many :users, foreign_key: :constructor_id, dependent: :destroy
 
+  scope :work_paused, -> { where(in_progress: false) }
+  scope :work_in_progress, -> { where(in_progress: true) }
+
   def constructor?
     constructor_id.nil?
   end

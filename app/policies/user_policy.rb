@@ -16,4 +16,12 @@ class UserPolicy < ApplicationPolicy
   def details?
     user.constructor?
   end
+
+  def stop_work?
+    user.constructor?
+  end
+
+  def resume_work?
+    user.constructor?
+  end
 end

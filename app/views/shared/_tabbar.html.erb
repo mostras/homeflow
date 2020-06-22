@@ -3,13 +3,13 @@
 
   <div>
     <%= link_to current_user.constructor? ? user_path(@client) : jobs_path do  %>
-      <i class="fas fa-tasks icon active"></i>
+      <i class="fas fa-tasks icon <%= active_class_for('jobs') %>"></i>
     <% end %>
   </div>
 
   <div>
     <%= link_to current_user.constructor? ? user_documents_path(@client) : documents_path do  %>
-      <i class="far fa-file icon"></i>
+      <i class="far fa-file icon <%= active_class_for('documents') %>"></i>
     <% end %>
   </div>
 
@@ -30,9 +30,8 @@
 
   <div>
     <%= link_to current_user.constructor? ? user_details_path(@client) : '#' do  %>
-      <i class="fas fa-ellipsis-h icon"></i>
+      <i class="fas fa-ellipsis-h icon <%= active_class_for('details') %>"></i>
     <% end %>
   </div>
-
 </div>
 

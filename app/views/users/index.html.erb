@@ -1,6 +1,6 @@
 <%= render partial: "shared/navbar_home", locals: {
   title: "#{@user.company_name}",
-  sub_title: "#{@clients.length} clients • XX actifs",
+  sub_title: "Bonjour #{current_user.first_name} • #{@clients.length} clients",
   } %>
 
 
@@ -14,10 +14,3 @@
 <% @clients.each do |client| %>
   <%= render partial: "shared/client_card", locals: {client: client} %>
 <% end %>
-
-
-
-
-
-
-
