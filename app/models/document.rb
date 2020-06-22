@@ -4,7 +4,11 @@ class Document < ApplicationRecord
 
   include PgSearch::Model
 
-  pg_search_scope :search, against: [:title, :category]
+  pg_search_scope :search,
+  against: [:title, :category],
+  using: {
+      tsearch: { prefix: true }
+    }
 
   DOC_TYPE = %w[banque plan administratif]
 
