@@ -1,0 +1,40 @@
+<style>
+  .center {
+    margin: 1rem auto;
+    border-radius: 10px;
+    color: $gray;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  p {
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+</style>
+
+<div class="center">
+  <%= image_tag "source", alt: "logo-homeflow" %>
+
+  <h1><%= @client.first_name %>, il y a du nouveau sur votre chantier !</h1>
+
+  <p>
+    Bonjour <%= @client.first_name %>,
+
+    <%= @client.constructor.first_name %>, votre chef de chantier a ajouter une nouvelle tâche dans la catégorie <%= @task.job.name %>.
+
+    Vous pouvez aller voir ce qu'il y a de nouveau en cliquant sur <%= link_to 'ce lien', job_url(@task.job) %>.
+
+  </p>
+
+</div>
+
