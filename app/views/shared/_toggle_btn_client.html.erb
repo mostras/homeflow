@@ -1,11 +1,11 @@
-<div class="toggle_button">
+<div class="toggle_button button-full">
   <% if client.in_progress == false %>
     <%= link_to resume_work_user_path(client), method: :patch, data: { confirm: 'Vous êtes sur le point de relancer le chantier, êtes vous sûr ? Un email sera envoyé à votre client pour le notifier.' } do  %>
-      <i class="fas fa-play"></i><span>Reprendre le chantier</span>
+      <i class="fas fa-play"></i><span>Reprendre</span>
     <% end %>
   <% else %>
     <%= link_to stop_work_user_path(client), method: :patch, data: { confirm: 'Vous êtes sur le point de mettre le chantier en pause, êtes vous sûr ? Un email sera envoyé à votre client pour le notifier.' } do  %>
-      <i class="fas fa-pause"></i><span>Mettre en pause</span>
+      <i class="fas fa-pause"></i><span>Pause</span>
     <% end %>
   <% end %>
 </div>

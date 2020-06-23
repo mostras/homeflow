@@ -2,7 +2,7 @@
 
 <%= render partial: "shared/navbar", locals: {
   title: "Nouvelle tâche",
-  sub_title: "pour #{@job.user.first_name} #{@job.user.last_name}",
+  sub_title: "pour #{@job.user.first_name} #{@job.user.last_name} (#{@job.name})",
   button: job_path(@job),
   user: @job.user
   } %>

@@ -4,7 +4,10 @@
   } %>
 
 
-<%= render partial: "shared/switcher" %>
+<div class="switch-button-container">
+  <%= render partial: "shared/plus_button", locals: {link: '#'} %>
+  <%= render partial: "shared/switcher" %>
+</div>
 
 
 
