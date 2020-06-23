@@ -1,4 +1,4 @@
-.centerflextask {
+.centerflex_docnew {
 display: flex;
 justify-content: center;
 max-width: 340px;
@@ -13,8 +13,9 @@ box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 
-.centeritem_task {
+.centeritem_docnew {
 margin-top: 0em;
 display: flex;
 justify-content: center;
+padding: 1em;
 }

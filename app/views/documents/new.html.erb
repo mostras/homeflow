@@ -5,6 +5,9 @@
   user: current_user
 } %>
 
+<div class="centerflex_docnew">
+
+<div class="centeritem_docnew ">
 <% if current_user.constructor? %>
   <%= simple_form_for [@user, @document] do |f| %>
     <%= f.input :title, label: 'Titre' %>
@@ -20,4 +23,6 @@
     <%= f.button :submit, "Ajouter le document"%>
   <% end %>
 <% end %>
+</div>
 <!-- @document, url: user_documents_path, method: 'POST' -->
+</div>
