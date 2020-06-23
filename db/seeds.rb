@@ -14,15 +14,15 @@ robert = User.new(first_name: 'Robert', last_name: 'Chantier', company_name: 'Rh
 robert.photo.attach(io: open('seed_images/avatar.png'), filename: 'avatar.png', content_type: 'image/png')
 robert.save!
 
-client1 = User.new(constructor: robert, first_name: 'Marine', last_name: 'Bouvier', phone_number: '06 81 92 45 59', address_street: '20 Rue des Capucins', address_zip: 69001, address_city: 'Lyon', email: 'marine@gmail.com', password: 'azerty')
+client1 = User.new(constructor: robert, first_name: 'Romain', last_name: 'Mostras', phone_number: '06 34 52 39 11', address_street: '5 rue Rosset', address_zip: 69004, address_city: 'Lyon', email: 'romainmostras@icloud.com', password: 'azerty')
 client1.photo.attach(io: open('seed_images/avatar3.png'), filename: 'avatar3.png', content_type: 'image/png')
 client1.save!
 
-client2 = User.new(constructor: robert, first_name: 'Jean', last_name: 'Charles', phone_number: '06 81 82 45 59', address_street: '6 Rue Joséphine Baker', address_zip: 69007, address_city: 'Lyon', email: 'jean@gmail.com', password: 'azerty')
+client2 = User.new(constructor: robert, first_name: 'Adrien', last_name: 'Barbier', phone_number: '06 79 09 38 18', address_street: '127 rue de Vendôme', address_zip: 69006, address_city: 'Lyon', email: 'adrien-barbier@hotmail.fr', password: 'azerty')
 client2.photo.attach(io: open('seed_images/avatar2.png'), filename: 'avatar2.png', content_type: 'image/png')
 client2.save!
 
-client3 = User.new(constructor: robert, first_name: 'Marc', last_name: 'Ronchant', phone_number: '06 81 92 45 58', address_street: '130 Rue Vauban', address_zip: 69006, address_city: 'Lyon', email: 'marc@gmail.com', password: 'azerty')
+client3 = User.new(constructor: robert, first_name: 'Didier', last_name: 'Jondet', phone_number: '06 10 35 56 30', address_street: '130 Rue Vauban', address_zip: 69006, address_city: 'Lyon', email: 'djondet@gmail.com', password: 'azerty')
 client3.photo.attach(io: open('seed_images/avatar1.png'), filename: 'avatar1.png', content_type: 'image/png')
 client3.save!
 
@@ -33,10 +33,10 @@ jobs = ['Fondation', 'Murs', 'Toiture', 'Revetement', 'Isolation', 'Plomberie', 
 
 clients.each do |client|
 
-  document1 = Document.new(title: 'Devis', category: "administratif", user: client)
+  document1 = Document.new(title: 'Devis Peinture', category: "administratif", user: client)
   document1.photo.attach(io: open('seed_images/devis1.jpg'), filename: 'devis1.jpg', content_type: 'image/jpg')
   document1.save!
-  document2 = Document.new(title: 'Devis', category: "administratif", user: client)
+  document2 = Document.new(title: 'Plan au sol', category: "plan", user: client)
   document2.photo.attach(io: open('seed_images/devis2.jpg'), filename: 'devis2.jpg', content_type: 'image/jpg')
   document2.save!
 
