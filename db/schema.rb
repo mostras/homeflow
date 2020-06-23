@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_074948) do
+ActiveRecord::Schema.define(version: 2020_06_22_154428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,8 @@ ActiveRecord::Schema.define(version: 2020_06_22_074948) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "constructor_id"
     t.boolean "in_progress", default: true
+    t.float "latitude"
+    t.float "longitude"
     t.index ["constructor_id"], name: "index_users_on_constructor_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
