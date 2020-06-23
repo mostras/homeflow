@@ -18,11 +18,11 @@ client1 = User.new(constructor: robert, first_name: 'Marine', last_name: 'Bouvie
 client1.photo.attach(io: open('seed_images/avatar3.png'), filename: 'avatar3.png', content_type: 'image/png')
 client1.save!
 
-client2 = User.new(constructor: robert, first_name: 'Jean', last_name: 'Charles', phone_number: '06 81 82 45 59', address_street: '45 rue du 12 septembre', address_zip: 25150, address_city: 'Pont de roide', email: 'jean@gmail.com', password: 'azerty')
+client2 = User.new(constructor: robert, first_name: 'Jean', last_name: 'Charles', phone_number: '06 81 82 45 59', address_street: '6 Rue Joséphine Baker', address_zip: 69007, address_city: 'Lyon', email: 'jean@gmail.com', password: 'azerty')
 client2.photo.attach(io: open('seed_images/avatar2.png'), filename: 'avatar2.png', content_type: 'image/png')
 client2.save!
 
-client3 = User.new(constructor: robert, first_name: 'Marc', last_name: 'Ronchant', phone_number: '06 81 92 45 58', address_street: '455 avenue du champ', address_zip: 69006, address_city: 'Lyon', email: 'marc@gmail.com', password: 'azerty')
+client3 = User.new(constructor: robert, first_name: 'Marc', last_name: 'Ronchant', phone_number: '06 81 92 45 58', address_street: '130 Rue Vauban', address_zip: 69006, address_city: 'Lyon', email: 'marc@gmail.com', password: 'azerty')
 client3.photo.attach(io: open('seed_images/avatar1.png'), filename: 'avatar1.png', content_type: 'image/png')
 client3.save!
 
