@@ -5,8 +5,11 @@ let map;
 
 const addMarker = (marker) => {
   let link = `<a href="http://maps.google.com/?q=${marker.full_address.replace(/\s/g, '')}" target="_blank">S'y rendre</a>`
+  let url = document.URL;
+  console.log(url)
+  let user_link = `<a href="${marker.url}"><h2>${marker.last_name} ${marker.first_name}</h2></a>`
 
-  const popup = new mapboxgl.Popup({ offset: 10 }).setHTML(`<h2>${marker.last_name} ${marker.first_name}</h2> <br> ${link}`)
+  const popup = new mapboxgl.Popup({ offset: 10 }).setHTML(`${user_link} <br> ${link}`)
 
 
   new mapboxgl.Marker()

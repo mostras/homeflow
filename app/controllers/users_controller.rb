@@ -23,8 +23,8 @@ class UsersController < ApplicationController
         lng: u.longitude,
         first_name: u.first_name,
         last_name: u.last_name,
-        full_address: u.full_address
-
+        full_address: u.full_address,
+        url: user_path(u)
       }
     end
   end
