@@ -2,10 +2,17 @@ import mapboxgl from 'mapbox-gl';
 
 let map;
 
+
 const addMarker = (marker) => {
+  let link = `<a href="http://maps.google.com/?q=${marker.full_address.replace(/\s/g, '')}" target="_blank">S'y rendre</a>`
+
+  const popup = new mapboxgl.Popup({ offset: 10 }).setHTML(`<h2>${marker.last_name} ${marker.first_name}</h2> <br> ${link}`)
+
+
   new mapboxgl.Marker()
     .setLngLat([ marker.lng, marker.lat ])
-    .addTo(map);
+    .addTo(map)
+    .setPopup(popup);
 }
 
 const fitMapToMarkers = (markers) => {
@@ -26,10 +33,10 @@ const initMapbox = () => {
   });
 
   const markers = JSON.parse(mapElement.dataset.markers);
-
   markers.forEach(addMarker);
-
   fitMapToMarkers(markers);
+
+  map.addControl(new mapboxgl.FullscreenControl());
 
 };
 

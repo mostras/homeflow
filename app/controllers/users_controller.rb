@@ -20,7 +20,11 @@ class UsersController < ApplicationController
     @markers = @client.map do |u|
       {
         lat: u.latitude,
-        lng: u.longitude
+        lng: u.longitude,
+        first_name: u.first_name,
+        last_name: u.last_name,
+        full_address: u.full_address
+
       }
     end
   end
