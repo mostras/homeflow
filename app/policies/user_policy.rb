@@ -17,6 +17,10 @@ class UserPolicy < ApplicationPolicy
     user.constructor?
   end
 
+  def map?
+    user.constructor?
+  end
+
   def stop_work?
     user.constructor?
   end

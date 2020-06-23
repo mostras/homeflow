@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       patch :stop_work, on: :member
       patch :resume_work, on: :member
     end
+
+    get "users/map", to: 'users#map', as:'users_map'
+
   end
 
   authenticate :user, lambda { |u| !u.constructor? } do
