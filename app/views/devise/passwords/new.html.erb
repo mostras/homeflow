@@ -6,23 +6,25 @@
 <div class="container_signin form-inputs registration">
 
   <div class="centertitre">
-<h2>Forgot your password?</h2>
+<h2>Mot de passe oublié ?</h2>
 </div>
 
 
     <%= f.input :email,
+                label: false,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" } %>
+                input_html: { autocomplete: "email", class: "field", placeholder: "Adresse email"} %>
   </div>
 
-<div class="centerflexrow">
+
   <div class="form-actions">
-    <%= f.button :submit, "Votre noveau mot de passe par mail" %>
+    <%= f.button :submit, "Noveau mot de passe", :class=>'button-empty' %>
   </div>
 <% end %>
-<div class="centerflexcolumn">
+</div>
+
+
+<div class="centeritem">
 <%= render "devise/shared/links" %>
-</div>
-</div>
 </div>

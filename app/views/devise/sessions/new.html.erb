@@ -11,24 +11,26 @@
 </div>
 
     <%= f.input :email,
+                label: false,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email", class: "field", placeholder: "Adresse email" } %>
     <%= f.input :password,
+                label: false,
                 required: false,
                 input_html: { autocomplete: "current-password", class: "field", placeholder: "Mot de passe" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
 </div>
 
-  <div class="centerflexrow">
+
   <div class="form-actions">
-    <%= f.button :submit, "Se connecter" %>
+    <%= f.button :submit, "Se connecter", :class=>'button-empty'%>
   </div>
 <% end %>
+</div>
 
+ <div class="centeritem">
 <%= render "devise/shared/links" %>
-
 </div>
 
-</div>

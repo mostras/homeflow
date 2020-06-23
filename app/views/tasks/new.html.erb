@@ -1,3 +1,5 @@
+
+
 <%= render partial: "shared/navbar", locals: {
   title: "Nouvelle tâche",
   sub_title: "pour #{@job.user.first_name} #{@job.user.last_name}",
@@ -5,9 +7,13 @@
   user: @job.user
   } %>
 
+<div class="centerflextask">
+  <div class="field">
   <%= simple_form_for [@job, @task] do |f| %>
   <%= f.submit "Envoyer"%>
   <%= f.input :title, label: 'Titre', hint:"Essayer de garder votre titre concis"%>
   <%= f.input :content, label: 'Description' %>
   <%= f.file_field :photos, label: false, as: :file, multiple: true %>
   <% end %>
+  </div>
+</div>

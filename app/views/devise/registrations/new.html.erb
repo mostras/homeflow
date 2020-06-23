@@ -26,14 +26,16 @@
                 input_html: { autocomplete: "new-password", class: "field", placeholder: "Mot de passe" } %>
   </div>
 
-<div class="centerflexrow">
-  <div class="form-actions">
-    <%= f.button :submit, "S'inscrire" %>
-  </div>
-<% end %>
 
+  <div class="form-actions">
+    <%= f.button :submit, "S'inscrire", :class=>'button-empty' %>
+<% end %>
+</div>
+
+
+  </div>
+
+<div class="centeritem">
 <%= render "devise/shared/links" %>
 </div>
 
-
-</div>
