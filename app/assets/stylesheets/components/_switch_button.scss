@@ -1,10 +1,10 @@
 .switch-button-container {
   max-width: 340px;
-  margin: 0 auto;
+  margin: 1rem auto 2rem auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 36px;
+  height: 33px;
 }
 
 .switch-button {
@@ -14,13 +14,13 @@
   align-items: center;
   justify-content: space-around;
   width: 80%;
-  height: 36px;
+  height: 33px;
 
   p {
     margin: 0;
     border-radius: 10px;
     text-align: center;
-    height: 36px;
+    height: 33px;
     display: flex;
     align-items: center;
     justify-content: center;

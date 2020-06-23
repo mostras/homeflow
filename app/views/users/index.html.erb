@@ -4,11 +4,11 @@
   } %>
 
 
-<%= render partial: "shared/switcher" %>
-
-
-
+<div class="switch-button-container">
+  <%= render partial: "shared/plus_button", locals: {link: '#'} %>
+  <%= render partial: "shared/switcher" %>
 </div>
+
 
 <% @clients.work_in_progress.each do |client| %>
   <%= render partial: "shared/client_card", locals: {client: client} %>
