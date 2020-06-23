@@ -3,18 +3,18 @@
 
 
 
-<div class="titrehome">
+<!-- <div class="titrehome">
 <h6>Home Flow</h6>
-</div>
+</div> -->
 
-<div class="slogan"><h4>Home flow simplifie votre construction</h4> </div>
+<div class="slogan"><h4>Home flow </br> simplifie votre construction</h4> </div>
 
   <div class = "container_home center">
 <%= image_tag "home1.png", size: '300x300', class: "photohome" %>
 
   </div>
 
-  <div class ="container_signin">
+  <div class ="container_signin_home">
 <%= simple_form_for(:user, as: :user, url: session_path(:user)) do |f| %>
     <div class="form-inputs itemcenter">
       <%= f.input :email,
@@ -29,8 +29,8 @@
 
 
 <div class = "centerbetewen">
-    <%= f.button :submit, "Log in", class: "button-connection" %>
-    <%= f.button :submit, "Sign in", class: "button-connection" %>
+    <%= f.button :submit, "Se connecter", class: "button-connection" %>
+    <%= f.button :submit, "S'inscrire", class: "button-connection" %>
 </div>
   <div class = "paddingremember center">
   <%= f.input :remember_me, as: :boolean %>
