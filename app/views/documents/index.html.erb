@@ -19,12 +19,18 @@
     </div>
     <%= form_tag(user_documents_path(@client), method: "get", class: 'form-document') do %>
       <%= text_field_tag(:query, nil, placeholder: 'Rechercher..', value: params[:query], class: 'field-document') %>
-      <button> <i class="fas fa-search"></i> </button>
-      <%= link_to '', 'hello' %>
+      <% if params[:query] == nil %>
+        <button> <i class="fas fa-search"></i> </button>
+      <% else %>
+        <%= link_to user_documents_path(@client) do  %>
+          <i class="far fa-times-circle"></i></i>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 
 <% else %>
+
   <%= render partial: "shared/tabbar" %>
 
   <div class="document-form-containerr">
@@ -35,7 +41,13 @@
     </div>
     <%= form_tag(documents_path, method: "get", class: 'form-document')  do %>
       <%= text_field_tag(:query, nil, placeholder: 'Rechercher..', class: 'field-document') %>
-      <button> <i class="fas fa-search"></i> </button>
+      <% if params[:query] == nil %>
+        <button> <i class="fas fa-search"></i> </button>
+      <% else %>
+        <%= link_to documents_path do  %>
+          <i class="far fa-times-circle"></i></i>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 
