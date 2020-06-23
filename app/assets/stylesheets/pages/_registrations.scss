@@ -1,18 +1,18 @@
 
-.button-connection {
-  padding: 10px 30px 10px 30px;
-  background-color: white;
-  color: orange;
-  border: 1px solid orange;
-  width: 9em;
-  text-align: center;
+// .button-connection {
+//   padding: 10px 30px 10px 30px;
+//   background-color: white;
+//   color: orange;
+//   border: 1px solid orange;
+//   width: 9em;
+//   text-align: center;
 
-a{
-    color: orange;
-    margin: 0;
-  }
+// a{
+//     color: $orange;
+//     margin: 0;
+//   }
 
-}
+// }
 
 
   .button-connection:hover {
@@ -52,7 +52,7 @@ height: 200px;
 .centertitre {
   text-align: center;
   margin-bottom: 3em;
-  color: orange;
+  color: $orange;
 }
 
 
@@ -89,12 +89,13 @@ align-items: center;
 }
 
 .centeritem {
-margin-top: 0em;
 display: flex;
 justify-content: center;
+margin:0;
 
 a{
-  color: orange;
+  text-decoration: none;
+  color: $gray;
     margin: 0;
     padding:1em;
 

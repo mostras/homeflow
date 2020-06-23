@@ -9,7 +9,8 @@
   border-radius: 10px;
   padding: 0.2rem 1rem;
   color: $orange;
-  margin-right: 1rem;
+
+
 
   i {
     text-decoration: none;
@@ -77,3 +78,16 @@
   }
 
 }
+
+.button-empty:hover {
+
+  transition: transform 0.20s;
+  transform: scale(0.95);
+  color: $white;
+  background-color:$orange;
+
+}
+
+
+
+
