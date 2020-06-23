@@ -19,7 +19,7 @@ class User < ApplicationRecord
   scope :work_in_progress, -> { where(in_progress: true) }
 
   def full_address
-    "#{address_street} #{address_zip} #{address_city}"
+    "#{address_street}, #{address_city}"
   end
 
   def constructor?
@@ -31,6 +31,6 @@ class User < ApplicationRecord
   end
 
   def need_geocoding?
-    will_save_change_to_address_zip? || will_save_change_to_address_street? || will_save_change_to_address_city?
+    will_save_change_to_address_street? || will_save_change_to_address_city?
   end
 end

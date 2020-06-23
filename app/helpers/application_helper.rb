@@ -8,6 +8,9 @@ module ApplicationHelper
     when 'jobs-index-jobs' then 'active'
     when 'documents-index-documents' then 'active'
     when 'users-details-details' then 'active'
+    when 'users-index-liste' then 'active'
+    when 'users-map-map' then 'active'
+
     end
   end
 end

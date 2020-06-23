@@ -1,15 +1,14 @@
 <%= render partial: "shared/navbar_home", locals: {
-  title: "#{@user.company_name}",
+  title: "#{current_user.company_name}",
   sub_title: "Bonjour #{current_user.first_name} • #{@clients.length} clients",
   } %>
 
 
-<%= link_to '#' do %>
-  <div class="button-empty">
-    <i class="fas fa-plus"></i>
-    <p>Ajouter un client</p>
-  </div>
-<% end %>
+<%= render partial: "shared/switcher" %>
+
+
+
+</div>
 
 <% @clients.work_in_progress.each do |client| %>
   <%= render partial: "shared/client_card", locals: {client: client} %>
@@ -19,7 +18,6 @@
   <%= render partial: "shared/client_card", locals: {client: client} %>
 <% end %>
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+
+

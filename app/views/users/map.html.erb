@@ -1,0 +1,15 @@
+<%= render partial: "shared/navbar_home", locals: {
+  title: "#{current_user.company_name}",
+  sub_title: "Bonjour #{current_user.first_name} • #{@clients.length} clients",
+  } %>
+
+
+<%= render partial: "shared/switcher" %>
+
+
+
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
