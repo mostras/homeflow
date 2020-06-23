@@ -4,12 +4,18 @@
   } %>
 
 
-<%= link_to '#' do %>
-  <div class="button-empty">
-    <i class="fas fa-plus"></i>
-    <p>Ajouter un client</p>
+<div class="switch-button-container">
+  <div class="plus_button">
+    <%= link_to '#' do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
   </div>
-<% end %>
+  <div class="switch-button">
+    <p class="switch-active">Liste</p>
+    <p>Carte</p>
+  </div>
+
+</div>
 
 <% @clients.work_in_progress.each do |client| %>
   <%= render partial: "shared/client_card", locals: {client: client} %>

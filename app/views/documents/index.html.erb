@@ -12,7 +12,7 @@
   <%= render partial: "shared/tabbar", locals: { client: @client } %>
 
   <div class="document-form-containerr">
-    <div class="add-document-button">
+    <div class="plus_button">
       <%= link_to new_user_document_path(@client) do %>
         <i class="fas fa-plus"></i>
       <% end %>
@@ -34,7 +34,7 @@
   <%= render partial: "shared/tabbar" %>
 
   <div class="document-form-containerr">
-    <div class="add-document-button">
+    <div class="plus_button">
       <%= link_to new_document_path do %>
         <i class="fas fa-plus"></i>
       <% end %>

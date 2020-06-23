@@ -52,3 +52,22 @@
     margin: 0;
   }
 }
+
+.plus_button {
+
+  border-radius: 10px;
+  padding: 0.26rem;
+  border: 1px $orange solid;
+  flex: 1 0 auto;
+  text-align: center;
+  margin-right: 1rem;
+  height: 36px;
+
+  a {
+    text-decoration: none;
+    i{
+      color: $orange;
+    }
+  }
+
+}
