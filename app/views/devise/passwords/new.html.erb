@@ -1,18 +1,28 @@
-<h2>Forgot your password?</h2>
+<div class="centerflex">
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+<div class="container_signin form-inputs registration">
+
+  <div class="centertitre">
+<h2>Forgot your password?</h2>
+</div>
+
+
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
   </div>
 
+<div class="centerflexrow">
   <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+    <%= f.button :submit, "Votre noveau mot de passe par mail" %>
   </div>
 <% end %>
-
+<div class="centerflexcolumn">
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>

@@ -1,0 +1,27 @@
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1.5rem;
+  margin: 2rem auto 0 auto;
+  justify-content: space-around;
+
+  h3 {
+    font-size: $T3;
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+    color: $orange;
+  }
+
+  #progress-bar {
+    width: 290px ;
+    margin: 0 auto;
+    border: 1px solid $orange;
+    border-radius: 10px;
+
+    div {
+      height: 10px;
+      background-color: $orange;
+      border-radius: 10px;
+    }
+  }
+}
