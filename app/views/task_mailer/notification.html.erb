@@ -1,18 +1,18 @@
 <style>
-  .center {
+  .mail-container {
     margin: 1rem auto;
     max-width: 500px;
     padding: 2rem;
     border-radius: 10px;
     color: rgba( 95, 95, 95, 1);
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left;
     font-family: sans-serif;
+    margin-top: 90px;
   }
 
-  h1 {
-    font-size: 24px;
-    font-weight: 700;
+  p {
+    padding-right: 7rem;
   }
 
   a {
@@ -21,31 +21,77 @@
     background-color: #FFF;
     border: 1px solid #FFAA05;
     color: #FFAA05;
-    padding: 0.2rem 1rem;
+    padding: 0.3rem 1rem;
     border-radius: 10px;
     margin: 2rem 1rem;
+    font-size: 12px;
   }
 
-  img {
+  .bubble-container {
+    position: relative;
+    margin-top: -110px;
+    margin-left: 90px;
+  }
+
+  #pic-constructor {
     width: 60px;
+    position: absolute;
+    top: 150px;
+  }
+
+  .bubble-container > h1 {
+    font-size: 24px;
+    font-weight: 700;
+    width: 250px;
+    position: absolute;
+    top: 30px;
+    right: 115px;
+  }
+
+  .signature {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+
+  .signature > p {
+      margin-left: 1rem;
+  }
+
+  #pic-logo {
+    width: 50px;
     text-align: left;
   }
 
+
+  #text-bubble {
+    width: 350px;
+  }
+
+
 </style>
 
-<div class="center">
-  <%= image_tag "favicon.ico", alt: "logo-homeflow" %>
+<div class="mail-container">
 
-  <h1>Il y a du nouveau sur votre chantier !</h1>
+  <div class="bubble-container">
+    <%= image_tag "mail_bubble.png", alt: "Bulle de texte", id: "text-bubble" %>
+    <%= cl_image_tag @client.constructor.photo.key, alt: "Photo du constructeur", id:"pic-constructor" %>
+    <h1>Il y a du nouveau sur votre chantier !</h1>
+  </div>
+
 
   <p>
     Bonjour <%= @client.first_name %>,
+    <br>
     <br><%= @client.constructor.first_name %>, votre chef de chantier a ajouter une nouvelle tâche dans la catégorie <%= @task.job.name %>.
     <br>Vous pouvez aller voir sur votre application ce qu'il y a de nouveau.
-    <br>L'équipe Homeflow
   </p>
 
   <%= link_to 'Voir la notification', job_url(@task.job) %>
 
+  <div class="signature">
+    <%= image_tag "favicon.ico", alt: "logo-homeflow", id: "pic-logo" %>
+    <p>L'équipe Homeflow</p>
+  </div>
 </div>
 
