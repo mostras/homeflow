@@ -1,6 +1,6 @@
 <%= render partial: "shared/navbar", locals: {
   title: current_user.constructor? ? "#{@client.first_name} #{@client.last_name}" : "Mes documents",
-  sub_title: "#{pluralize @documents.size, "document"}",
+  sub_title: "#{pluralize @documents.size, "document", "documents"}",
   button: current_user.constructor? ? user_path(@client) : jobs_path,
   user: current_user.constructor? ? @client : current_user
 } %>
@@ -18,7 +18,7 @@
       <% end %>
     </div>
     <%= form_tag(user_documents_path(@client), method: "get", class: 'form-document') do %>
-      <%= text_field_tag(:query, nil, placeholder: 'Rechercher..', value: params[:query], class: 'field-document') %>
+      <%= text_field_tag(:query, nil, placeholder: 'Rechercher...', value: params[:query], class: 'field-document') %>
       <% if params[:query] == nil %>
         <button> <i class="fas fa-search"></i> </button>
       <% else %>
@@ -40,7 +40,7 @@
       <% end %>
     </div>
     <%= form_tag(documents_path, method: "get", class: 'form-document')  do %>
-      <%= text_field_tag(:query, nil, placeholder: 'Rechercher..', class: 'field-document') %>
+      <%= text_field_tag(:query, nil, placeholder: 'Rechercher...', class: 'field-document') %>
       <% if params[:query] == nil %>
         <button> <i class="fas fa-search"></i> </button>
       <% else %>

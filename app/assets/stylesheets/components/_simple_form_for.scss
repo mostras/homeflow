@@ -1,9 +1,40 @@
-.field {
+.form-field {
   font-family: inherit;
   font-size: 1em;
-  padding: 20px;
+  padding: 1rem;
   border-radius: 10px;
+  width: 320px;
   }
+
+  .btn.button-full {
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .form-control {
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid $orange;
+  }
+
+  abbr[title] {
+  text-decoration: none;
+  display: none;
+  }
+
+  .text-muted {
+    padding-left: 0.5rem;
+  }
+
+  .form-group {
+    label { display: none }
+    textarea { height: 120px }
+  }
+
+
+
+
+
 
 .paddingremember {
   color: gray;
