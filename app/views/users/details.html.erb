@@ -10,7 +10,7 @@
 
   <% if current_user.constructor? %>
     <div class="details-buttons">
-      <%= link_to "S'y rendre", ("https://www.google.com/maps/place/#{@client.address_street}#{@client.address_zip}#{@client.address_city}"), class: "button-empty" %>
+      <%= link_to "S'y rendre", ("https://www.google.com/maps/place/#{@client.address_street} #{@client.address_zip} #{@client.address_city}"), class: "button-empty" %>
       <%= render partial: "shared/toggle_btn_client", locals: {client: @client}  %>
     </div>
   <% end %>

@@ -29,14 +29,14 @@ client3.save!
 clients = [client1, client2, client3]
 
 puts "---------- ça créer du JOBS"
-jobs = ['Fondation', 'Murs', 'Toiture', 'Revetement', 'Isolation', 'Plomberie', 'Electicite', 'Peinture']
+jobs = ['Fondation', 'Murs', 'Toiture', 'Revetement', 'Isolation', 'Plomberie', 'Electicite', 'Peinture'].reverse
 
 clients.each do |client|
 
-  document1 = Document.new(title: 'Devis Peinture', category: "administratif", user: client)
+  document1 = Document.new(title: 'Devis Peinture', category: "Administratif", user: client)
   document1.photo.attach(io: open('seed_images/devis1.jpg'), filename: 'devis1.jpg', content_type: 'image/jpg')
   document1.save!
-  document2 = Document.new(title: 'Plan au sol', category: "plan", user: client)
+  document2 = Document.new(title: 'Plan au sol', category: "Plan", user: client)
   document2.photo.attach(io: open('seed_images/devis2.jpg'), filename: 'devis2.jpg', content_type: 'image/jpg')
   document2.save!
 
