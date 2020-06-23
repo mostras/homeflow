@@ -80,18 +80,26 @@
   <div class="bubble-container">
     <%= image_tag "mail_bubble.png", alt: "Bulle de texte", id: "text-bubble" %>
     <%= cl_image_tag @client.constructor.photo.key, alt: "Photo du constructeur", id:"pic-constructor" %>
-    <h1>Il y a du nouveau sur votre chantier !</h1>
+    <% if @client.in_progress? %>
+      <h1>On est de retour sur votre chantier !</h1>
+    <% else %>
+      <h1>On revient très vite sur votre chantier !</h1>
+    <% end %>
   </div>
 
+  <p>Bonjour <%= @client.first_name %>,</p>
+  <% if @client.in_progress? %>
+    <p>Comme prévu, la construction de votre maison reprend aujourd'hui.
+      <br><br>On vous tient au courant de l'avancée des travaux !
+    </p>
+  <% else %>
+    <p>Nous allons nous absenter quelques temps de votre chaniter, mais n'ayer crainte, tout est prévu et votre chantier sera terminé à la date prévue !
+      <br><br> Nous vous préviendrons lorsque le chantier pourra reprendre.
+    </p>
+  <% end %>
 
-  <p>
-    Bonjour <%= @client.first_name %>,
-    <br>
-    <br><%= @client.constructor.first_name %>, votre chef de chantier a ajouter une nouvelle tâche dans la catégorie <%= @task.job.name %>.
-    <br>Vous pouvez aller voir sur votre application ce qu'il y a de nouveau.
-  </p>
 
-  <%= link_to 'Voir la notification', job_url(@task.job) %>
+  <%= link_to 'Voir mon tableau de bord', jobs_url %>
 
   <div class="signature">
     <%= image_tag "favicon.ico", alt: "logo-homeflow", id: "pic-logo" %>

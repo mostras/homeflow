@@ -1,6 +1,6 @@
 <div class="toggle_button">
   <% if job.completed == false %>
-    <%= link_to completed_job_path(job), method: :patch, data: { confirm: 'Êtes vous sûr de vouloir marquer cette étape comme terminée ?' } do  %>
+    <%= link_to completed_job_path(job), method: :patch, data: { confirm: 'Êtes vous sûr de vouloir marquer cette étape comme terminée ? Un email sera envoyé à votre client pour le notifier.' } do  %>
       <i class="fas fa-check"></i><span>Terminer</span>
     <% end %>
   <% elsif job.completed == true %>

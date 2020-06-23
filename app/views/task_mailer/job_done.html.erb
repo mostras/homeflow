@@ -48,8 +48,8 @@
     font-weight: 700;
     width: 250px;
     position: absolute;
-    top: 30px;
-    right: 118px;
+    top: 20px;
+    right: 110px;
   }
 
   .signature {
@@ -80,18 +80,19 @@
   <div class="bubble-container">
     <%= image_tag "mail_bubble.png", alt: "Bulle de texte", id: "text-bubble" %>
     <%= cl_image_tag @client.constructor.photo.key, alt: "Photo du constructeur", id:"pic-constructor" %>
-    <h1>Il y a du nouveau sur votre chantier !</h1>
+    <h1>Ça y est, l'étape <%= @job.name %> est terminée !</h1>
   </div>
 
 
   <p>
     Bonjour <%= @client.first_name %>,
     <br>
-    <br><%= @client.constructor.first_name %>, votre chef de chantier a ajouter une nouvelle tâche dans la catégorie <%= @task.job.name %>.
-    <br>Vous pouvez aller voir sur votre application ce qu'il y a de nouveau.
+    <br><%= @client.constructor.first_name %>, votre chef de chantier a indiqué que l'étape <%= @job.name %> de la construction de votre maison est terminée.
+    <br>Vous pouvez retrouver toutes les tâches associées à cette étape sur votre tableau de bord.
+    <br>La prochaine étape va pouvoir commencer, on vous tient au courant de l'avancée des travaux dès qu'il y a du nouveau !
   </p>
 
-  <%= link_to 'Voir la notification', job_url(@task.job) %>
+  <%= link_to 'Voir mon tableau de bord', jobs_url %>
 
   <div class="signature">
     <%= image_tag "favicon.ico", alt: "logo-homeflow", id: "pic-logo" %>
