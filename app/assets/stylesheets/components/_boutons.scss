@@ -29,6 +29,21 @@
   }
 }
 
+.button-empty:hover {
+
+  transition: transform 0.20s;
+  transform: scale(0.93);
+  color: $white;
+  background-color:$orange;
+  transition: background-color 0,5s;
+  text-decoration:none;
+  border:none;
+}
+
+
+
+
+
 .button-full {
   flex: 1 0 auto;
   height: 33px;
@@ -80,16 +95,17 @@
     }
   }
 
+
 }
 
-.button-empty:hover {
-
+.plus_button:hover {
   transition: transform 0.20s;
-  transform: scale(0.95);
+  transform: scale(0.93);
   color: $white;
   background-color:$orange;
-
+  transition: background-color 0,5s;
 }
+
 
 
 
