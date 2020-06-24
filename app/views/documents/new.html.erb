@@ -13,8 +13,8 @@
         <%= f.input :title, placeholder: 'Titre' %>
         <%= f.input :category, collection: Document::DOC_TYPE, selected: 'Type de document' %>
         <%= f.file_field :photo, as: :file, class: 'nice_input_file', data: {prompt: 'le document'} %>
-        <%= f.button :submit, "Ajouter le document", class: "button-full"%>
         <%= f.error :photo %>
+        <%= f.button :submit, "Ajouter le document", class: "button-full"%>
       <% end %>
     </div>
 
@@ -24,8 +24,8 @@
         <%= f.input :title, placeholder: 'Titre' %>
         <%= f.input :category, collection: Document::DOC_TYPE, selected: 'Type de document' %>
         <%= f.file_field :photo, as: :file, class: 'nice_input_file', data: {prompt: 'le document'} %>
-        <%= f.button :submit, "Ajouter le document", class: "button-full"%>
         <%= f.error :photo %>
+        <%= f.button :submit, "Ajouter le document", class: "button-full"%>
       <% end %>
     </div>
   <% end %>
