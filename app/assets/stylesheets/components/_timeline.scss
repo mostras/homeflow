@@ -2,13 +2,32 @@
     margin: 0 auto;
     padding: 0 0 0 115px;
     max-width: 340px;
-
-    .name{
-      margin-top: 10px;
-      font-style: italic;
-      text-align: right;
-      margin-right: 20px
   }
+
+.bottom {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  .link {
+    margin-right: 1.5rem;
+  }
+
+  .task-state{
+  margin-top: 1rem;
+  font-style: italic;
+  color: white;
+  background-color: $orange;
+  padding: 0.2rem;
+  border-radius: 10px;
+  text-align: center;
+  height: 24px;
+  flex: 1 0 auto;
+
+  p {
+    font-size: 12px;
+  }
+}
 
   h2 {
     font-size: 18px;
@@ -59,17 +78,17 @@
     display: block;
     width: 0;
     height: 100%;
-    border:1px solid $green;
+    border:1px solid $orange;
     position: absolute;
     top:0;
-    left: -46px;
+    left: -34px;
 }
 
 .box ul li > span:before {
     content: "";
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background: white;
     border:2px solid $orange;
@@ -96,3 +115,12 @@
 .visible-task {
   display: none;
 }
+
+#seen {
+  background-color: white;
+  color: $orange;
+  border: 1px $orange solid;
+}
+
+
+

@@ -1,14 +1,21 @@
 <span></span>
 <div class="title"><h2><%= task.title %></h2></div>
 <div class="info"><p><%= task.content %></p></div>
-<div class="link"><%= link_to 'En voir plus', task_path(task)%></div>
-<div class="name">
-      <% if task.seen? %>
-        <p>Vu</p>
-      <% else %>
-        <p>Non vu</p>
-      <% end %>
+<div class="bottom">
+  <div class="link"><%= link_to 'En voir plus', task_path(task)%></div>
+
+        <% if task.seen? %>
+          <div class="task-state" id="seen">
+            <p>Vu</p>
+          </div>
+        <% else %>
+          <div class="task-state">
+            <p>Non vu</p>
+          </div>
+        <% end %>
+
 </div>
+
 <div class="time">
     <span><%= task.created_at.strftime('%d/%m/%Y') %></span>
 </div>
