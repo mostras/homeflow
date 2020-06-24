@@ -2,6 +2,9 @@
 .home-page{
     background-color: $orange;
     padding-top: 5rem;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 
   img {
     max-width: 100px;
@@ -15,11 +18,11 @@
     text-align: center;
     font-style: $T2;
     margin-top: 1rem;
+    flex-grow: 1;
   }
 
   .signin-container {
-    max-width: 300px;
-    margin: 13rem auto;
+    padding: 0 1rem;
   }
 
 
