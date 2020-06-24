@@ -1,30 +1,20 @@
-<div class="task-card-container-wrap">
-
-  <div class="timeline">
-
-  <% if task.seen? %>
-    <i class="far fa-circle"></i>
-  <% else %>
-    <i class="fas fa-circle"></i>
-  <% end %>
-
-    <div class="line"></div>
-  </div>
-
-  <div class="task-card-container">
-    <%= link_to '', task_path(task), class: 'cover-link'  %>
-    <div class="task-info">
-      <h2><%= task.title %> </h2>
+<span></span>
+<div class="title"><h2><%= task.title %></h2></div>
+<div class="info"><p><%= task.content %></p></div>
+<div class="link"><%= link_to 'En voir plus', task_path(task)%></div>
+<div class="name">
       <% if task.seen? %>
         <p>Vu</p>
       <% else %>
         <p>Non vu</p>
       <% end %>
-    </div>
-  </div>
-
-
 </div>
+<div class="time">
+    <span><%= task.created_at.strftime('%d/%m/%Y') %></span>
+</div>
+
+
+
 
 
 

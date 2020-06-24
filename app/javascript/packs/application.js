@@ -41,6 +41,30 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
+let list = document.querySelectorAll("#first-list > li");
+
+for (let i = 2; i < list.length; i++) {
+  let item = list[i];
+  item.classList.add("visible-task");
+}
+
+let button = document.querySelector('#button-show')
+console.log(button)
+
+button.addEventListener('click', (e) => {
+  let li = document.querySelectorAll(".visible-task ");
+  console.log(li[li.length -1]);
+  li = li[li.length -1]
+  let next_li = li.next()
+  console.log(next_li)
+  next_li.classList.remove('.visible-task')
+});
+
+
+
+
+
+
 
 
 

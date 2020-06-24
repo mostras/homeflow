@@ -1,0 +1,98 @@
+.box{
+    margin: 0 auto;
+    padding: 0 0 0 115px;
+    max-width: 340px;
+
+    .name{
+      margin-top: 10px;
+      font-style: italic;
+      text-align: right;
+      margin-right: 20px
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .info > p {
+    font-size: 16px;
+  }
+
+  a {
+    font-style: italic;
+    font-size: 12px;
+  }
+}
+
+.box ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top:0
+}
+
+.box ul:before{
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    border:1px dashed #fff;
+    position: absolute;
+    top:0;
+    left:30px
+}
+
+.box ul li{
+    position: relative;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+    color: black;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 1.5rem;
+}
+
+
+.box ul li > span{
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    border:1px solid $green;
+    position: absolute;
+    top:0;
+    left: -46px;
+}
+
+.box ul li > span:before {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    border:2px solid $orange;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.box ul li > span:before{top:-1px}
+
+
+.box .time span{
+    position: absolute;
+    left: -100px;
+    color: $orange;
+    font-size:80%;
+    font-weight: bold;
+}
+
+.box .time span:last-child{
+  top:-2px;
+  left: -140px;
+}
+
+.visible-task {
+  display: none;
+}

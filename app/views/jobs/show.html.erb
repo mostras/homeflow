@@ -15,9 +15,18 @@
     <% end %>
   </div>
 
-<% @job.tasks.order(created_at: :desc).each do |task| %>
-  <%= render partial: "shared/task_card", locals: { task: task } %>
-<% end %>
 
+
+<div class="box">
+  <ul id="first-list">
+    <% @job.tasks.order(created_at: :desc).each do |task| %>
+      <li>
+        <%= render partial: "shared/task_card", locals: { task: task } %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<button id="button-show">Clicckkkk</button>
 
 
