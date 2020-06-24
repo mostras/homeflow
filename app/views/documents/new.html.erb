@@ -15,13 +15,6 @@
         <%= f.input :category, collection: Document::DOC_TYPE, selected: 'Type de document' %>
         <%= f.file_field :photo, as: :file, class: 'nice_input_file', data: {prompt: 'le document'} %>
         <%= f.error :photo %>
-
-
-<!--         <label for="test" class="add-photo-button button-empty">
-          <div>Choisir le document...</div>
-          <input type="file" id="test" name="document[photo]">
-        </label>
-        <p id="filename"></p> -->
       <% end %>
     </div>
 
@@ -35,7 +28,6 @@
         <%= f.error :photo %>
       <% end %>
     </div>
-
   <% end %>
 </div>
 <!-- @document, url: user_documents_path, method: 'POST' -->
