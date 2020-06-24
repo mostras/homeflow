@@ -1,6 +1,6 @@
 <span></span>
-<div class="title"><%= task.title %></div>
-<div class="info"><%= task.content %></div>
+<div class="title"><h2><%= task.title %></h2></div>
+<div class="info"><p><%= task.content %></p></div>
 <div class="link"><%= link_to 'En voir plus', task_path(task)%></div>
 <div class="name">
       <% if task.seen? %>
@@ -12,6 +12,9 @@
 <div class="time">
     <span><%= task.created_at.strftime('%d/%m/%Y') %></span>
 </div>
+
+
+
 
 
 
