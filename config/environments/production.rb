@@ -16,7 +16,7 @@ Rails.application.configure do
 
 
   config.action_mailer.default_url_options = { host: "www.homeflow.fr" }
-  config.action_mailer.asset_host = 'http://localhost:3000'
+  config.action_mailer.asset_host = 'www.homeflow.fr'
   config.action_mailer.delivery_method = :mailjet
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
