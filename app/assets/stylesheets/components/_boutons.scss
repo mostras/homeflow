@@ -10,6 +10,7 @@
   padding: 0.2rem 1rem;
   color: $orange;
 
+
   i {
     text-decoration: none;
     color: $orange;
@@ -76,3 +77,16 @@
   }
 
 }
+
+.button-empty:hover {
+
+  transition: transform 0.20s;
+  transform: scale(0.95);
+  color: $white;
+  background-color:$orange;
+
+}
+
+
+
+
