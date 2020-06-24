@@ -31,12 +31,43 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+import { initFileInput } from './init_file_input';
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initFileInput();
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+let list = document.querySelectorAll("#first-list > li");
+
+
+
+window.addEventListener('load', (event) => {
+    for (let i = 2; i < list.length; i++) {
+    let item = list[i];
+    item.classList.add("visible-task");
+  };
+});
+
+let button = document.querySelector('#button-show')
+
+button.addEventListener('click', (e) => {
+  let first_li = document.querySelector('#first-list li.visible-task');
+  first_li.classList.remove('visible-task')
+
+  let second_li = document.querySelector('#first-list li.visible-task');
+  second_li.classList.remove('visible-task')
+  second_li.scrollIntoView();
+});
+
+
+
+
+
+
 
 
 

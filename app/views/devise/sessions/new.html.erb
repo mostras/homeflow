@@ -1,36 +1,32 @@
+
+<%= image_tag "logo-homeflow.png", alt: "homeflow logo", id: "logo-signin" %>
+
 <div class="centerflex">
 
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="container_signin form-inputs registration">
+      <div class="centertitre">
+        <h2>Identifiants</h2>
+      </div>
+      <%= f.input :email,
+                  label: false,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email", class: "field", placeholder: "Adresse email" } %>
+      <%= f.input :password,
+                  label: false,
+                  required: false,
+                  input_html: { autocomplete: "current-password", class: "field", placeholder: "Mot de passe" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+    <div class="form-actions centeritem">
+      <%= f.button :submit, "Se connecter", :class=>'button-empty'%>
+    </div>
+  <% end %>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-
-<div class="container_signin form-inputs registration">
-
-<div class="centertitre">
-  <h2>Identifiants</h2>
 </div>
 
-    <%= f.input :email,
-                label: false,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email", class: "field", placeholder: "Adresse email" } %>
-    <%= f.input :password,
-                label: false,
-                required: false,
-                input_html: { autocomplete: "current-password", class: "field", placeholder: "Mot de passe" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-
-</div>
-
-
-  <div class="form-actions centeritem">
-    <%= f.button :submit, "Se connecter", :class=>'button-empty'%>
-  </div>
-<% end %>
-</div>
-
- <div class="centeritem">
-<%= render "devise/shared/links" %>
+<div class="centeritem">
+  <%= render "devise/shared/links" %>
 </div>
 

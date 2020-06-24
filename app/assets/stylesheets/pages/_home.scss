@@ -1,28 +1,31 @@
 // Specific CSS for your home-page
+.home-page{
+    background-color: $orange;
+    padding-top: 5rem;
+
+  img {
+    max-width: 100px;
+    display: flex;
+    margin: 0px auto;
+  }
 
 
-.slogan {
-margin-top: 2em;
-text-align: center;
-color: gray;
+  h1 {
+    color: #fff;
+    text-align: center;
+    font-style: $T2;
+    margin-top: 1rem;
+  }
 
-}
+  .signin-container {
+    max-width: 300px;
+    margin: 13rem auto;
+  }
 
-.hauthome {
-height: 10em;
-}
 
-.photohome {
-display:flex;
-align-items: center;
-width: 20em;
-height: 17em;
-margin: auto;
-}
-
-.wrap_home {
-display:flex;
-flex-direction: column;
-margin: auto;
-
+  .button-empty {
+    border: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 3rem;
+  }
 }

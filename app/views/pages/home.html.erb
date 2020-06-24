@@ -1,43 +1,26 @@
-<body style="background-color: white";>
 
+<div class="home-page">
+  <%= image_tag "logo-homeflow-blanc.png", alt: "alttext" %>
+  <h1>Homeflow</h1>
 
-<div class="wrap_home">
-
-<!-- <div class="titrehome">
-<h6>Home Flow</h6>
-</div> -->
-
-<div class="slogan"><h4>Home flow </br> simplifie votre construction</h4> </div>
-
-  <div class = "container_home center">
-<%= image_tag "home1.png", size: '300x300', class: "photohome" %>
-
-  </div>
-
-  <div class ="container_signin_home">
-<%= simple_form_for(:user, as: :user, url: session_path(:user)) do |f| %>
-    <div class="form-inputs itemcenter">
-      <%= f.input :email,
-                  label: false,
-                  required: false,
-                  autofocus: true,
-                  input_html:{ autocomplete: "email", class: "field", placeholder: "Adresse email" } %>
-      <%= f.input :password,
-                  label: false,
-                  required: false,
-                  input_html: { autocomplete: "current-password", class: "field", placeholder: "Mot de passe"} %>
-
-
-<div class = "centerbetewen">
-    <%= f.button :submit, "Se connecter", class: "button-empty" %>
-    <%= f.button :submit, " S'inscrire ", class: "button-empty " %>
-</div>
-<!--   <div class = "paddingremember center">
-  <%= f.input :remember_me, as: :boolean %>
-  </div> -->
-<% end %>
-
-    </div>
+  <div class ="signin-container">
+    <%= simple_form_for(:user, as: :user, url: session_path(:user)) do |f| %>
+      <div class="">
+        <%= f.input :email,
+                    label: false,
+                    required: false,
+                    autofocus: true,
+                    input_html:{ autocomplete: "email", class: "field", placeholder: "Adresse email" } %>
+        <%= f.input :password,
+                    label: false,
+                    required: false,
+                    input_html: { autocomplete: "current-password", class: "field", placeholder: "Mot de passe"} %>
+        <div class = "centerbetewen">
+          <%= f.button :submit, "Se connecter", class: "button-empty" %>
+          <div style="flex-grow: 0 ; flex-shrink: 0 ; width: 1rem"></div>
+          <%= f.button :submit, " S'inscrire ", class: "button-empty " %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-</body>

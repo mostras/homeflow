@@ -18,7 +18,7 @@ client1 = User.new(constructor: robert, first_name: 'Romain', last_name: 'Mostra
 client1.photo.attach(io: open('seed_images/avatar3.png'), filename: 'avatar3.png', content_type: 'image/png')
 client1.save!
 
-client2 = User.new(constructor: robert, first_name: 'Adrien', last_name: 'Barbier', phone_number: '06 79 09 38 18', address_street: '127 rue de Vendôme', address_zip: 69006, address_city: 'Lyon', email: 'adrien-barbier@hotmail.fr', password: 'azerty')
+client2 = User.new(constructor: robert, first_name: 'Adrien', last_name: 'Barbier', phone_number: '06 79 09 38 18', address_street: '127 rue Vendôme', address_zip: 69006, address_city: 'Lyon', email: 'adrien-barbier@hotmail.fr', password: 'azerty')
 client2.photo.attach(io: open('seed_images/avatar2.png'), filename: 'avatar2.png', content_type: 'image/png')
 client2.save!
 
@@ -28,17 +28,20 @@ client3.save!
 
 clients = [client1, client2, client3]
 
-puts "---------- ça créer du JOBS"
-jobs = ['Fondation', 'Murs', 'Toiture', 'Revetement', 'Isolation', 'Plomberie', 'Electicite', 'Peinture'].reverse
+puts "---------- ça créer du DOCUMENT"
 
 clients.each do |client|
 
-  document1 = Document.new(title: 'Devis Peinture', category: "Administratif", user: client)
+  document1 = Document.new(title: 'Devis Peinture', category: "Contrats", user: client)
   document1.photo.attach(io: open('seed_images/devis1.jpg'), filename: 'devis1.jpg', content_type: 'image/jpg')
   document1.save!
-  document2 = Document.new(title: 'Plan au sol', category: "Plan", user: client)
+  document2 = Document.new(title: 'Plan au sol', category: "Plans", user: client)
   document2.photo.attach(io: open('seed_images/devis2.jpg'), filename: 'devis2.jpg', content_type: 'image/jpg')
   document2.save!
+
+  puts "---------- ça créer ses JOBS"
+
+  jobs = ['Fondation', 'Murs', 'Toiture', 'Revetement', 'Isolation', 'Plomberie', 'Electicite', 'Peinture'].reverse
 
   jobs.each do |job|
     var = Job.create!(name: job, user: client)

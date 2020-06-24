@@ -31,14 +31,15 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new(document_params)
     authorize @document
+
     if current_user.constructor?
       @user = User.find(params[:user_id])
       @document.user = @user
-        if @document.save
-          redirect_to user_documents_path(@user)
-        else
-          render :new
-        end
+      if @document.save
+        redirect_to user_documents_path(@user)
+      else
+        render :new
+      end
     else
       @document.user = current_user
       if @document.save
@@ -47,7 +48,6 @@ class DocumentsController < ApplicationController
         render :new
       end
     end
-
   end
 
   def destroy

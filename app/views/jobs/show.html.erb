@@ -1,6 +1,6 @@
 <%= render partial: "shared/navbar", locals: {
   title: @job.name,
-  sub_title: "#{@job.tasks.count} tâches #{@job.tasks.count == 0 ? '' : "• Dernier envoi : #{@job.tasks.last.created_at.strftime('%d/%m/%Y')}"}",
+  sub_title: "#{@job.tasks.count == 0 ? 'Aucune tâche pour cette étape' : "#{ pluralize @job.tasks.count, "tâche", "tâches"} • Dernier envoi : #{@job.tasks.last.created_at.strftime('%d/%m/%Y')}"}",
   button: current_user.constructor? ? user_path(@job.user) : jobs_path,
   user: current_user.constructor? ? @job.user : current_user
   } %>
@@ -15,9 +15,23 @@
     <% end %>
   </div>
 
-<% @job.tasks.order(created_at: :desc).each do |task| %>
-  <%= render partial: "shared/task_card", locals: { task: task } %>
-<% end %>
+
+
+<div class="box">
+  <ul id="first-list">
+    <% @job.tasks.order(created_at: :desc).each do |task| %>
+      <li>
+        <%= render partial: "shared/task_card", locals: { task: task } %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="button-scroll">
+  <i class="fas fa-arrow-down" id="button-show"></i>
+</div>
+
+
 
 
 
