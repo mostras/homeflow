@@ -18,7 +18,7 @@ client1 = User.new(constructor: robert, first_name: 'Romain', last_name: 'Mostra
 client1.photo.attach(io: open('seed_images/avatar3.png'), filename: 'avatar3.png', content_type: 'image/png')
 client1.save!
 
-client2 = User.new(constructor: robert, first_name: 'Adrien', last_name: 'Barbier', phone_number: '06 79 09 38 18', address_street: '127 rue de Vendôme', address_zip: 69006, address_city: 'Lyon', email: 'adrien-barbier@hotmail.fr', password: 'azerty')
+client2 = User.new(constructor: robert, first_name: 'Adrien', last_name: 'Barbier', phone_number: '06 79 09 38 18', address_street: '127 rue Vendôme', address_zip: 69006, address_city: 'Lyon', email: 'adrien-barbier@hotmail.fr', password: 'azerty')
 client2.photo.attach(io: open('seed_images/avatar2.png'), filename: 'avatar2.png', content_type: 'image/png')
 client2.save!
 

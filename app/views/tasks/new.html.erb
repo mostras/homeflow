@@ -11,10 +11,10 @@
 <div class="new-task-form">
   <div class="form-field">
   <%= simple_form_for [@job, @task] do |f| %>
-  <%= f.submit "Envoyer", class: "btn button-full"%>
   <%= f.input :title, hint:"Essayer de garder votre titre concis", placeholder: "Titre"%>
   <%= f.input :content, label: "", placeholder: "Contenu"%>
   <%= f.file_field :photos, as: :file, multiple: true, class: 'nice_input_file', data: {prompt: 'les photos'} %>
+  <%= f.submit "Envoyer", class: "btn button-full"%>
   <% end %>
   </div>
 </div>
