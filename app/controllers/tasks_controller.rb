@@ -29,7 +29,7 @@ class TasksController < ApplicationController
   private
 
   def send_notification_task_email
-    TaskMailer.with(client: @task.job.user, task: @task).notification.deliver_later
+    TaskMailer.with(client: @task.job.user, task: @task).notification.deliver_now
   end
 
   def task_params
