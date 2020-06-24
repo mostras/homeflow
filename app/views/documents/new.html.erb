@@ -10,10 +10,10 @@
   <% if current_user.constructor? %>
     <div class="form-field">
       <%= simple_form_for [@user, @document] do |f| %>
-        <%= f.button :submit, "Ajouter le document", class: "button-full"%>
         <%= f.input :title, placeholder: 'Titre' %>
         <%= f.input :category, collection: Document::DOC_TYPE, selected: 'Type de document' %>
         <%= f.file_field :photo, as: :file, class: 'nice_input_file', data: {prompt: 'le document'} %>
+        <%= f.button :submit, "Ajouter le document", class: "button-full"%>
         <%= f.error :photo %>
       <% end %>
     </div>
@@ -21,10 +21,10 @@
   <% else %>
     <div class="form-field">
       <%= simple_form_for(@document) do |f| %>
-        <%= f.button :submit, "Ajouter le document", class: "button-full"%>
         <%= f.input :title, placeholder: 'Titre' %>
         <%= f.input :category, collection: Document::DOC_TYPE, selected: 'Type de document' %>
         <%= f.file_field :photo, as: :file, class: 'nice_input_file', data: {prompt: 'le document'} %>
+        <%= f.button :submit, "Ajouter le document", class: "button-full"%>
         <%= f.error :photo %>
       <% end %>
     </div>
