@@ -12,8 +12,16 @@
       <%= simple_form_for [@user, @document] do |f| %>
         <%= f.button :submit, "Ajouter le document", class: "button-full"%>
         <%= f.input :title, placeholder: 'Titre' %>
-        <%= f.input :category, collection: Document::DOC_TYPE, selected: 'selected' %>
-        <%= f.file_field :photo, label: false, as: :file %>
+        <%= f.input :category, collection: Document::DOC_TYPE, selected: 'Type de document' %>
+        <%= f.file_field :photo, as: :file, class: 'nice_input_file', data: {prompt: 'le document'} %>
+        <%= f.error :photo %>
+
+
+<!--         <label for="test" class="add-photo-button button-empty">
+          <div>Choisir le document...</div>
+          <input type="file" id="test" name="document[photo]">
+        </label>
+        <p id="filename"></p> -->
       <% end %>
     </div>
 
@@ -22,11 +30,17 @@
       <%= simple_form_for(@document) do |f| %>
         <%= f.button :submit, "Ajouter le document", class: "button-full"%>
         <%= f.input :title, placeholder: 'Titre' %>
-        <%= f.input :category, collection: Document::DOC_TYPE, selected: 'selected' %>
-        <%= f.file_field :photo, label: false, as: :file %>
+        <%= f.input :category, collection: Document::DOC_TYPE, selected: 'Type de document' %>
+        <%= f.file_field :photo, as: :file, class: 'nice_input_file', data: {prompt: 'le document'} %>
+        <%= f.error :photo %>
       <% end %>
     </div>
 
   <% end %>
 </div>
 <!-- @document, url: user_documents_path, method: 'POST' -->
+
+
+<!-- Comment valider la presence de photos de le model? -->
+<!-- name="task[photos][]" A AJOUTER POUR LE FORMUALIRE DES TACHES-->
+<!-- Comment faire pour le multiple picture? -->

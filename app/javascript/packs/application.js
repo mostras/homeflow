@@ -31,9 +31,12 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+import { initFileInput } from './init_file_input';
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initFileInput();
   // Call your functions here, e.g:
   // initSelect2();
 });

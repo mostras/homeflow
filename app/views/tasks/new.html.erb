@@ -14,7 +14,7 @@
   <%= f.submit "Envoyer", class: "btn button-full"%>
   <%= f.input :title, hint:"Essayer de garder votre titre concis", placeholder: "Titre"%>
   <%= f.input :content, label: "", placeholder: "Contenu"%>
-  <%= f.file_field :photos, as: :file, multiple: true %>
+  <%= f.file_field :photos, as: :file, multiple: true, class: 'nice_input_file', data: {prompt: 'les photos'} %>
   <% end %>
   </div>
 </div>

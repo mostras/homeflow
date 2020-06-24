@@ -14,4 +14,13 @@ class Document < ApplicationRecord
 
   validates :title, presence: true
   validates :category, presence: true, inclusion: { in: DOC_TYPE }
+  # validates :photo, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/pdf'], message: 'Merci de choisir un document à joindre'
+
+  validate :presence_photo
+
+  private
+
+  def presence_photo
+    errors.add(:photo, 'Veuillez choisir un document') unless photo.attached?
+  end
 end

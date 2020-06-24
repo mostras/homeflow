@@ -15,16 +15,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  :user_name => 'romainmostras@icloud.com',
-  :password => 'AZERTYazerty123',
-  :domain => 'homeflow.fr',
-  :address => 'smtp.sendgrid.net',
-  :port => 587,
-  :authentication => :plain,
-  :enable_starttls_auto => true
-  }
+  config.action_mailer.delivery_method = :mailjet
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
