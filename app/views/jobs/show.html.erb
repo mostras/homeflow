@@ -16,9 +16,8 @@
   </div>
 
 
-
 <div class="box">
-  <ul id="first-list">
+  <ul>
     <% @job.tasks.order(created_at: :desc).each do |task| %>
       <li>
         <%= render partial: "shared/task_card", locals: { task: task } %>
