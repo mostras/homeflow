@@ -12,8 +12,4 @@ class TutorialPolicy < ApplicationPolicy
   def index?
     !user.constructor?
   end
-
-  def show?
-    !user.constructor?
-  end
 end
