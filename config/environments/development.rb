@@ -33,20 +33,8 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-
   config.action_mailer.perform_caching = false
-  # config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.delivery_method = :mailjet
-  # config.action_mailer.smtp_settings = {
-  #   :user_name => 'romainmostras@icloud.com',
-  #   :password => 'AZERTYazerty123',
-  #   :domain => 'homeflow.fr',
-  #   :address => 'smtp.sendgrid.net',
-  #   :port => 587,
-  #   :authentication => :plain,
-  #   :enable_starttls_auto => true
-  # }
-
+  config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.default_url_options = { host: "localhost:3000" }
   config.action_mailer.asset_host = 'http://localhost:3000'
 
