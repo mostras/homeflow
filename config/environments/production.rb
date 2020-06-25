@@ -17,7 +17,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :mailjet
   config.action_mailer.default_url_options = { host: "www.homeflow.fr" }
-  config.action_mailer.asset_host = 'www.homeflow.fr'
+  config.action_mailer.asset_host = 'https://www.homeflow.fr'
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
