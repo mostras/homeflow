@@ -34,9 +34,8 @@
 
   <div class="document-form-containerr">
     <div class="plus_button">
-      <%= link_to new_document_path do %>
-        <i class="fas fa-plus"></i>
-      <% end %>
+      <%= link_to '', new_document_path, class: 'cover-link'%>
+      <i class="fas fa-plus"></i>
     </div>
     <%= form_tag(documents_path, method: "get", class: 'form-document')  do %>
       <%= text_field_tag(:query, nil, placeholder: 'Rechercher...', class: 'field-document') %>
