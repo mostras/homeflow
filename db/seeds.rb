@@ -129,57 +129,68 @@ clients = [romain, client2, client3, client4, client5, client6, client7, client8
 
 puts "---------- ça créer du DOCUMENT"
 
-  document = Document.new(title: 'Assurance emprunteur', category: "Assurance", user: romain)
-  document.photo.attach(io: open('seed_images/documents/assurance emprunteur.png'), filename: 'document.png', content_type: 'image/png')
-  document.save!
+document = Document.new(title: 'Assurance emprunteur', category: "Assurance", user: romain)
+document.photo.attach(io: open('seed_images/documents/assurance emprunteur.png'), filename: 'document.png', content_type: 'image/png')
+document.save!
 
-  document = Document.new(title: 'CCMI', category: "Contrats", user: romain)
-  document.photo.attach(io: open('seed_images/documents/CCMI.jpeg'), filename: 'document.jpeg', content_type: 'image/jpeg')
-  document.save!
+document = Document.new(title: 'CCMI', category: "Contrats", user: romain)
+document.photo.attach(io: open('seed_images/documents/CCMI.jpeg'), filename: 'document.jpeg', content_type: 'image/jpeg')
+document.save!
 
-  document = Document.new(title: 'Acte Notaire', category: "Notaire", user: romain)
-  document.photo.attach(io: open('seed_images/documents/notaire_acte.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
-  document.save!
+document = Document.new(title: 'Acte Notaire', category: "Notaire", user: romain)
+document.photo.attach(io: open('seed_images/documents/notaire_acte.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
+document.save!
 
-  document = Document.new(title: 'Permis Contruire', category: "Urbanisme", user: romain)
-  document.photo.attach(io: open('seed_images/documents/permis_de_contruire.png'), filename: 'document.png', content_type: 'image/png')
-  document.save!
+document = Document.new(title: 'Permis Contruire', category: "Urbanisme", user: romain)
+document.photo.attach(io: open('seed_images/documents/permis_de_contruire.png'), filename: 'document.png', content_type: 'image/png')
+document.save!
 
-  document = Document.new(title: 'Plans Maison', category: "Plans", user: romain)
-  document.photo.attach(io: open('seed_images/documents/plans_maison.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
-  document.save!
+document = Document.new(title: 'Plans Maison', category: "Plans", user: romain)
+document.photo.attach(io: open('seed_images/documents/plans_maison.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
+document.save!
 
-  document = Document.new(title: 'Consuel', category: "Urbanisme", user: romain)
-  document.photo.attach(io: open('seed_images/documents/consuel.png'), filename: 'document.png', content_type: 'image/png')
-  document.save!
+document = Document.new(title: 'Consuel', category: "Urbanisme", user: romain)
+document.photo.attach(io: open('seed_images/documents/consuel.png'), filename: 'document.png', content_type: 'image/png')
+document.save!
 
-  document = Document.new(title: 'Plan Situation', category: "Plans", user: romain)
-  document.photo.attach(io: open('seed_images/documents/plan_situation.png'), filename: 'document.png', content_type: 'image/png')
-  document.save!
+document = Document.new(title: 'Plan Situation', category: "Plans", user: romain)
+document.photo.attach(io: open('seed_images/documents/plan_situation.png'), filename: 'document.png', content_type: 'image/png')
+document.save!
 
-  document = Document.new(title: 'Recepisse Permis', category: "Urbanisme", user: romain)
-  document.photo.attach(io: open('seed_images/documents/recepisse_permis.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
-  document.save!
+document = Document.new(title: 'Recepisse Permis', category: "Urbanisme", user: romain)
+document.photo.attach(io: open('seed_images/documents/recepisse_permis.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
+document.save!
 
-  document = Document.new(title: 'Certificat Urbanisme', category: "Urbanisme", user: romain)
-  document.photo.attach(io: open('seed_images/documents/certificat_urbanisme.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
-  document.save!
+document = Document.new(title: 'Certificat Urbanisme', category: "Urbanisme", user: romain)
+document.photo.attach(io: open('seed_images/documents/certificat_urbanisme.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
+document.save!
 
-  document = Document.new(title: 'Ouverture Chantier', category: "Urbanisme", user: romain)
-  document.photo.attach(io: open('seed_images/documents/ouverture_chantier.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
-  document.save!
+document = Document.new(title: 'Ouverture Chantier', category: "Urbanisme", user: romain)
+document.photo.attach(io: open('seed_images/documents/ouverture_chantier.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
+document.save!
 
-  document = Document.new(title: 'Ouverture EDF', category: "Contrats", user: romain)
-  document.photo.attach(io: open('seed_images/documents/ouverture_edf.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
-  document.save!
+document = Document.new(title: 'Ouverture EDF', category: "Contrats", user: romain)
+document.photo.attach(io: open('seed_images/documents/ouverture_edf.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
+document.save!
 
-  document = Document.new(title: 'Ouverture eau', category: "Contrats", user: romain)
-  document.photo.attach(io: open('seed_images/documents/ouverture_eau.png'), filename: 'document.png', content_type: 'image/png')
-  document.save!
+document = Document.new(title: 'Ouverture eau', category: "Contrats", user: romain)
+document.photo.attach(io: open('seed_images/documents/ouverture_eau.png'), filename: 'document.png', content_type: 'image/png')
+document.save!
 
-  document = Document.new(title: 'Contrat gaz', category: "Contrats", user: romain)
-  document.photo.attach(io: open('seed_images/documents/contrat_gaz.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
-  document.save!
+document = Document.new(title: 'Contrat gaz', category: "Contrats", user: romain)
+document.photo.attach(io: open('seed_images/documents/contrat_gaz.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
+document.save!
+
+
+
+puts "---------- ça créer du TUTORIELS"
+Tutorial.create!(title:"Les fondations d'une maison", description:"Nous vous présentons la mise en oeuvre des fondations d'une maison, des armatures de fondations, du béton armé, de l'étude de sol, du sol porteur, des armatures de liaison, des semelles fillantes, des linteaux, des poutres, des chainages d'armatures, des chevetres.", url:"www.youtube.com/watch?v=_A6qbihsbyY#t=0m23s")
+Tutorial.create!(title:"Fenetres et portes", description:"Quels matériaux utiliser pour quelle performance énergétique ? Cette vidéo vous montre comment est réalisé l'étanchéité des huisseries.", url:"www.youtube.com/watch?v=rRpCZiFjZl0#t=0m23s")
+Tutorial.create!(title:"Toiture et isolation d'un toit", description:"Nous vous présentons la mise en place, de l'isolation de la toiture, des pare vapeur, des écrans de sous toiture, des tuiles minérales, de la couverture du toit, du faitage, de noues, étanchéité, l'imperméabilité, sur la charpente, les linteaux, pour maison neuve ou rénovation.", url:"www.youtube.com/watch?v=eeWZpNlgD5g#t=0m23s")
+Tutorial.create!(title:"L'assurance Dommages Ouvrage", description:"Nous vous présentons les avantages de souscrire à une assurance dommages ouvrage avant la construction de votre maison individuelle pour vous couvrir des sinistres que pourra rencontrer votre habitation.", url:"www.youtube.com/watch?v=6HMkny_SA_E#t=0m23s")
+Tutorial.create!(title:"Avantage d'une VMC double flux", description:"Nous vous présentons les avantages et le fonctionnement de la ventilation simple flux, simple flux avec pompe à chaleur et double flux.", url:"www.youtube.com/watch?v=fDPzplguoyk#t=0m23s")
+Tutorial.create!(title:"Chauffage et eau chaude", description:"Nous vous présentons l'installation de différents type de chauffage, chauffe-eau et radiateur adapté à la maison neuve, respectant la RT2012.", url:"www.youtube.com/watch?v=KuSKdDKQCQU#t=0m23s")
+Tutorial.create!(title:"Etanchéité à l'air et étude thermique", description:"Vous devez impérativement disposer d'un certificat certifiant que votre maison est aux normes RT 2012. Pour ce faire, nous faisons intervenir un spécialiste. Nous vous explquons ici les étapes de la certification.", url:"www.youtube.com/watch?v=LI-mgWrLtPU#t=0m23s")
 
 
 clients.each do |client|
