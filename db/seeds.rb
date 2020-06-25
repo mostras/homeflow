@@ -22,7 +22,6 @@ romain.photo.attach(io: open('seed_images/avatar/m1.jpg'), filename: 'avatar3.jp
 romain.save!
 puts "#{romain.first_name} a été créé !!!!!!!!"
 
-
 client2 = User.new(constructor: robert, first_name: 'Richard', last_name: 'Dassault', phone_number: '06 79 09 38 18', address_street: '1 place de la Comédie', address_zip: 69001, address_city: 'Lyon', email: 'Richard@gmail.com', password: 'ytreza')
 client2.photo.attach(io: open('seed_images/avatar/m1.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
 client2.save!
