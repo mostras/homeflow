@@ -1,27 +1,32 @@
-<span></span>
-<%= link_to '', task_path(task), class: 'cover-link'%>
-<% if task.seen? %>
-  <div class="time">
-    <p id="seen-date"><%= task.created_at.strftime('%d/%m/%Y') %></p>
-  </div>
-<% else %>
-  <div class="time">
-    <p><%= task.created_at.strftime('%d/%m/%Y') %></p>
-  </div>
-<% end %>
-
-<div class="title"><h2><%= task.title %></h2></div>
-<div class="bottom">
-  <div class="link"><p>En savoir plus</p></div>
+<div class="task-container-wrap">
+  <div class="time-line">
     <% if task.seen? %>
-      <div class="task-state" id="seen">
-        <p>Vu</p>
-      </div>
+      <span class="line" id="seen-timeline"></span>
+      <span class="dot" id="seen-timeline"></span>
     <% else %>
-      <div class="task-state">
-        <p>Non vu</p>
-      </div>
+      <span class="line"></span>
+      <span class="dot"></span>
     <% end %>
+  </div>
+  <div class="task-container">
+    <p class="date"><%= task.created_at.strftime('%d/%m/%Y') %></p>
+    <div class="task-info">
+      <%= link_to '', task_path(task), class: "cover-link" %>
+      <h2><%= task.title %></h2>
+      <div class="task-info-bottom">
+        <p>En savoir plus</p>
+        <% if task.seen? %>
+          <div class="task-state" id="seen">
+            <p>Vu</p>
+          </div>
+        <% else %>
+          <div class="task-state">
+            <p>Non vu</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
 
