@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tutorials/index'
+  get 'tutorials/show'
   devise_for :users
 
 
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
 
   authenticate :user, lambda { |u| !u.constructor? } do
     resources :jobs, only: [:index]
+    resources :tutorials, only: [:index, :show]
   end
 
   resources :users, only: [:show] do

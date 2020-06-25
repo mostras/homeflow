@@ -1,0 +1,13 @@
+<%= render partial: "shared/navbar", locals: {
+  title: "Mes tutoriels",
+  sub_title: "Vous avez #{Tutorial.count} tutoriels",
+  button: jobs_path,
+  user: current_user
+  } %>
+
+<%= render partial: "shared/tabbar" %>
+
+<% @tutorials.each do |tutorial| %>
+  <%= render partial: "shared/tutorial_card", locals: {tutorial: tutorial}  %>
+<% end %>
+
