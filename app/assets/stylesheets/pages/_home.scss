@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .home-page{
     background-color: $orange;
-    padding-top: 5rem;
+    padding-top: 10rem;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -29,6 +29,6 @@
   .button-empty {
     border: 1px solid #fff;
     color: #fff;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
   }
 }
