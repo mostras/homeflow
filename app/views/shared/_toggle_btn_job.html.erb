@@ -1,12 +1,10 @@
 <div class="toggle_button button-full">
   <% if job.completed == false %>
-    <%= link_to completed_job_path(job), method: :patch, data: { confirm: 'Êtes vous sûr de vouloir marquer cette étape comme terminée ? Un email sera envoyé à votre client pour le notifier.' }, class: "full_button" do  %>
-      <i class="fas fa-check"></i><span>Terminer l'étape <%= job.name %></span>
-    <% end %>
+    <%= link_to '', completed_job_path(job), method: :patch, data: { confirm: 'Êtes vous sûr de vouloir marquer cette étape comme terminée ? Un email sera envoyé à votre client pour le notifier.' }, class: "cover-link" %>
+    <i class="fas fa-check"></i><span><p>Terminer l'étape <%= job.name %></p></span>
   <% elsif job.completed == true %>
-    <%= link_to not_completed_job_path(job), method: :patch, data: { confirm: 'Vous êtes sur le point de réouvrir cette étape, êtes vous sûr ?' }, class: "full_button" do  %>
-      <i class="fas fa-undo-alt"></i><span>Reprendre l'étape <%= job.name %></span>
-    <% end %>
+    <%= link_to '', not_completed_job_path(job), method: :patch, data: { confirm: 'Vous êtes sur le point de réouvrir cette étape, êtes vous sûr ?' }, class: "cover-link" %>
+    <i class="fas fa-undo-alt"></i><span><p>Reprendre l'étape <%= job.name %></p></span>
   <% else %>
     <%= "" %>
   <% end %>

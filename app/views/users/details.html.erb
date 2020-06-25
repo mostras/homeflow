@@ -19,7 +19,7 @@
 
 <div class="details-card">
   <% unless @client.in_progress %>
-    <p>⚠️ Le chantier de <%= @client.first_name %> <%= @client.last_name %> est actuellement en pause.</p>
+    <p><strong>⚠️ Le chantier de <%= @client.first_name %> <%= @client.last_name %> est actuellement en pause.</strong></p>
   <% end %>
 
   <p>Adresse : <%= @client.address_street %> <%= @client.address_zip %>, <%= @client.address_city %></p>
