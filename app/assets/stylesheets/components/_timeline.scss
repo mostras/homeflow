@@ -15,7 +15,7 @@
     position: absolute;
     top: -22px;
     color: #FFAA05;
-    left: 0;
+    left: 3px;
   }
 }
 
@@ -78,6 +78,14 @@
     border-radius: 10px;
     padding: 1rem;
     margin: 1.5rem 0 3rem 1.5rem;
+
+    .cover-link{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
 }
 
 
@@ -85,7 +93,7 @@
     content: "";
     display: block;
     width: 0;
-    height: 120%;
+    height: 124%;
     border: 1px solid #FFAA05;
     position: absolute;
     top: -23px;
@@ -120,6 +128,10 @@
   background-color: white;
   color: $orange;
   border: 1px $orange solid;
+}
+
+#seen-title {
+  color: $orange;
 }
 
 

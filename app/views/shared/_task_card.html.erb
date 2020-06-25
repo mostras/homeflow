@@ -3,7 +3,11 @@
 <div class="time">
   <p><%= task.created_at.strftime('%d/%m/%Y') %></p>
 </div>
-<div class="title"><h2><%= task.title %></h2></div>
+<% if task.seen? %>
+  <div class="title"><h2><%= task.title %></h2></div>
+<% else %>
+  <div class="title"><h2 id="seen-title"><%= task.title %></h2></div>
+<% end %>
 <div class="bottom">
   <div class="link"><p>En savoir plus</p></div>
     <% if task.seen? %>
