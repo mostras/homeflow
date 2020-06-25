@@ -6,7 +6,7 @@
   } %>
 
   <div class='button-container'>
-    <% if policy(@job.tasks).create? %>
+    <% if policy(@job.tasks).create? && !@job.completed   %>
       <%= render partial: "shared/plus_button", locals: {link: new_job_task_path(@job)} %>
     <% end %>
 
