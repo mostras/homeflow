@@ -1,12 +1,10 @@
 <div class="toggle_button button-full">
   <% if client.in_progress == false %>
-    <%= link_to resume_work_user_path(client), method: :patch, data: { confirm: 'Vous êtes sur le point de relancer le chantier, êtes vous sûr ? Un email sera envoyé à votre client pour le notifier.' } do  %>
-      <i class="fas fa-play"></i><span>Reprendre</span>
-    <% end %>
+    <%= link_to '' ,resume_work_user_path(client), method: :patch, data: { confirm: 'Vous êtes sur le point de relancer le chantier, êtes vous sûr ? Un email sera envoyé à votre client pour le notifier.' }, class: 'cover-link'%>
+    <i class="fas fa-play"></i><span><p>Reprendre</p></span>
   <% else %>
-    <%= link_to stop_work_user_path(client), method: :patch, data: { confirm: 'Vous êtes sur le point de mettre le chantier en pause, êtes vous sûr ? Un email sera envoyé à votre client pour le notifier.' } do  %>
-      <i class="fas fa-pause"></i><span>Pause</span>
-    <% end %>
+    <%= link_to '',  stop_work_user_path(client), method: :patch, data: { confirm: 'Vous êtes sur le point de mettre le chantier en pause, êtes vous sûr ? Un email sera envoyé à votre client pour le notifier.' }, class: 'cover-link'%>
+    <i class="fas fa-pause"></i><span><p>Pause</p></span>
   <% end %>
 </div>
 

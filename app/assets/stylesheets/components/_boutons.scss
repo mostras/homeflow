@@ -55,6 +55,7 @@
   border-radius: 10px;
   padding: 0.2rem 1rem;
   background-color: $green;
+  position: relative;
 
   i {
     text-decoration: none;
@@ -74,6 +75,18 @@
   a {
     color: white;
     margin: 0;
+
+    span {
+      color: white;
+    }
+  }
+
+  .cover-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
 
