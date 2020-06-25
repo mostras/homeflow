@@ -27,9 +27,11 @@
   </ul>
 </div>
 
-<div class="button-scroll">
-  <i class="fas fa-arrow-down" id="button-show"></i>
-</div>
+<% if @job.tasks.length > 2 %>
+  <div class="button-scroll">
+    <i class="fas fa-arrow-down" id="button-show"></i>
+  </div>
+<% end %>
 
 
 
