@@ -26,17 +26,19 @@
   }
 
   h2 {
-    font-size: $T2;
+    font-size: 20px;
+    max-width: 270px;
   }
 
   h3 {
     font-size: $T4;
     max-width: 270px;
+    font-weight: 400;
   }
 
   p {
     font-size: $T4;
-    opacity: 0.4;
+    opacity: 0.5;
     font-style: italic;
     margin-bottom: 0;
   }
