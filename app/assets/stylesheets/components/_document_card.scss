@@ -34,7 +34,14 @@
   h3 {
     font-size: 12px;
     color: $gray;
-    line-height: 0.5;
+    line-height: 0.4;
+  }
+
+  p {
+    font-size: 10px;
+    opacity: 0.5;
+    font-style: italic;
+    margin-bottom: 0;
   }
 
   .document-info{
