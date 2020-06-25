@@ -1,3 +1,4 @@
+
 <%= render partial: "shared/navbar", locals: {
   title: "#{@client.first_name} #{@client.last_name}",
   sub_title: "#{pluralize @client.jobs.count, "étape", "étapes"}  • #{ pluralize @client.jobs.where(completed: false).count, "active", "actives"}  • #{ pluralize @client.jobs.where(completed: true).count, "terminée", "terminées"} ",
