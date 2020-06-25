@@ -25,13 +25,30 @@
         <i class="fas fa-phone icon"></i>
       <% end %>
     </div>
+
+    <div>
+      <%= link_to user_details_path(@client) do  %>
+        <i class="fas fa-ellipsis-h icon <%= active_class_for('details') %>"></i>
+      <% end %>
+    </div>
+
+  <% else %>
+    <div>
+      <%= link_to tutorials_path do  %>
+       <i class="far fa-lightbulb icon <%= active_class_for('tuto') %>"></i>
+      <% end %>
+    </div>
+
+    <div>
+      <%= link_to '#' do  %>
+        <i class="fas fa-ellipsis-h icon <%= active_class_for('details') %>"></i>
+      <% end %>
+    </div>
+
   <% end %>
-
-
-  <div>
-    <%= link_to current_user.constructor? ? user_details_path(@client) : '#' do  %>
-      <i class="fas fa-ellipsis-h icon <%= active_class_for('details') %>"></i>
-    <% end %>
-  </div>
 </div>
+
+
+
+
 

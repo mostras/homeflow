@@ -1,0 +1,49 @@
+.tutorial-card {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: white;
+  max-width: 350px;
+  position: relative;
+  margin: 1rem auto;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+  color: $bold-gray;
+
+  .cover-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .tutorial-info {
+    margin-left: 1rem;
+    flex: 1 0 auto;
+  }
+
+  h2 {
+    font-size: $T2;
+  }
+
+  h3 {
+    font-size: $T4;
+    max-width: 270px;
+  }
+
+  p {
+    font-size: $T4;
+    opacity: 0.4;
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  i {
+    font-size: 45px;
+    color: $gray;
+    opacity: 0.2;
+  }
+}
