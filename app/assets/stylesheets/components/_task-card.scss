@@ -75,8 +75,9 @@
     }
 
     p {
-      font-size: 8px;
+      font-size: 10px;
       font-style: italic;
+      color: $gray;
     }
   }
 
@@ -88,7 +89,6 @@
       .task-state{
       margin-top: 1rem;
       font-style: italic;
-      color: white;
       background-color: $orange;
       padding: 0.2rem;
       border-radius: 10px;
@@ -99,16 +99,19 @@
 
       p {
         font-size: 10px;
-        color: $gray;
+        color: white;
       }
     }
   }
 }
 
-#seen {
+.task-info-bottom > #seen {
   background-color: white;
-  color: $orange;
   border: 1px $orange solid;
+
+  p {
+    color: $orange;
+  }
 }
 
 #seen-timeline {
