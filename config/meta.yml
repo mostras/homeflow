@@ -1,0 +1,5 @@
+meta_product_name: "Homeflow"
+meta_title: "Homeflow - Simplifiez vos relations clients"
+meta_description: "Avec Homeflow, informez vos clients en temp réel de l'avancement de leur chantier"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
