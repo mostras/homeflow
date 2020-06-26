@@ -20,7 +20,7 @@ puts "----- votre constructor Robert a bien été créé!!!!"
 
 
 romain = User.new(constructor: robert, first_name: 'Romain', last_name: 'Mostras', phone_number: '06 34 52 39 12', address_street: '34 rue Pasteur', address_zip: 69300, address_city: 'Caluire-et-Cuire', email: 'romainmostras@icloud.com', password: 'romainm')
-romain.photo.attach(io: open('seed_images/avatar/m1.jpg'), filename: 'avatar3.jpg', content_type: 'image/jpg')
+romain.photo.attach(io: open('seed_images/avatar/romain.jpeg'), filename: 'avatar3.jpeg', content_type: 'image/jpeg')
 romain.save!
 puts "#{romain.first_name} a été créé !!!!!!!!"
 
@@ -120,7 +120,7 @@ client20.save!
 puts "#{client20.first_name} a été créé !!!!!!!!"
 
 adrien = User.new(constructor: robert, first_name: 'Adrien', last_name: 'Barbier', phone_number: '06 79 09 38 18', address_street: '1 place de la Comédie', address_zip: 69001, address_city: 'Lyon', email: 'adrien-barbier@hotmail.fr', password: 'azerty')
-adrien.photo.attach(io: open('seed_images/avatar/m12.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
+adrien.photo.attach(io: open('seed_images/avatar/pepito.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
 adrien.save!
 puts "#{adrien.first_name} a été créé !!!!!!!!"
 
@@ -234,7 +234,7 @@ jobs_done.each do |job|
 end
 
 
-etape = Job.create!(name: 'Finissions', user: romain, completed: false, updated_at: 4.days.ago)
+etape = Job.create!(name: 'Finissions', user: romain, completed: false)
 Task.create!(created_at: 19.days.ago, title: "Pose des plaintes chambres", content: "Dernière étape pour vos chambres, c’est parfait !", seen: true, job: etape)
 Task.create!(created_at: 18.days.ago, title: "Climatisation", content: "En cours d’installation, frais devant ;-)", seen: true, job: etape)
 Task.create!(created_at: 9.days.ago, title: "Peinture terminée !", content: "Nous avons terminé toutes les peintures, très beau choix, c’est lumineux et tendance comme prévu !", seen: true, job: etape)
@@ -243,8 +243,9 @@ Task.create!(created_at: 6.days.ago, title: "Domotique entrée", content: "Insta
 chaudiere = Task.new(created_at: 4.days.ago, title: "Chaudière géothermique", content: "On a finalement pu vous installer votre chaudière, on est passé chez Schneider, l'autre fabricant ne nous répondait pas, encore désolé du retard, tout est ok maintenant!", seen: false, job: etape)
 chaudiere.photos.attach(io: open('seed_images/task/chaudiere_geothermie.jpeg'), filename: 'document.jpeg', content_type: 'image/jpeg')
 chaudiere.save!
+etape.update!(updated_at: 4.days.ago)
 
-etape = Job.create!(name: 'Extérieur', user: romain, completed: false, updated_at: 5.days.ago)
+etape = Job.create!(name: 'Extérieur', user: romain, completed: false)
 Task.create!(created_at: 34.days.ago, title: "Mur soutènement", content: "Enfin terminé !!, voilà une bonne nouvelle ;-)", seen: true, job: etape)
 Task.create!(created_at: 21.days.ago, title: "Allée terminée", content: "Notre jardinier à fait des merveilles, votre allée est splendide !", seen: true, job: etape)
 Task.create!(created_at: 12.days.ago, title: "Eclairage extérieur", content: "On termine la pose de vos éclairages au sol dans le jardin et sur la terrasse.", seen: false, job: etape)
@@ -253,12 +254,14 @@ massif.photos.attach(io: open('seed_images/task/fleurs_2.jpg'), filename: 'docum
 massif.photos.attach(io: open('seed_images/task/fleurs_3.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 massif.photos.attach(io: open('seed_images/task/massif_fleur.jpeg'), filename: 'document.jpeg', content_type: 'image/jpeg')
 massif.save!
+etape.update!(updated_at: 5.days.ago)
 
 
 puts '------------------ Ca créer des Jobs pour Adrien'
 
-etape = Job.create!(name: 'Préparation Terrain', user: adrien, completed: false, updated_at: 21.days.ago)
+etape = Job.create!(name: 'Préparation Terrain', user: adrien, completed: false)
 Task.create!(title: "Bornage", content: "Ca y est c'est le début du chantier, on attaque le bornage du terrain avec le géomètre!", seen: true, job: etape, created_at: 21.days.ago)
+etape.update!(updated_at: 21.days.ago)
 
 jobs_not_started = ['Fondations', 'Murs & étages', 'Toiture', 'Aménagement', 'Revêtement', 'Isolation', 'Menuiserie', 'Plomberie', 'Electicite'].reverse
 jobs_not_started.each do |job|
