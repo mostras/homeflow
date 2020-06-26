@@ -210,7 +210,7 @@ Tutorial.create!(title:"Etanchéité à l'air et étude thermique", description:
 clients.each do |client|
   puts "---------- ça créer ses JOBS pour #{client.first_name}"
 
-  jobs = ['Préparation Terrain', 'Fondations', 'Murs & étages', 'Toiture', 'Aménagement', 'Revêtement', 'Isolation', 'Menuiserie', 'Plomberie', 'Electicite', 'Extérieur', 'Finissions'].reverse
+  jobs = ['Préparation Terrain', 'Fondations', 'Murs & étages', 'Toiture', 'Aménagement', 'Revêtement', 'Isolation', 'Menuiserie', 'Plomberie', 'Electicite', 'Extérieur', 'Finition'].reverse
 
   jobs.each do |job|
     etape = Job.create!(name: job, user: client, completed: true)
@@ -235,7 +235,7 @@ jobs_done.each do |job|
 end
 
 
-etape = Job.create!(name: 'Finissions', user: romain, completed: false)
+etape = Job.create!(name: 'Finition', user: romain, completed: false)
 Task.create!(created_at: 19.days.ago, title: "Pose des plaintes chambres", content: "Dernière étape pour vos chambres, c’est parfait !", seen: true, job: etape)
 Task.create!(created_at: 18.days.ago, title: "Climatisation", content: "En cours d’installation, frais devant ;-)", seen: true, job: etape)
 Task.create!(created_at: 9.days.ago, title: "Peinture terminée !", content: "Nous avons terminé toutes les peintures, très beau choix, c’est lumineux et tendance comme prévu !", seen: true, job: etape)
