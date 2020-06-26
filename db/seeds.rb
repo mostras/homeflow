@@ -8,13 +8,15 @@ Document.destroy_all
 Job.destroy_all
 User.destroy_all
 
+puts "============ DESTRUCION TERMINADA"
+
 
 puts "---------- ça créer du USERS"
 
 robert = User.new(first_name: 'Robert', last_name: 'Charpentier', company_name: 'Lyon Construction', phone_number: '06 79 09 38 18', email: 'rcharpentier@lyonconstruction.com', password: 'robertlyon')
 robert.photo.attach(io: open('seed_images/avatar/iddidier.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
 robert.save!
-puts "--- votre constructor Robert a bien été créé!!!!"
+puts "----- votre constructor Robert a bien été créé!!!!"
 
 
 romain = User.new(constructor: robert, first_name: 'Romain', last_name: 'Mostras', phone_number: '06 34 52 39 12', address_street: '34 rue Pasteur', address_zip: 69300, address_city: 'Caluire-et-Cuire', email: 'romainmostras@icloud.com', password: 'romainm')
@@ -128,57 +130,70 @@ clients = [client2, client3, client4, client5, client6, client7, client8, client
 
 puts "---------- ça créer du DOCUMENT"
 
-document = Document.new(title: 'Assurance emprunteur', category: "Assurance", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Assurance emprunteur', category: "Assurance", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/assurance emprunteur.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
+puts "--- Et hop le premier doc, ça, c'est fait !"
 
-document = Document.new(title: 'CCMI', category: "Contrats", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'CCMI', category: "Contrats", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/CCMI.jpeg'), filename: 'document.jpeg', content_type: 'image/jpeg')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Acte Notaire', category: "Notaire", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Acte Notaire', category: "Notaire", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/notaire_acte.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Permis Contruire', category: "Urbanisme", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Permis Contruire', category: "Urbanisme", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/permis_de_contruire.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Plans Maison', category: "Plans", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Plans Maison', category: "Plans", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/plans_maison.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Consuel', category: "Urbanisme", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Consuel', category: "Urbanisme", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/consuel.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Plan Situation', category: "Plans", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Plan Situation', category: "Plans", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/plan_situation.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Recepisse Permis', category: "Urbanisme", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Recepisse Permis', category: "Urbanisme", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/recepisse_permis.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Certificat Urbanisme', category: "Urbanisme", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Certificat Urbanisme', category: "Urbanisme", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/certificat_urbanisme.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Ouverture Chantier', category: "Urbanisme", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Ouverture Chantier', category: "Urbanisme", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/ouverture_chantier.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Ouverture EDF', category: "Contrats", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Ouverture EDF', category: "Contrats", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/ouverture_edf.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Ouverture eau', category: "Contrats", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Ouverture eau', category: "Contrats", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/ouverture_eau.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
+puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Contrat gaz', category: "Contrats", user: romain, created_at: 273.day.ago)
+document = Document.new(title: 'Contrat gaz', category: "Contrats", user: romain, created_at: 273.days.ago)
 document.photo.attach(io: open('seed_images/documents/contrat_gaz.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
+puts "--- Et voilà l'travail ! Tous les docs de Romain sont prêts !!"
 
 
 
@@ -218,26 +233,40 @@ end
 
 
 etape = Job.create!(name: 'Finissions', user: romain, completed: false)
-Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
-Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
-Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
-Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
-Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
-Task.create!(title: "", content: "", seen: false, job: etape, created_at: 1.day.ago)
+Task.create!(created_at: 19.days.ago, title: "Pose des plaintes chambres", content: "Dernière étape pour vos chambres, c’est parfait !", seen: true, job: etape)
+Task.create!(created_at: 18.days.ago, title: "Climatisation", content: "En cours d’installation, frais devant ;-)", seen: true, job: etape)
+Task.create!(created_at: 9.days.ago, title: "Peinture terminée !", content: "Nous avons terminé toutes les peintures, très beau choix, c’est lumineux et tendance comme prévu !", seen: true, job: etape)
+Task.create!(created_at: 7.days.ago, title: "Volets roulants", content: "Volets installés reliés et connectés à votre centrale domotique, il ne reste plus qu’à faire les tests d’usages Android et iPhone.", seen: true, job: etape)
+Task.create!(created_at: 6.days.ago, title: "Domotique entrée", content: "Installation de votre portier. Tout marche parfaitement, vous allez pouvoir faire de beaux portraits de vos invités ;-)", seen: false, job: etape)
+chaudiere = Task.new(created_at: 4.days.ago, title: "Chaudière géothermique", content: "On a finalement pu vous installer votre chaudière, on est passé chez Schneider, l'autre fabricant ne nous répondait pas, encore désolé du retard, tout est ok maintenant!", seen: false, job: etape)
+chaudiere.photos.attach(io: open('seed_images/task/chaudiere_geothermie.jpeg'), filename: 'document.jpeg', content_type: 'image/jpeg')
+chaudiere.save!
 
 etape = Job.create!(name: 'Extérieur', user: romain, completed: false)
-Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
-Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
-Task.create!(title: "", content: "", seen: false, job: etape, created_at: 1.day.ago)
-Task.create!(title: "", content: "", seen: false, job: etape, created_at: 1.day.ago)
+Task.create!(created_at: 34.days.ago, title: "Mur soutènement", content: "Enfin terminé !!, voilà une bonne nouvelle ;-)", seen: true, job: etape)
+Task.create!(created_at: 21.days.ago, title: "Allée terminée", content: "Notre jardinier à fait des merveilles, votre allée est splendide !", seen: true, job: etape)
+Task.create!(created_at: 12.days.ago, title: "Eclairage extérieur", content: "On termine la pose de vos éclairages au sol dans le jardin et sur la terrasse.", seen: false, job: etape)
+massif = Task.new(created_at: 5.days.ago, title: "Massifs & plantes", content: "Je crois que plus, et c’est la jungle ;-), magnifique réalisation de notre jardiner !", seen: false, job: etape)
+massif.photos.attach(io: open('seed_images/task/fleurs_2.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
+massif.photos.attach(io: open('seed_images/task/fleurs_3.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
+massif.photos.attach(io: open('seed_images/task/massif_fleur.jpeg'), filename: 'document.jpeg', content_type: 'image/jpeg')
+massif.save!
 
+
+puts '------------------ Ca créer des Jobs pour Adrien'
 
 etape = Job.create!(name: 'Préparation Terrain', user: adrien, completed: false)
-Task.create!(title: "", content: "", seen: true, job: etape, created_at: 2.day.ago)
+Task.create!(title: "Bornage", content: "Ca y est c'est le début du chantier, on attaque le bornage du terrain avec le géomètre!", seen: true, job: etape, created_at: 21.days.ago)
+
+jobs_not_started = ['Fondations', 'Murs & étages', 'Toiture', 'Aménagement', 'Revêtement', 'Isolation', 'Menuiserie', 'Plomberie', 'Electicite'].reverse
+jobs_not_started.each do |job|
+  etape = Job.create!(name: job, user: adrien)
+end
 
 
-puts "==============================="
+puts "=========================================="
 puts "Et c'est ainsi que les seeds se terminent."
+puts "=========================================="
 
 
 
