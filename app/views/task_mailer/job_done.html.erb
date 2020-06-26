@@ -17,6 +17,12 @@
   margin-top: 2rem;
 }
 
+.image-const {
+  margin: 0 auto;
+  max-width: 100px;
+  text-align: center;
+}
+
 
   a {
     text-decoration: none;
@@ -34,10 +40,7 @@
   #pic-constructor {
     width: 64px;
     border-radius: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    top: -32px;
+
   }
 
   .mail-container > h1 {
@@ -72,7 +75,10 @@
 
 <div class="mail-container">
 
-    <%= cl_image_tag @client.constructor.photo.key, alt: "Photo du constructeur", id:"pic-constructor" %>
+    <div class="image-const">
+      <%= cl_image_tag @client.constructor.photo.key, alt: "Photo du constructeur", id:"pic-constructor" %>
+    </div>
+
 
     <h1>Ça y est, l'étape <%= @job.name %> <br>est terminée !</h1>
 
