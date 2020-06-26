@@ -130,8 +130,8 @@ clients = [client2, client3, client4, client5, client6, client7, client8, client
 
 puts "---------- ça créer du DOCUMENT"
 
-document = Document.new(title: 'Assurance emprunteur', category: "Assurance", user: romain, created_at: 273.days.ago)
-document.photo.attach(io: open('seed_images/documents/assurance emprunteur.png'), filename: 'document.png', content_type: 'image/png')
+document = Document.new(title: 'Certificat Urbanisme', category: "Urbanisme", user: romain, created_at: 273.days.ago)
+document.photo.attach(io: open('seed_images/documents/certificat_urbanisme.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
 puts "--- Et hop le premier doc, ça, c'est fait !"
 
@@ -170,8 +170,8 @@ document.photo.attach(io: open('seed_images/documents/recepisse_permis.jpg'), fi
 document.save!
 puts "--- Et d'un autre !"
 
-document = Document.new(title: 'Certificat Urbanisme', category: "Urbanisme", user: romain, created_at: 273.days.ago)
-document.photo.attach(io: open('seed_images/documents/certificat_urbanisme.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
+document = Document.new(title: 'Assurance emprunteur', category: "Assurance", user: romain, created_at: 273.days.ago)
+document.photo.attach(io: open('seed_images/documents/assurance emprunteur.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
 puts "--- Et d'un autre !"
 
@@ -226,13 +226,15 @@ puts '------------------ Ca créer des Jobs pour Romain'
 
 jobs_done = ['Préparation Terrain', 'Fondations', 'Murs & étages', 'Toiture', 'Aménagement', 'Revêtement', 'Isolation', 'Menuiserie', 'Plomberie', 'Electicite'].reverse
 jobs_done.each do |job|
-  etape = Job.create!(name: job, user: romain, completed: true)
-  Task.create!(title: 'Titre de la tâche', content: "Bonjour ! Nous avons bien continué votre chantier. Tout se passe comme prévu, nous aurons fini tous les travaux à temps. On vous tient au courant de l'avancée en direct sur Homeflow! Bonne journée!", seen: true, job: etape)
+  etape = Job.create!(name: job, user: romain, completed: true, updated_at: 245.days.ago)
+  10.times do
+    Task.create!(title: 'Titre de la tâche', content: "Bonjour ! Nous avons bien continué votre chantier. Tout se passe comme prévu, nous aurons fini tous les travaux à temps. On vous tient au courant de l'avancée en direct sur Homeflow! Bonne journée!", seen: true, job: etape)
+  end
   puts 'job et tasks associées créées pour Romain !!!!'
 end
 
 
-etape = Job.create!(name: 'Finissions', user: romain, completed: false)
+etape = Job.create!(name: 'Finissions', user: romain, completed: false, updated_at: 4.days.ago)
 Task.create!(created_at: 19.days.ago, title: "Pose des plaintes chambres", content: "Dernière étape pour vos chambres, c’est parfait !", seen: true, job: etape)
 Task.create!(created_at: 18.days.ago, title: "Climatisation", content: "En cours d’installation, frais devant ;-)", seen: true, job: etape)
 Task.create!(created_at: 9.days.ago, title: "Peinture terminée !", content: "Nous avons terminé toutes les peintures, très beau choix, c’est lumineux et tendance comme prévu !", seen: true, job: etape)
@@ -242,7 +244,7 @@ chaudiere = Task.new(created_at: 4.days.ago, title: "Chaudière géothermique", 
 chaudiere.photos.attach(io: open('seed_images/task/chaudiere_geothermie.jpeg'), filename: 'document.jpeg', content_type: 'image/jpeg')
 chaudiere.save!
 
-etape = Job.create!(name: 'Extérieur', user: romain, completed: false)
+etape = Job.create!(name: 'Extérieur', user: romain, completed: false, updated_at: 5.days.ago)
 Task.create!(created_at: 34.days.ago, title: "Mur soutènement", content: "Enfin terminé !!, voilà une bonne nouvelle ;-)", seen: true, job: etape)
 Task.create!(created_at: 21.days.ago, title: "Allée terminée", content: "Notre jardinier à fait des merveilles, votre allée est splendide !", seen: true, job: etape)
 Task.create!(created_at: 12.days.ago, title: "Eclairage extérieur", content: "On termine la pose de vos éclairages au sol dans le jardin et sur la terrasse.", seen: false, job: etape)
@@ -255,7 +257,7 @@ massif.save!
 
 puts '------------------ Ca créer des Jobs pour Adrien'
 
-etape = Job.create!(name: 'Préparation Terrain', user: adrien, completed: false)
+etape = Job.create!(name: 'Préparation Terrain', user: adrien, completed: false, updated_at: 21.days.ago)
 Task.create!(title: "Bornage", content: "Ca y est c'est le début du chantier, on attaque le bornage du terrain avec le géomètre!", seen: true, job: etape, created_at: 21.days.ago)
 
 jobs_not_started = ['Fondations', 'Murs & étages', 'Toiture', 'Aménagement', 'Revêtement', 'Isolation', 'Menuiserie', 'Plomberie', 'Electicite'].reverse
