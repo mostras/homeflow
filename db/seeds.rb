@@ -216,7 +216,7 @@ clients.each do |client|
     etape = Job.create!(name: job, user: client, completed: true)
     puts "#{etape.name} a été créé !!!!!"
     10.times do
-      Task.create!(title: 'Titre de la tâche', content: "Bonjour ! Nous avons bien continué votre chantier. Tout se passe comme prévu, nous aurons fini tous les travaux à temps. On vous tient au courant de l'avancée en direct sur Homeflow! Bonne journée!)", seen: true, job: job)
+      Task.create!(title: 'Titre de la tâche', content: "Bonjour ! Nous avons bien continué votre chantier. Tout se passe comme prévu, nous aurons fini tous les travaux à temps. On vous tient au courant de l'avancée en direct sur Homeflow! Bonne journée!)", seen: true, job: etape)
       puts 'Tache créée !!!'
     end
   end
