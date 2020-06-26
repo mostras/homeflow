@@ -1,12 +1,13 @@
 
 
-puts "ceci marque le debut des seeds.."
+puts "Ceci marque le debut des seeds..."
 
-puts "empezamos la desrucion de las seedas"
+puts "=========== Empezamos la destrucion de las seedas ==========="
 
 Document.destroy_all
 Job.destroy_all
 User.destroy_all
+
 
 puts "---------- ça créer du USERS"
 
@@ -14,7 +15,6 @@ robert = User.new(first_name: 'Robert', last_name: 'Charpentier', company_name: 
 robert.photo.attach(io: open('seed_images/avatar/iddidier.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
 robert.save!
 puts "--- votre constructor Robert a bien été créé!!!!"
-
 
 
 romain = User.new(constructor: robert, first_name: 'Romain', last_name: 'Mostras', phone_number: '06 34 52 39 12', address_street: '34 rue Pasteur', address_zip: 69300, address_city: 'Caluire-et-Cuire', email: 'romainmostras@icloud.com', password: 'romainm')
@@ -37,7 +37,7 @@ client4.photo.attach(io: open('seed_images/avatar/m2.jpg'), filename: 'avatar.jp
 client4.save!
 puts "#{client4.first_name} a été créé !!!!!!!!"
 
-client5 = User.new(constructor: robert, first_name: 'Odile', last_name: 'Hatmoilarate', phone_number: '06 79 09 38 18', address_street: '291 cours Emile Zola', address_zip: 69100, address_city: 'Villeurbane', email: 'Odile@gmail.com', password: 'ytreza')
+client5 = User.new(in_progress: false, constructor: robert, first_name: 'Odile', last_name: 'Hatmoilarate', phone_number: '06 79 09 38 18', address_street: '291 cours Emile Zola', address_zip: 69100, address_city: 'Villeurbane', email: 'Odile@gmail.com', password: 'ytreza')
 client5.photo.attach(io: open('seed_images/avatar/w2.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
 client5.save!
 puts "#{client5.first_name} a été créé !!!!!!!!"
@@ -52,12 +52,12 @@ client7.photo.attach(io: open('seed_images/avatar/m4.jpg'), filename: 'avatar.jp
 client7.save!
 puts "#{client7.first_name} a été créé !!!!!!!!"
 
-client8 = User.new(constructor: robert, first_name: 'Andréa', last_name: 'Martel', phone_number: '06 79 09 38 18', address_street: '15 rue de Taillepied', address_zip: 69540, address_city: 'Irigny', email: 'Andréa@gmail.com', password: 'ytreza')
+client8 = User.new(in_progress: false, constructor: robert, first_name: 'Andréa', last_name: 'Martel', phone_number: '06 79 09 38 18', address_street: '15 rue de Taillepied', address_zip: 69540, address_city: 'Irigny', email: 'Andréa@gmail.com', password: 'ytreza')
 client8.photo.attach(io: open('seed_images/avatar/w3.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
 client8.save!
 puts "#{client8.first_name} a été créé !!!!!!!!"
 
-client9 = User.new(constructor: robert, first_name: 'Guillaume', last_name: 'Debailly', phone_number: '06 79 09 38 18', address_street: 'Rue de Boutan', address_zip: 69540, address_city: 'Irigny', email: 'Guillaume@gmail.com', password: 'ytreza')
+client9 = User.new(in_progress: false, constructor: robert, first_name: 'Guillaume', last_name: 'Debailly', phone_number: '06 79 09 38 18', address_street: 'Rue de Boutan', address_zip: 69540, address_city: 'Irigny', email: 'Guillaume@gmail.com', password: 'ytreza')
 client9.photo.attach(io: open('seed_images/avatar/m5.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
 client9.save!
 puts "#{client9.first_name} a été créé !!!!!!!!"
@@ -112,71 +112,71 @@ client19.photo.attach(io: open('seed_images/avatar/m10.jpg'), filename: 'avatar.
 client19.save!
 puts "#{client19.first_name} a été créé !!!!!!!!"
 
-client20 = User.new(constructor: robert, first_name: 'Ivan', last_name: 'Desnugets', phone_number: '06 10 35 56 30', address_street: "Place de l'Europe", address_zip: 69330, address_city: 'Meyzieu', email: 'Ivan@gmail.com', password: 'ytreza')
+client20 = User.new(in_progress: false, constructor: robert, first_name: 'Ivan', last_name: 'Desnugets', phone_number: '06 10 35 56 30', address_street: "Place de l'Europe", address_zip: 69330, address_city: 'Meyzieu', email: 'Ivan@gmail.com', password: 'ytreza')
 client20.photo.attach(io: open('seed_images/avatar/m11.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
 client20.save!
 puts "#{client20.first_name} a été créé !!!!!!!!"
 
-client21 = User.new(constructor: robert, first_name: 'Adrien', last_name: 'Barbier', phone_number: '06 79 09 38 18', address_street: '1 place de la Comédie', address_zip: 69001, address_city: 'Lyon', email: 'adrien-barbier@hotmail.fr', password: 'azerty')
-client21.photo.attach(io: open('seed_images/avatar/m12.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
-client21.save!
-puts "#{client21.first_name} a été créé !!!!!!!!"
+adrien = User.new(constructor: robert, first_name: 'Adrien', last_name: 'Barbier', phone_number: '06 79 09 38 18', address_street: '1 place de la Comédie', address_zip: 69001, address_city: 'Lyon', email: 'adrien-barbier@hotmail.fr', password: 'azerty')
+adrien.photo.attach(io: open('seed_images/avatar/m12.jpg'), filename: 'avatar.jpg', content_type: 'image/jpg')
+adrien.save!
+puts "#{adrien.first_name} a été créé !!!!!!!!"
 
-clients = [romain, client2, client3, client4, client5, client6, client7, client8, client9, client10, client11,  client12, client13, client14, client15, client16, client17, client18, client19, client20, client21]
+clients = [client2, client3, client4, client5, client6, client7, client8, client9, client10, client11,  client12, client13, client14, client15, client16, client17, client18, client19, client20]
 
 
 
 puts "---------- ça créer du DOCUMENT"
 
-document = Document.new(title: 'Assurance emprunteur', category: "Assurance", user: romain)
+document = Document.new(title: 'Assurance emprunteur', category: "Assurance", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/assurance emprunteur.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
 
-document = Document.new(title: 'CCMI', category: "Contrats", user: romain)
+document = Document.new(title: 'CCMI', category: "Contrats", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/CCMI.jpeg'), filename: 'document.jpeg', content_type: 'image/jpeg')
 document.save!
 
-document = Document.new(title: 'Acte Notaire', category: "Notaire", user: romain)
+document = Document.new(title: 'Acte Notaire', category: "Notaire", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/notaire_acte.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
 
-document = Document.new(title: 'Permis Contruire', category: "Urbanisme", user: romain)
+document = Document.new(title: 'Permis Contruire', category: "Urbanisme", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/permis_de_contruire.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
 
-document = Document.new(title: 'Plans Maison', category: "Plans", user: romain)
+document = Document.new(title: 'Plans Maison', category: "Plans", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/plans_maison.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
 
-document = Document.new(title: 'Consuel', category: "Urbanisme", user: romain)
+document = Document.new(title: 'Consuel', category: "Urbanisme", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/consuel.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
 
-document = Document.new(title: 'Plan Situation', category: "Plans", user: romain)
+document = Document.new(title: 'Plan Situation', category: "Plans", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/plan_situation.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
 
-document = Document.new(title: 'Recepisse Permis', category: "Urbanisme", user: romain)
+document = Document.new(title: 'Recepisse Permis', category: "Urbanisme", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/recepisse_permis.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
 
-document = Document.new(title: 'Certificat Urbanisme', category: "Urbanisme", user: romain)
+document = Document.new(title: 'Certificat Urbanisme', category: "Urbanisme", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/certificat_urbanisme.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
 
-document = Document.new(title: 'Ouverture Chantier', category: "Urbanisme", user: romain)
+document = Document.new(title: 'Ouverture Chantier', category: "Urbanisme", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/ouverture_chantier.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
 
-document = Document.new(title: 'Ouverture EDF', category: "Contrats", user: romain)
+document = Document.new(title: 'Ouverture EDF', category: "Contrats", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/ouverture_edf.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
 
-document = Document.new(title: 'Ouverture eau', category: "Contrats", user: romain)
+document = Document.new(title: 'Ouverture eau', category: "Contrats", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/ouverture_eau.png'), filename: 'document.png', content_type: 'image/png')
 document.save!
 
-document = Document.new(title: 'Contrat gaz', category: "Contrats", user: romain)
+document = Document.new(title: 'Contrat gaz', category: "Contrats", user: romain, created_at: 273.day.ago)
 document.photo.attach(io: open('seed_images/documents/contrat_gaz.jpg'), filename: 'document.jpg', content_type: 'image/jpg')
 document.save!
 
@@ -198,11 +198,68 @@ clients.each do |client|
   jobs = ['Préparation Terrain', 'Fondations', 'Murs & étages', 'Toiture', 'Aménagement', 'Revêtement', 'Isolation', 'Menuiserie', 'Plomberie', 'Electicite', 'Extérieur', 'Finissions'].reverse
 
   jobs.each do |job|
-    var = Job.create!(name: job, user: client)
-    puts "#{var.name} a été créé !!!!!"
-
+    etape = Job.create!(name: job, user: client, completed: true)
+    puts "#{etape.name} a été créé !!!!!"
+    10.times do
+      Task.create!(title: 'Titre de la tâche', content: "Bonjour ! Nous avons bien continué votre chantier. Tout se passe comme prévu, nous aurons fini tous les travaux à temps. On vous tient au courant de l'avancée en direct sur Homeflow! Bonne journée!)", seen: true, job: job)
+      puts 'Tache créée !!!'
+    end
   end
 end
 
+puts '------------------ Ca créer des Jobs pour Romain'
+
+jobs_done = ['Préparation Terrain', 'Fondations', 'Murs & étages', 'Toiture', 'Aménagement', 'Revêtement', 'Isolation', 'Menuiserie', 'Plomberie', 'Electicite'].reverse
+jobs_done.each do |job|
+  etape = Job.create!(name: job, user: romain, completed: true)
+  Task.create!(title: 'Titre de la tâche', content: "Bonjour ! Nous avons bien continué votre chantier. Tout se passe comme prévu, nous aurons fini tous les travaux à temps. On vous tient au courant de l'avancée en direct sur Homeflow! Bonne journée!", seen: true, job: etape)
+  puts 'job et tasks associées créées pour Romain !!!!'
+end
+
+
+etape = Job.create!(name: 'Finissions', user: romain, completed: false)
+Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
+Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
+Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
+Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
+Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
+Task.create!(title: "", content: "", seen: false, job: etape, created_at: 1.day.ago)
+
+etape = Job.create!(name: 'Extérieur', user: romain, completed: false)
+Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
+Task.create!(title: "", content: "", seen: true, job: etape, created_at: 1.day.ago)
+Task.create!(title: "", content: "", seen: false, job: etape, created_at: 1.day.ago)
+Task.create!(title: "", content: "", seen: false, job: etape, created_at: 1.day.ago)
+
+
+etape = Job.create!(name: 'Préparation Terrain', user: adrien, completed: false)
+Task.create!(title: "", content: "", seen: true, job: etape, created_at: 2.day.ago)
+
+
 puts "==============================="
 puts "Et c'est ainsi que les seeds se terminent."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
