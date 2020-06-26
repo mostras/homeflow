@@ -9,11 +9,9 @@
     text-align: left;
     font-family: sans-serif;
     margin-top: 90px;
+    position: relative;
   }
 
-  h1 {
-    color: #FFAA05;
-  }
 
   a {
     text-decoration: none;
@@ -34,19 +32,26 @@
   }
 
   #pic-constructor {
-    width: 60px;
+    width: 64px;
+    border-radius: 50%;
     position: absolute;
-    top: 115px;
-    right: -9px;
+    transform: translateX(-50%);
+    left: 50%;
+    top: -32px;
   }
 
-  .bubble-container > h1 {
-    font-size: 18px;
+  .content-mail-notif > p {
+    font-size: 16px;
+    margin-top: 2rem;
+  }
+
+  .mail-container > h1 {
+   font-size: 18px;
     font-weight: 700;
-    width: 191px;
-    position: absolute;
-    top: 25px;
-    right: 81px;
+    color: #FFAA05;
+    text-align: center;
+    margin: 2rem 0;
+    color: #FFAA05;
   }
 
   .signature {
@@ -73,19 +78,17 @@
 
 <div class="mail-container">
 
-  <div class="bubble-container">
-    <%= image_tag "mail_bubble.png", alt: "Bulle de texte", id: "text-bubble" %>
     <%= cl_image_tag @client.constructor.photo.key, alt: "Photo du constructeur", id:"pic-constructor" %>
     <h1>Il y a du nouveau sur votre chantier !</h1>
-  </div>
 
-
-  <p>
-    Bonjour <%= @client.first_name %>,
-    <br>
-    <br><%= @client.constructor.first_name %>, votre chef de chantier a ajouter une nouvelle tâche dans la catégorie <%= @task.job.name %>.
-    <br><br>Vous pouvez aller voir sur votre application ce qu'il y a de nouveau.
-  </p>
+    <div class="content-mail-notif">
+      <p>
+        Bonjour <%= @client.first_name %>,
+        <br>
+        <br><%= @client.constructor.first_name %>, votre chef de chantier a ajouter une nouvelle tâche dans la catégorie <%= @task.job.name %>.
+        <br><br>Vous pouvez aller voir sur votre application ce qu'il y a de nouveau.
+      </p>
+    </div>
 
   <%= link_to 'Voir la notification', job_url(@task.job) %>
 

@@ -9,11 +9,14 @@
     text-align: left;
     font-family: sans-serif;
     margin-top: 90px;
+    position: relative;
   }
 
-  h1 {
-    color: #FFAA05;
-  }
+.content-mail-job-done > p {
+  font-size: 16px;
+  margin-top: 2rem;
+}
+
 
   a {
     text-decoration: none;
@@ -23,30 +26,26 @@
     color: #FFAA05;
     padding: 0.3rem 1rem;
     border-radius: 10px;
-    margin: 2rem auto;
+    margin: 1rem auto;
     font-size: 12px;
   }
 
-  .bubble-container {
-    position: relative;
-    margin-top: -110px;
-    margin-left: -34px;
-  }
 
   #pic-constructor {
-    width: 60px;
+    width: 64px;
+    border-radius: 50%;
     position: absolute;
-    top: 115px;
-    right: -9px;
+    transform: translateX(-50%);
+    left: 50%;
+    top: -32px;
   }
 
-  .bubble-container > h1 {
+  .mail-container > h1 {
     font-size: 18px;
     font-weight: 700;
-    width: 191px;
-    position: absolute;
-    top: 15px;
-    right: 81px;
+    color: #FFAA05;
+    text-align: center;
+    margin: 2rem 0;
   }
 
   .signature {
@@ -73,20 +72,19 @@
 
 <div class="mail-container">
 
-  <div class="bubble-container">
-    <%= image_tag "mail_bubble.png", alt: "Bulle de texte", id: "text-bubble" %>
     <%= cl_image_tag @client.constructor.photo.key, alt: "Photo du constructeur", id:"pic-constructor" %>
+
     <h1>Ça y est, l'étape <%= @job.name %> <br>est terminée !</h1>
+
+  <div class="content-mail-job-done">
+    <p>
+      Bonjour <%= @client.first_name %>,
+      <br>
+      <br><%= @client.constructor.first_name %>, votre chef de chantier a indiqué que l'étape <%= @job.name %> de la construction de votre maison est terminée.
+      <br>Vous pouvez retrouver toutes les tâches associées à cette étape sur votre tableau de bord.
+      <br>La prochaine étape va pouvoir commencer, on vous tient au courant de l'avancée des travaux dès qu'il y a du nouveau !
+    </p>
   </div>
-
-
-  <p>
-    Bonjour <%= @client.first_name %>,
-    <br>
-    <br><%= @client.constructor.first_name %>, votre chef de chantier a indiqué que l'étape <%= @job.name %> de la construction de votre maison est terminée.
-    <br>Vous pouvez retrouver toutes les tâches associées à cette étape sur votre tableau de bord.
-    <br>La prochaine étape va pouvoir commencer, on vous tient au courant de l'avancée des travaux dès qu'il y a du nouveau !
-  </p>
 
   <%= link_to 'Voir mon tableau de bord', jobs_url %>
 

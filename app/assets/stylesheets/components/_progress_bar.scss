@@ -1,9 +1,10 @@
 .progress-bar-container {
   display: flex;
   align-items: center;
-  padding: 0.7rem 1.5rem;
-  margin: 2rem auto 0 auto;
-  justify-content: space-around;
+  margin: 2rem auto 1rem auto;
+  padding: 0 0.3rem;
+  justify-content: space-between;
+  max-width: 340px;
 
   h3 {
     font-size: $T3;
@@ -14,7 +15,6 @@
 
   #progress-bar {
     width: 290px ;
-    margin: 0 auto;
     border: 1px solid $orange;
     border-radius: 10px;
 
