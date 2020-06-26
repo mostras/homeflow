@@ -230,6 +230,7 @@ jobs_done.each do |job|
   10.times do
     Task.create!(title: 'Titre de la tâche', content: "Bonjour ! Nous avons bien continué votre chantier. Tout se passe comme prévu, nous aurons fini tous les travaux à temps. On vous tient au courant de l'avancée en direct sur Homeflow! Bonne journée!", seen: true, job: etape)
   end
+  etape.update!(updated_at: 245.days.ago)
   puts 'job et tasks associées créées pour Romain !!!!'
 end
 
